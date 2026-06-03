@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import traceback
+import json
 from pathlib import Path
 
 import discord
@@ -17,6 +18,7 @@ from scripts.simulate_sandbox import simulate as simulate_sandbox
 ROOT = Path(__file__).resolve().parent
 MAP_CONTACT_SHEET = ROOT / "data" / "runs" / "maps" / "prototype_state_contact_sheet.png"
 COMMANDS_PATH = ROOT / "data" / "command_unlocks.json"
+ACTOR_PROFILES_PATH = ROOT / "data" / "actor_profiles.json"
 DISCORD_TEXT_LIMIT = 1800
 
 
@@ -49,6 +51,13 @@ def read_text(path: Path, fallback: str) -> str:
     if not path.exists():
         return fallback
     return path.read_text(encoding="utf-8")
+
+
+def load_actor_profiles() -> dict[str, dict]:
+    if not ACTOR_PROFILES_PATH.exists():
+        return {}
+    data = json.loads(ACTOR_PROFILES_PATH.read_text(encoding="utf-8"))
+    return {actor["id"]: actor for actor in data.get("actors", [])}
 
 
 def trim_for_discord(text: str, limit: int = DISCORD_TEXT_LIMIT) -> str:
@@ -161,6 +170,69 @@ async def publish_map_to_channel(interaction: discord.Interaction) -> discord.ab
     return await send_to_configured_channel(interaction, "HG_PUBLIC_MAP_CHANNEL_ID", content, MAP_CONTACT_SHEET)
 
 
+def split_bitacora_sections(text: str) -> list[tuple[str, str]]:
+    sections: list[tuple[str, str]] = []
+    current_title = "Inicio"
+    current_lines: list[str] = []
+    for line in text.splitlines():
+        if line.startswith("## "):
+            if current_lines:
+                sections.append((current_title, "\n".join(current_lines).strip()))
+            current_title = line.replace("## ", "", 1).strip()
+            current_lines = [line]
+        else:
+            current_lines.append(line)
+    if current_lines:
+        sections.append((current_title, "\n".join(current_lines).strip()))
+    return [(title, body) for title, body in sections if body]
+
+
+async def publish_action_feed(interaction: discord.Interaction, max_sections: int = 12) -> discord.abc.Messageable:
+    text = read_text(SANDBOX_LOG_PATH, "Todavia no hay bitacora sandbox.")
+    channel_id = env_int("HG_ACTION_CHANNEL_ID")
+    channel = interaction.client.get_channel(channel_id) if channel_id else None
+    if channel is None and channel_id:
+        channel = await interaction.client.fetch_channel(channel_id)
+    if channel is None or not hasattr(channel, "send"):
+        raise RuntimeError("No pude resolver HG_ACTION_CHANNEL_ID.")
+
+    sections = split_bitacora_sections(text)
+    sent_channel = channel
+    await sent_channel.send("**Hellgames Battle Royale - accion del sandbox**")
+    for title, body in sections[:max_sections]:
+        if title.lower().startswith("bitacora sandbox"):
+            continue
+        await sent_channel.send(f"```md\n{trim_for_discord(body, 1700)}\n```")
+    return sent_channel
+
+
+def actor_profile_embed(profile: dict) -> discord.Embed:
+    color_by_kind = {
+        "participante": discord.Color.red(),
+        "lugareno": discord.Color.blue(),
+        "criatura": discord.Color.purple(),
+        "guardian": discord.Color.orange(),
+        "jefe": discord.Color.dark_gold(),
+    }
+    embed = discord.Embed(
+        title=profile["name"],
+        description=profile.get("public_summary", ""),
+        color=color_by_kind.get(profile.get("kind"), discord.Color.dark_grey()),
+    )
+    embed.add_field(name="Tipo", value=profile.get("kind", "desconocido"), inline=True)
+    embed.add_field(name="Rol", value=profile.get("role", "sin rol"), inline=True)
+    embed.add_field(name="Rasgos", value=", ".join(profile.get("personality", [])) or "sin datos", inline=False)
+    embed.add_field(name="Habilidades", value=", ".join(profile.get("known_skills", [])) or "sin datos", inline=False)
+    hooks = profile.get("public_hooks", [])
+    if hooks:
+        embed.add_field(name="Ganchos", value="\n".join(f"- {hook}" for hook in hooks), inline=False)
+    if profile.get("image_asset_id"):
+        embed.set_footer(text=f"Asset: {profile['image_asset_id']}")
+    else:
+        embed.set_footer(text="Imagen pendiente de asignar")
+    return embed
+
+
 @bot.event
 async def on_ready() -> None:
     if GUILD_ID:
@@ -201,7 +273,7 @@ async def hg_ayuda(interaction: discord.Interaction) -> None:
     )
     embed.add_field(
         name="Admin",
-        value="`/hg admin diagnostico`, `/hg admin montar_demo`, `/hg admin sandbox`, `/hg admin render_mapa`, `/hg admin publicar_bitacora`, `/hg admin publicar_mapa`, `/hg admin estado_actor`",
+        value="`/hg admin diagnostico`, `/hg admin montar_demo`, `/hg admin publicar_accion`, `/hg admin publicar_fichas`, `/hg admin sandbox`, `/hg admin render_mapa`, `/hg admin publicar_bitacora`, `/hg admin publicar_mapa`, `/hg admin estado_actor`",
         inline=False,
     )
     await interaction.response.send_message(embed=embed, ephemeral=True)
@@ -251,10 +323,15 @@ async def hg_mapa(interaction: discord.Interaction) -> None:
 @hg.command(name="personaje", description="Muestra una ficha publica basica.")
 @app_commands.describe(personaje="ID del personaje, ejemplo: rex, sira, silas_crow")
 async def hg_personaje(interaction: discord.Interaction, personaje: str) -> None:
-    await interaction.response.send_message(
-        f"Ficha publica V0 de `{personaje}`: disponible cuando conectemos lectura directa del catalogo.",
-        ephemeral=True,
-    )
+    profiles = load_actor_profiles()
+    profile = profiles.get(personaje.strip().lower())
+    if not profile:
+        await interaction.response.send_message(
+            f"No encontre `{personaje}`. Prueba: {', '.join(sorted(profiles)[:8])}",
+            ephemeral=True,
+        )
+        return
+    await interaction.response.send_message(embed=actor_profile_embed(profile), ephemeral=True)
 
 
 @hg.command(name="rumores", description="Muestra rumores publicos desbloqueados.")
@@ -307,10 +384,11 @@ async def admin_montar_demo(interaction: discord.Interaction, seed: int = 11) ->
         SANDBOX_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
         SANDBOX_LOG_PATH.write_text(log, encoding="utf-8")
         render_prototype_maps()
+        action_channel = await publish_action_feed(interaction)
         log_channel = await publish_bitacora_to_channel(interaction)
         map_channel = await publish_map_to_channel(interaction)
         await interaction.followup.send(
-            f"Demo montada con seed `{seed}`.\nBitacora: {getattr(log_channel, 'mention', 'canal configurado')}\nMapa: {getattr(map_channel, 'mention', 'canal configurado')}",
+            f"Demo montada con seed `{seed}`.\nAccion: {getattr(action_channel, 'mention', 'canal configurado')}\nBitacora: {getattr(log_channel, 'mention', 'canal configurado')}\nMapa: {getattr(map_channel, 'mention', 'canal configurado')}",
             ephemeral=True,
         )
     except Exception as exc:
@@ -329,6 +407,43 @@ async def admin_render_mapa(interaction: discord.Interaction) -> None:
     except Exception as exc:
         traceback.print_exception(type(exc), exc, exc.__traceback__)
         await interaction.followup.send(f"No pude renderizar el mapa: `{type(exc).__name__}: {exc}`", ephemeral=True)
+
+
+@admin.command(name="publicar_accion", description="Publica la bitacora por escenas en el canal principal.")
+async def admin_publicar_accion(interaction: discord.Interaction) -> None:
+    if not await require_admin(interaction):
+        return
+    await interaction.response.defer(ephemeral=True, thinking=True)
+    try:
+        channel = await publish_action_feed(interaction)
+        await interaction.followup.send(f"Accion publicada en {getattr(channel, 'mention', 'el canal configurado')}.", ephemeral=True)
+    except Exception as exc:
+        traceback.print_exception(type(exc), exc, exc.__traceback__)
+        await interaction.followup.send(f"No pude publicar la accion: `{type(exc).__name__}: {exc}`", ephemeral=True)
+
+
+@admin.command(name="publicar_fichas", description="Publica fichas base en el canal database.")
+async def admin_publicar_fichas(interaction: discord.Interaction) -> None:
+    if not await require_admin(interaction):
+        return
+    await interaction.response.defer(ephemeral=True, thinking=True)
+    try:
+        channel_id = env_int("HG_DATABASE_CHANNEL_ID")
+        channel = interaction.client.get_channel(channel_id) if channel_id else None
+        if channel is None and channel_id:
+            channel = await interaction.client.fetch_channel(channel_id)
+        if channel is None or not hasattr(channel, "send"):
+            raise RuntimeError("No pude resolver HG_DATABASE_CHANNEL_ID.")
+
+        profiles = load_actor_profiles()
+        await channel.send("**Hellgames database - fichas base V0**")
+        for profile in profiles.values():
+            await channel.send(embed=actor_profile_embed(profile))
+        await channel.send(file=discord.File(str(ACTOR_PROFILES_PATH)))
+        await interaction.followup.send(f"Fichas publicadas en {getattr(channel, 'mention', 'el canal database')}.", ephemeral=True)
+    except Exception as exc:
+        traceback.print_exception(type(exc), exc, exc.__traceback__)
+        await interaction.followup.send(f"No pude publicar fichas: `{type(exc).__name__}: {exc}`", ephemeral=True)
 
 
 @admin.command(name="publicar_bitacora", description="Publica la ultima bitacora en el canal configurado.")

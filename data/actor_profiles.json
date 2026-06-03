@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "actors": [
+    {
+      "id": "rex",
+      "name": "Rex",
+      "kind": "participante",
+      "role": "Creativo improvisador",
+      "public_summary": "Un participante raro dentro de Hell Games: diseñador, hablador y capaz de convertir basura en herramienta.",
+      "personality": ["curioso", "dramatico", "evita_matar", "improvisador"],
+      "known_skills": ["negociar", "distraer", "improvisar_herramientas"],
+      "public_hooks": ["Busca aliados antes que violencia directa.", "Puede ser subestimado por los mas duros."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "renzo_manos_frias",
+      "name": "Renzo Manos Frias",
+      "kind": "participante",
+      "role": "Tecnico calculador",
+      "public_summary": "Paciente, frio y practico. Prefiere reparar, medir riesgos y conseguir ventaja tecnica antes que pelear.",
+      "personality": ["calculador", "paciente", "tecnico", "pragmatico"],
+      "known_skills": ["reparar_radio", "abrir_cajas", "montar_trampas_simples"],
+      "public_hooks": ["La radio del faro podria interesarle demasiado.", "Su calma puede parecer sospechosa."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "silas_crow",
+      "name": "Silas Crow",
+      "kind": "participante",
+      "role": "Oportunista sigiloso",
+      "public_summary": "Observador, reservado y dificil de leer. No siempre ataca, pero casi siempre esta midiendo una ventaja.",
+      "personality": ["observador", "reservado", "oportunista", "mentiroso"],
+      "known_skills": ["sigilo", "rastrear", "saquear", "intimidar"],
+      "public_hooks": ["Puede estar cerca aunque nadie lo vea.", "Las ruinas son una tentacion obvia para el."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "sira",
+      "name": "Sira",
+      "kind": "lugareno",
+      "role": "Vigilia del faro",
+      "public_summary": "Lugarenia desconfiada, herida y ligada al faro. Sabe mas de las ruinas de lo que acepta decir.",
+      "personality": ["cautelosa", "protectora", "desconfiada", "lee_marcas_antiguas"],
+      "known_skills": ["leer_marcas", "vigilar", "ocultar_informacion"],
+      "public_hooks": ["Puede advertir a un participante antes de que cometa un error.", "Protege el diario del farero."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "verek",
+      "name": "Verek",
+      "kind": "lugareno",
+      "role": "Saqueador comerciante",
+      "public_summary": "Vende rumores, chatarra y medias verdades. Recuerda deudas y rara vez ofrece algo gratis.",
+      "personality": ["oportunista", "negociador", "saqueador_paciente"],
+      "known_skills": ["trueque", "rumores", "regatear", "detectar_oportunidades"],
+      "public_hooks": ["Acepta comida por informacion.", "Sus rumores pueden ser utiles aunque incompletos."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "gaviotas_hueso",
+      "name": "Gaviotas de hueso",
+      "kind": "criatura",
+      "role": "Alarma costera",
+      "public_summary": "Aves agresivas del faro. No son la amenaza mas letal, pero delatan posiciones con sus chillidos.",
+      "personality": ["territoriales", "atraidas_por_comida", "ruidosas"],
+      "known_skills": ["delatar_posicion", "acosar", "robar_comida"],
+      "public_hooks": ["Pueden arruinar un escondite.", "Aparecen cerca del faro y la costa."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "larvas_raiz",
+      "name": "Larvas de raiz",
+      "kind": "criatura",
+      "role": "Plaga del campamento",
+      "public_summary": "Criaturas pequenas que viven bajo las raices negras. Muerden poco, pero pueden infectar y sembrar panico.",
+      "personality": ["ocultas", "atraidas_por_humo", "hambrientas"],
+      "known_skills": ["mordida_infecciosa", "aparecer_bajo_tiendas"],
+      "public_hooks": ["El campamento no es tan seguro como parece.", "La higiene y el fuego importan."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "sombras_monolito",
+      "name": "Sombras de monolito",
+      "kind": "criatura",
+      "role": "Imitadoras nocturnas",
+      "public_summary": "Formas oscuras que imitan siluetas cerca del circulo. No siempre atacan: a veces basta con quebrar la confianza.",
+      "personality": ["nocturnas", "imitadoras", "confusas"],
+      "known_skills": ["imitar_silueta", "aumentar_miedo", "separar_grupos"],
+      "public_hooks": ["Pueden hacer parecer culpable a alguien inocente.", "Son mas peligrosas de noche."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "custodio_faro",
+      "name": "Custodio del Faro",
+      "kind": "guardian",
+      "role": "Regla espiritual del faro",
+      "public_summary": "Presencia que protege la luz del faro. No ataca primero, pero bloquea a quienes rompen antiguas reglas.",
+      "personality": ["ritual", "silencioso", "memorioso"],
+      "known_skills": ["bloquear_paso", "exigir_promesa", "recordar_deudas"],
+      "public_hooks": ["La luz del faro tiene condiciones.", "Encender el faro de noche puede traer consecuencias."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "centinela_piedra",
+      "name": "Centinela de Piedra",
+      "kind": "guardian",
+      "role": "Defensor de las ruinas",
+      "public_summary": "Guardian fisico, lento y resistente. Despierta cuando una reliquia es robada o una trampa se fuerza demasiado.",
+      "personality": ["lento", "implacable", "ritual"],
+      "known_skills": ["perseguir", "resistir", "aceptar_ofrenda"],
+      "public_hooks": ["No siempre hay que vencerlo: a veces hay que devolver algo.", "Protege la puerta y la reliquia."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    },
+    {
+      "id": "guardian_juramentado",
+      "name": "El Guardian Juramentado",
+      "kind": "jefe",
+      "role": "Juez de las ruinas",
+      "public_summary": "Jefe del piloto. Despierta si las ruinas son perturbadas y juzga lo que la isla recuerda.",
+      "personality": ["solemne", "juez", "antiguo", "severo"],
+      "known_skills": ["juzgar_bitacora", "castigar_traicion", "exigir_memoria"],
+      "public_hooks": ["No busca escapar: busca dictar sentencia.", "Puede cerrar el piloto con una escena fuerte."],
+      "image_asset_id": null,
+      "expression_pack_id": null
+    }
+  ]
+}

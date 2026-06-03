@@ -198,6 +198,8 @@ Basicos:
 
 - `/hg ayuda`: muestra comandos disponibles para tu nivel;
 - `/hg perfil`: muestra nivel, XP, puntos y personajes seguidos;
+- `/hg monedas`: muestra Hellcoins actuales;
+- `/hg reclamar`: reclama bono diario de Hellcoins;
 - `/hg ranking`: ranking de espectadores/investigadores;
 - `/hg bitacora`: ultimo resumen publico del evento;
 - `/hg mapa`: mapa publico de la isla o del sandbox;
@@ -223,6 +225,11 @@ Seguimiento:
 Comunidad:
 
 - `/hg votar`: votacion activa;
+- `/hg apuestas`: lista apuestas abiertas;
+- `/hg apostar <apuesta> <opcion> <cantidad>`: apuesta Hellcoins;
+- `/hg mis_apuestas`: muestra apuestas activas del usuario;
+- `/hg mercado`: muestra gastos disponibles con Hellcoins;
+- `/hg comprar <opcion>`: compra pista, seguimiento o utilidad;
 - `/hg teoria <texto>`: registra una teoria del usuario;
 - `/hg comparar <a> <b>`: compara dos personajes si se tiene nivel;
 - `/hg evento`: explica el evento publico actual.
@@ -250,6 +257,11 @@ Mas admin:
 - `/hg admin xp <usuario> <cantidad>`: ajusta XP;
 - `/hg admin puntos <usuario> <cantidad>`: ajusta puntos de seguimiento;
 - `/hg admin desbloquear <usuario> <comando>`: desbloqueo manual.
+- `/hg admin apuesta_crear`: crea una apuesta vinculada a una memoria/evento;
+- `/hg admin apuesta_cerrar`: cierra entradas de una apuesta;
+- `/hg admin apuesta_resolver`: resuelve apuesta y paga Hellcoins;
+- `/hg admin monedas <usuario> <cantidad>`: ajusta Hellcoins;
+- `/hg admin transacciones`: revisa movimientos economicos.
 
 Owner:
 
@@ -268,10 +280,14 @@ Publicos:
 
 - `/hg ayuda`;
 - `/hg perfil`;
+- `/hg monedas`;
+- `/hg reclamar`;
 - `/hg bitacora`;
 - `/hg mapa`;
 - `/hg personaje`;
 - `/hg mirar`;
+- `/hg apuestas`;
+- `/hg apostar`;
 - `/hg seguir`;
 - `/hg observar`;
 - `/hg rumores`.
@@ -283,6 +299,9 @@ Admin/owner:
 - `/hg admin publicar_bitacora`;
 - `/hg admin estado_actor`;
 - `/hg admin reset_demo`;
+- `/hg admin apuesta_crear`;
+- `/hg admin apuesta_resolver`;
+- `/hg admin monedas`;
 - `/hg owner sync`;
 - `/hg owner set_canal`.
 

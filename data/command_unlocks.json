@@ -12,13 +12,13 @@
       "level": 0,
       "name": "Espectador",
       "xp_required": 0,
-      "commands": ["ayuda", "perfil", "bitacora", "mapa", "personaje"]
+      "commands": ["ayuda", "perfil", "bitacora", "mapa", "personaje", "monedas", "reclamar"]
     },
     {
       "level": 1,
       "name": "Curioso",
       "xp_required": 50,
-      "commands": ["mirar", "mirar_casilla", "rumores", "guia"]
+      "commands": ["mirar", "mirar_casilla", "rumores", "guia", "apuestas", "apostar", "mis_apuestas"]
     },
     {
       "level": 2,
@@ -30,7 +30,7 @@
       "level": 3,
       "name": "Investigador",
       "xp_required": 350,
-      "commands": ["casilla", "rastros", "evento"]
+      "commands": ["casilla", "rastros", "evento", "mercado", "comprar"]
     },
     {
       "level": 4,
@@ -54,7 +54,23 @@
     "votar": 8,
     "guia": 4,
     "rumor_nuevo": 12,
-    "teoria_acertada": 25
+    "teoria_acertada": 25,
+    "apuesta_ganada": 10,
+    "reclamar_diario": 2
+  },
+  "hellcoins": {
+    "starting_balance": 100,
+    "daily_claim": 25,
+    "vote_reward": 5,
+    "new_rumor_reward": 15,
+    "max_bet_per_user_per_bet": 50,
+    "default_bet_multiplier": 2,
+    "costs": {
+      "seguir": 20,
+      "profundizar": 40,
+      "espiar": 15,
+      "pista_menor": 30
+    }
   },
   "tracking_costs": {
     "seguir": 2,
@@ -68,7 +84,11 @@
     "bitacora",
     "mapa",
     "personaje",
+    "monedas",
+    "reclamar",
     "mirar",
+    "apuestas",
+    "apostar",
     "seguir",
     "observar",
     "rumores"
@@ -79,6 +99,9 @@
     "admin publicar_bitacora",
     "admin estado_actor",
     "admin reset_demo",
+    "admin apuesta_crear",
+    "admin apuesta_resolver",
+    "admin monedas",
     "owner sync",
     "owner set_canal"
   ]

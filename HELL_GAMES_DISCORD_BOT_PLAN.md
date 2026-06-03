@@ -25,6 +25,29 @@ Scopes al invitarlo:
 - `bot`;
 - `applications.commands`.
 
+En Discord Developer Portal, dentro de OAuth2 / URL Generator, no hace falta marcar
+`identify`, `email`, `guilds`, `guilds.members.read`, `messages.read` ni permisos de
+RPC. Para la primera version solo queremos invitar el bot al servidor y registrar
+comandos slash.
+
+Bot tab:
+
+- crear/copiar token del bot y guardarlo solo en `.env`;
+- `Public Bot`: puede estar apagado si solo se usara en tu server;
+- `Requires OAuth2 Code Grant`: apagado para una invitacion normal;
+- `Message Content Intent`: apagado si usamos solo slash commands;
+- `Server Members Intent`: apagado en la V0;
+- `Presence Intent`: apagado en la V0.
+
+Permisos del URL Generator al seleccionar `bot`:
+
+- View Channels;
+- Send Messages;
+- Embed Links;
+- Attach Files;
+- Read Message History;
+- Use Application Commands.
+
 Permisos para canales publicos del evento:
 
 - ver canales;
@@ -58,15 +81,25 @@ Evitaria permisos amplios al principio:
 
 Publicos:
 
-- `hellgames-bitacora`: sucesos narrativos importantes;
-- `hellgames-mapa`: mapas de estado publicados por el bot;
+- `hellgames-battleroyale`: canal principal donde ocurre la accion publica;
+- `hellgames-bitacora`: resumen ordenado de dias/bloques importantes;
+- `hellgames-mapa`: mapas de estado publicados por el bot, idealmente limpio;
 - `hellgames-rumores`: informacion parcial y desbloqueos.
 
 Privados/admin:
 
 - `hellgames-admin-log`: registro completo de simulacion;
 - `hellgames-assets`: imagenes subidas manualmente para que el bot guarde referencias;
+- `hellgames-database`: mensajes estructurados de lore, fichas, rumores o eventos cargables;
 - `hellgames-debug`: pruebas tecnicas y errores.
+
+Recomendacion para no mezclar:
+
+- `hellgames-battleroyale` es el teatro: sucesos vivos, escenas, alertas, apuestas importantes.
+- `hellgames-mapa` es el tablero: ultima imagen del mapa, posiciones reveladas y mapas tacticos.
+- `hellgames-bitacora` es el archivo publico: resumen por bloque/dia, sin tanto ruido.
+- `hellgames-assets` es almacenamiento visual: imagenes y adjuntos.
+- `hellgames-database` es biblioteca estructurada: texto/JSON/YAML que el bot puede importar.
 
 ## Usar imagenes del server por ID
 

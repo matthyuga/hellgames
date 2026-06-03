@@ -101,6 +101,8 @@ async def send_to_configured_channel(
 ) -> discord.abc.Messageable:
     channel_id = env_int(env_name)
     channel = interaction.client.get_channel(channel_id) if channel_id else None
+    if channel is None and channel_id:
+        channel = await interaction.client.fetch_channel(channel_id)
     if channel is None:
         channel = interaction.channel
     if channel is None or not hasattr(channel, "send"):
@@ -109,6 +111,34 @@ async def send_to_configured_channel(
     file = discord.File(str(file_path)) if file_path and file_path.exists() else None
     await channel.send(content=content, file=file)
     return channel
+
+
+def required_channel_permissions(need_file: bool = False) -> tuple[str, ...]:
+    base = ("view_channel", "send_messages", "embed_links", "read_message_history")
+    if need_file:
+        return base + ("attach_files",)
+    return base
+
+
+async def describe_channel_access(interaction: discord.Interaction, env_name: str, need_file: bool = False) -> str:
+    channel_id = env_int(env_name)
+    if not channel_id:
+        return f"- `{env_name}`: FALTA ID"
+    try:
+        channel = interaction.client.get_channel(channel_id) or await interaction.client.fetch_channel(channel_id)
+    except Exception as exc:
+        return f"- `{env_name}` `{channel_id}`: no accesible (`{type(exc).__name__}: {exc}`)"
+
+    guild = interaction.guild
+    me = guild.me if guild else None
+    if me is None or not isinstance(channel, discord.abc.GuildChannel):
+        return f"- `{env_name}` {getattr(channel, 'mention', channel_id)}: no pude leer permisos del guild"
+
+    perms = channel.permissions_for(me)
+    missing = [perm for perm in required_channel_permissions(need_file) if not getattr(perms, perm, False)]
+    if missing:
+        return f"- `{env_name}` {channel.mention}: FALTAN {', '.join(missing)}"
+    return f"- `{env_name}` {channel.mention}: OK"
 
 
 async def publish_bitacora_to_channel(interaction: discord.Interaction) -> discord.abc.Messageable:
@@ -171,7 +201,7 @@ async def hg_ayuda(interaction: discord.Interaction) -> None:
     )
     embed.add_field(
         name="Admin",
-        value="`/hg admin montar_demo`, `/hg admin sandbox`, `/hg admin render_mapa`, `/hg admin publicar_bitacora`, `/hg admin publicar_mapa`, `/hg admin estado_actor`",
+        value="`/hg admin diagnostico`, `/hg admin montar_demo`, `/hg admin sandbox`, `/hg admin render_mapa`, `/hg admin publicar_bitacora`, `/hg admin publicar_mapa`, `/hg admin estado_actor`",
         inline=False,
     )
     await interaction.response.send_message(embed=embed, ephemeral=True)
@@ -245,6 +275,25 @@ async def admin_sandbox(interaction: discord.Interaction, seed: int = 11) -> Non
     SANDBOX_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
     SANDBOX_LOG_PATH.write_text(log, encoding="utf-8")
     await interaction.followup.send(f"Sandbox generado con seed `{seed}`.\n`{SANDBOX_LOG_PATH}`", ephemeral=True)
+
+
+@admin.command(name="diagnostico", description="Revisa acceso del bot a los canales configurados.")
+async def admin_diagnostico(interaction: discord.Interaction) -> None:
+    if not await require_admin(interaction):
+        return
+    await interaction.response.defer(ephemeral=True, thinking=True)
+    checks = [
+        ("HG_ACTION_CHANNEL_ID", False),
+        ("HG_PUBLIC_MAP_CHANNEL_ID", True),
+        ("HG_PUBLIC_LOG_CHANNEL_ID", True),
+        ("HG_RUMORS_CHANNEL_ID", False),
+        ("HG_ADMIN_LOG_CHANNEL_ID", False),
+        ("HG_ASSET_CHANNEL_ID", True),
+        ("HG_DATABASE_CHANNEL_ID", False),
+        ("HG_DEBUG_CHANNEL_ID", False),
+    ]
+    lines = [await describe_channel_access(interaction, env_name, need_file) for env_name, need_file in checks]
+    await interaction.followup.send("**Diagnostico de canales Hellgames**\n" + "\n".join(lines), ephemeral=True)
 
 
 @admin.command(name="montar_demo", description="Genera sandbox, renderiza mapa y publica ambos.")

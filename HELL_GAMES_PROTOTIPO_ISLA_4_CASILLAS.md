@@ -12,7 +12,7 @@ casilla 6 abajo izquierda y casilla 7 abajo derecha.
 
 ## Objetivo del piloto
 
-Probar una partida corta con:
+Probar una partida corta tipo sandbox con:
 
 - 4 casillas activas;
 - 2 NPC lugarenos;
@@ -20,12 +20,27 @@ Probar una partida corta con:
 - 3 criaturas comunes;
 - 2 guardianes;
 - 1 jefe;
-- simulacion de 3 a 5 dias;
+- simulacion de 3 dias;
 - registro diario en bitacora;
 - decisiones por personalidad, necesidad, ubicacion, miedo y memoria.
 
-La meta no es decidir aun todo el sistema final. La meta es comprobar si el bot puede mover
-personajes, generar incidentes, recordar consecuencias y producir una narracion entendible.
+La meta no es escapar todavia. Como no esta activa la casilla 13, el objetivo del piloto es sobrevivir
+3 dias en una zona cerrada de la isla. Esto permite probar hambre, sed, miedo, descanso,
+trueque, rutinas, criaturas, guardianes y eventos sin necesidad de final oficial.
+
+## Modo sandbox de supervivencia
+
+Regla principal:
+
+- los participantes caen en puntos aleatorios de las casillas 1, 2 o 6;
+- los lugarenos ya estan en la isla y siguen rutinas por bloque horario;
+- las criaturas pueden estar ubicadas o aparecer como evento;
+- los guardianes protegen reglas o zonas;
+- el jefe puede despertar como evento si las ruinas son perturbadas;
+- al final de la noche del dia 3 se revisa quien sigue vivo.
+
+La prueba debe sentirse como una pecera peligrosa: pocos actores, poco mapa,
+pero muchas consecuencias.
 
 ## Participantes elegidos
 

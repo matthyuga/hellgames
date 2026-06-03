@@ -55,6 +55,54 @@
     "night_penalty": 2,
     "rule": "detection_score = perception + range_bonus - stealth - penalties"
   },
+  "sandbox_rules": {
+    "objective": "sobrevivir_3_dias",
+    "participant_spawn": {
+      "mode": "random",
+      "allowed_cells": [1, 2, 6],
+      "points": {
+        "1": [
+          {"micro": "K4", "poi": "radio_mastil"},
+          {"micro": "C8", "poi": "santuario"},
+          {"micro": "I7", "poi": "casa_cuidador"}
+        ],
+        "2": [
+          {"micro": "G7", "poi": "fogata"},
+          {"micro": "E5", "poi": "tiendas"},
+          {"micro": "D8", "poi": "raices"}
+        ],
+        "6": [
+          {"micro": "D5", "poi": "monolitos"},
+          {"micro": "G7", "poi": "circulo"},
+          {"micro": "K10", "poi": "monolitos"}
+        ]
+      }
+    },
+    "local_routines": {
+      "sira": {
+        "manana": {"cell": 1, "micro": "I6", "poi": "casa_cuidador", "action": "vigilar_faro"},
+        "tarde": {"cell": 6, "micro": "D10", "poi": "monolitos", "action": "leer_marcas"},
+        "noche": {"cell": 1, "micro": "F5", "poi": "faro", "action": "evitar_luz_nocturna"},
+        "madrugada": {"cell": 1, "micro": "I7", "poi": "casa_cuidador", "action": "descansar_oculta"}
+      },
+      "verek": {
+        "manana": {"cell": 2, "micro": "E5", "poi": "tiendas", "action": "buscar_trueque"},
+        "tarde": {"cell": 2, "micro": "G7", "poi": "fogata", "action": "vender_rumores"},
+        "noche": {"cell": 6, "micro": "D5", "poi": "monolitos", "action": "vigilar_rutas"},
+        "madrugada": {"cell": 2, "micro": "I6", "poi": "tiendas", "action": "dormir_ligero"}
+      }
+    },
+    "event_chances": {
+      "creature_minor_day": 0.18,
+      "creature_minor_night": 0.35,
+      "guardian_warning": 0.25,
+      "boss_final_night_if_ruins_disturbed": 0.75
+    },
+    "success_condition": {
+      "survive_until": "dia_3_noche",
+      "participant_min_hp": 1
+    }
+  },
   "items": [
     {
       "id": "venda_usada",

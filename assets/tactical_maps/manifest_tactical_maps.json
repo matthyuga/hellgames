@@ -1,0 +1,227 @@
+[
+  {
+    "scenario_id": 1,
+    "name": "Faro de la Vigilia Sagrada",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_01_faro_de_la_vigilia_sagrada/scenario_01_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_01_faro_de_la_vigilia_sagrada/scenario_01_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_01_faro_de_la_vigilia_sagrada/scenario_01_tactical.json"
+  },
+  {
+    "scenario_id": 2,
+    "name": "Campamento Raíz Maldita",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_02_campamento_raiz_maldita/scenario_02_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_02_campamento_raiz_maldita/scenario_02_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_02_campamento_raiz_maldita/scenario_02_tactical.json"
+  },
+  {
+    "scenario_id": 3,
+    "name": "Minas de Hierro",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_03_minas_de_hierro/scenario_03_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_03_minas_de_hierro/scenario_03_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_03_minas_de_hierro/scenario_03_tactical.json"
+  },
+  {
+    "scenario_id": 4,
+    "name": "Cascada de los Susurros",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_04_cascada_de_los_susurros/scenario_04_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_04_cascada_de_los_susurros/scenario_04_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_04_cascada_de_los_susurros/scenario_04_tactical.json"
+  },
+  {
+    "scenario_id": 5,
+    "name": "Puerto del Navegante",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_05_puerto_del_navegante/scenario_05_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_05_puerto_del_navegante/scenario_05_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_05_puerto_del_navegante/scenario_05_tactical.json"
+  },
+  {
+    "scenario_id": 6,
+    "name": "Círculo de Monolitos",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_06_circulo_de_monolitos/scenario_06_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_06_circulo_de_monolitos/scenario_06_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_06_circulo_de_monolitos/scenario_06_tactical.json"
+  },
+  {
+    "scenario_id": 7,
+    "name": "Ruinas del Guardián",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_07_ruinas_del_guardian/scenario_07_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_07_ruinas_del_guardian/scenario_07_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_07_ruinas_del_guardian/scenario_07_tactical.json"
+  },
+  {
+    "scenario_id": 8,
+    "name": "Pradera Valle del Viento",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_08_pradera_valle_del_viento/scenario_08_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_08_pradera_valle_del_viento/scenario_08_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_08_pradera_valle_del_viento/scenario_08_tactical.json"
+  },
+  {
+    "scenario_id": 9,
+    "name": "Templo de las Hojas Carmesí",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_09_templo_de_las_hojas_carmesi/scenario_09_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_09_templo_de_las_hojas_carmesi/scenario_09_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_09_templo_de_las_hojas_carmesi/scenario_09_tactical.json"
+  },
+  {
+    "scenario_id": 10,
+    "name": "Bastión del Acantilado",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_10_bastion_del_acantilado/scenario_10_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_10_bastion_del_acantilado/scenario_10_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_10_bastion_del_acantilado/scenario_10_tactical.json"
+  },
+  {
+    "scenario_id": 11,
+    "name": "Pantano de los Olvidados",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_11_pantano_de_los_olvidados/scenario_11_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_11_pantano_de_los_olvidados/scenario_11_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_11_pantano_de_los_olvidados/scenario_11_tactical.json"
+  },
+  {
+    "scenario_id": 12,
+    "name": "Sector X",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_12_sector_x/scenario_12_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_12_sector_x/scenario_12_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_12_sector_x/scenario_12_tactical.json"
+  },
+  {
+    "scenario_id": 13,
+    "name": "Torre Centinela",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_13_torre_centinela/scenario_13_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_13_torre_centinela/scenario_13_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_13_torre_centinela/scenario_13_tactical.json"
+  },
+  {
+    "scenario_id": 14,
+    "name": "Granja Sangrienta",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_14_granja_sangrienta/scenario_14_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_14_granja_sangrienta/scenario_14_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_14_granja_sangrienta/scenario_14_tactical.json"
+  },
+  {
+    "scenario_id": 15,
+    "name": "Templo del Sol",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_15_templo_del_sol/scenario_15_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_15_templo_del_sol/scenario_15_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_15_templo_del_sol/scenario_15_tactical.json"
+  },
+  {
+    "scenario_id": 16,
+    "name": "Costa del Naufragio Negro",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_16_costa_del_naufragio_negro/scenario_16_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_16_costa_del_naufragio_negro/scenario_16_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_16_costa_del_naufragio_negro/scenario_16_tactical.json"
+  },
+  {
+    "scenario_id": 17,
+    "name": "Templo de la Luna",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_17_templo_de_la_luna/scenario_17_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_17_templo_de_la_luna/scenario_17_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_17_templo_de_la_luna/scenario_17_tactical.json"
+  },
+  {
+    "scenario_id": 18,
+    "name": "Cañón Partido",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_18_canon_partido/scenario_18_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_18_canon_partido/scenario_18_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_18_canon_partido/scenario_18_tactical.json"
+  },
+  {
+    "scenario_id": 19,
+    "name": "Estación Militar",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_19_estacion_militar/scenario_19_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_19_estacion_militar/scenario_19_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_19_estacion_militar/scenario_19_tactical.json"
+  },
+  {
+    "scenario_id": 20,
+    "name": "Observatorio Militar",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_20_observatorio_militar/scenario_20_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_20_observatorio_militar/scenario_20_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_20_observatorio_militar/scenario_20_tactical.json"
+  },
+  {
+    "scenario_id": 21,
+    "name": "Muelle Aguas Rojas",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_21_muelle_aguas_rojas/scenario_21_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_21_muelle_aguas_rojas/scenario_21_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_21_muelle_aguas_rojas/scenario_21_tactical.json"
+  },
+  {
+    "scenario_id": 22,
+    "name": "Pueblo Nevado",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_22_pueblo_nevado/scenario_22_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_22_pueblo_nevado/scenario_22_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_22_pueblo_nevado/scenario_22_tactical.json"
+  },
+  {
+    "scenario_id": 23,
+    "name": "Jungla de Bambú Diabólico",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_23_jungla_de_bambu_diabolico/scenario_23_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_23_jungla_de_bambu_diabolico/scenario_23_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_23_jungla_de_bambu_diabolico/scenario_23_tactical.json"
+  },
+  {
+    "scenario_id": 24,
+    "name": "Bastión Duna Seca",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_24_bastion_duna_seca/scenario_24_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_24_bastion_duna_seca/scenario_24_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_24_bastion_duna_seca/scenario_24_tactical.json"
+  },
+  {
+    "scenario_id": 25,
+    "name": "Volcán Ceniza Durmiente",
+    "grid_width": 14,
+    "grid_height": 14,
+    "clean_image": "assets/tactical_maps/scenario_25_volcan_ceniza_durmiente/scenario_25_clean.png",
+    "grid_image": "assets/tactical_maps/scenario_25_volcan_ceniza_durmiente/scenario_25_grid_14x14.png",
+    "tactical_data": "assets/tactical_maps/scenario_25_volcan_ceniza_durmiente/scenario_25_tactical.json"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "scenario_id": 18,
+  "name": "Cañón Partido",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_18_canon_partido/scenario_18_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_18_canon_partido/scenario_18_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_18_canon_partido/scenario_18_state_demo.png",
+  "poi": [
+    {
+      "id": "puente",
+      "name": "Puente central",
+      "cells": [
+        "G7",
+        "H7"
+      ]
+    },
+    {
+      "id": "cueva",
+      "name": "Boca de cueva",
+      "cells": [
+        "K5"
+      ]
+    },
+    {
+      "id": "precipicio",
+      "name": "Borde del cañon",
+      "cells": [
+        "C8",
+        "D8"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

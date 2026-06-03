@@ -1,0 +1,38 @@
+{
+  "scenario_id": 10,
+  "name": "Bastión del Acantilado",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_10_bastion_del_acantilado/scenario_10_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_10_bastion_del_acantilado/scenario_10_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_10_bastion_del_acantilado/scenario_10_state_demo.png",
+  "poi": [
+    {
+      "id": "muralla",
+      "name": "Muralla del bastion",
+      "cells": [
+        "F4",
+        "G4",
+        "H4"
+      ]
+    },
+    {
+      "id": "patio",
+      "name": "Patio fortificado",
+      "cells": [
+        "G7",
+        "H7"
+      ]
+    },
+    {
+      "id": "torre",
+      "name": "Torre de vigia",
+      "cells": [
+        "K5"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

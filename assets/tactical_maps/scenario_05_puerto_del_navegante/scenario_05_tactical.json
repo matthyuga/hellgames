@@ -1,0 +1,39 @@
+{
+  "scenario_id": 5,
+  "name": "Puerto del Navegante",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_05_puerto_del_navegante/scenario_05_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_05_puerto_del_navegante/scenario_05_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_05_puerto_del_navegante/scenario_05_state_demo.png",
+  "poi": [
+    {
+      "id": "muelle",
+      "name": "Muelle principal",
+      "cells": [
+        "G6",
+        "H6",
+        "I6"
+      ]
+    },
+    {
+      "id": "barco",
+      "name": "Barco dañado",
+      "cells": [
+        "K8",
+        "K9"
+      ]
+    },
+    {
+      "id": "cajas",
+      "name": "Cajas de carga",
+      "cells": [
+        "E5",
+        "F5"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

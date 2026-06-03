@@ -1,0 +1,40 @@
+{
+  "scenario_id": 4,
+  "name": "Cascada de los Susurros",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_04_cascada_de_los_susurros/scenario_04_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_04_cascada_de_los_susurros/scenario_04_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_04_cascada_de_los_susurros/scenario_04_state_demo.png",
+  "poi": [
+    {
+      "id": "cascada",
+      "name": "Cascada",
+      "cells": [
+        "G2",
+        "H2"
+      ]
+    },
+    {
+      "id": "poza",
+      "name": "Poza azul",
+      "cells": [
+        "G5",
+        "H5",
+        "G6",
+        "H6"
+      ]
+    },
+    {
+      "id": "hierbas",
+      "name": "Hierbas medicinales",
+      "cells": [
+        "D8",
+        "E8"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

@@ -1,0 +1,38 @@
+{
+  "scenario_id": 17,
+  "name": "Templo de la Luna",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_17_templo_de_la_luna/scenario_17_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_17_templo_de_la_luna/scenario_17_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_17_templo_de_la_luna/scenario_17_state_demo.png",
+  "poi": [
+    {
+      "id": "templo",
+      "name": "Templo lunar",
+      "cells": [
+        "G5",
+        "H5"
+      ]
+    },
+    {
+      "id": "pozas",
+      "name": "Pozas reflectantes",
+      "cells": [
+        "F8",
+        "I8"
+      ]
+    },
+    {
+      "id": "mercado",
+      "name": "Puestos silenciosos",
+      "cells": [
+        "D7",
+        "E7"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

@@ -1,0 +1,39 @@
+{
+  "scenario_id": 7,
+  "name": "Ruinas del Guardián",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_07_ruinas_del_guardian/scenario_07_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_07_ruinas_del_guardian/scenario_07_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_07_ruinas_del_guardian/scenario_07_state_demo.png",
+  "poi": [
+    {
+      "id": "puerta",
+      "name": "Puerta sellada",
+      "cells": [
+        "H4",
+        "I4"
+      ]
+    },
+    {
+      "id": "patio",
+      "name": "Patio de ruinas",
+      "cells": [
+        "G7",
+        "H7"
+      ]
+    },
+    {
+      "id": "trampas",
+      "name": "Pasillo de trampas",
+      "cells": [
+        "E6",
+        "E7",
+        "E8"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

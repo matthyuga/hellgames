@@ -1,0 +1,152 @@
+﻿[
+    {
+        "id":  1,
+        "name":  "Faro de la Vigilia Sagrada",
+        "map_cell_image":  "assets/map_cells/casilla_01_faro_de_la_vigilia_sagrada.png",
+        "scenario_art":  "assets/scenario_art/escenario_01_faro_de_la_vigilia_sagrada.png"
+    },
+    {
+        "id":  2,
+        "name":  "Campamento Raíz Maldita",
+        "map_cell_image":  "assets/map_cells/casilla_02_campamento_raiz_maldita.png",
+        "scenario_art":  "assets/scenario_art/escenario_02_campamento_raiz_maldita.png"
+    },
+    {
+        "id":  3,
+        "name":  "Minas de Hierro",
+        "map_cell_image":  "assets/map_cells/casilla_03_minas_de_hierro.png",
+        "scenario_art":  "assets/scenario_art/escenario_03_minas_de_hierro.png"
+    },
+    {
+        "id":  4,
+        "name":  "Cascada de los Susurros",
+        "map_cell_image":  "assets/map_cells/casilla_04_cascada_de_los_susurros.png",
+        "scenario_art":  "assets/scenario_art/escenario_04_cascada_de_los_susurros.png"
+    },
+    {
+        "id":  5,
+        "name":  "Puerto del Navegante",
+        "map_cell_image":  "assets/map_cells/casilla_05_puerto_del_navegante.png",
+        "scenario_art":  "assets/scenario_art/escenario_05_puerto_del_navegante.png"
+    },
+    {
+        "id":  6,
+        "name":  "Círculo de Monolitos",
+        "map_cell_image":  "assets/map_cells/casilla_06_circulo_de_monolitos.png",
+        "scenario_art":  "assets/scenario_art/escenario_06_circulo_de_monolitos.png"
+    },
+    {
+        "id":  7,
+        "name":  "Ruinas del Guardián",
+        "map_cell_image":  "assets/map_cells/casilla_07_ruinas_del_guardian.png",
+        "scenario_art":  "assets/scenario_art/escenario_07_ruinas_del_guardian.png"
+    },
+    {
+        "id":  8,
+        "name":  "Pradera Valle del Viento",
+        "map_cell_image":  "assets/map_cells/casilla_08_pradera_valle_del_viento.png",
+        "scenario_art":  "assets/scenario_art/escenario_08_pradera_valle_del_viento.png"
+    },
+    {
+        "id":  9,
+        "name":  "Templo de las Hojas Carmesí",
+        "map_cell_image":  "assets/map_cells/casilla_09_templo_de_las_hojas_carmesi.png",
+        "scenario_art":  "assets/scenario_art/escenario_09_templo_de_las_hojas_carmesi.png"
+    },
+    {
+        "id":  10,
+        "name":  "Bastión del Acantilado",
+        "map_cell_image":  "assets/map_cells/casilla_10_bastion_del_acantilado.png",
+        "scenario_art":  "assets/scenario_art/escenario_10_bastion_del_acantilado.png"
+    },
+    {
+        "id":  11,
+        "name":  "Pantano de los Olvidados",
+        "map_cell_image":  "assets/map_cells/casilla_11_pantano_de_los_olvidados.png",
+        "scenario_art":  "assets/scenario_art/escenario_11_pantano_de_los_olvidados.png"
+    },
+    {
+        "id":  12,
+        "name":  "Sector X",
+        "map_cell_image":  "assets/map_cells/casilla_12_sector_x.png",
+        "scenario_art":  "assets/scenario_art/escenario_12_sector_x.png"
+    },
+    {
+        "id":  13,
+        "name":  "Torre Centinela",
+        "map_cell_image":  "assets/map_cells/casilla_13_torre_centinela.png",
+        "scenario_art":  "assets/scenario_art/escenario_13_torre_centinela.png"
+    },
+    {
+        "id":  14,
+        "name":  "Granja Sangrienta",
+        "map_cell_image":  "assets/map_cells/casilla_14_granja_sangrienta.png",
+        "scenario_art":  "assets/scenario_art/escenario_14_granja_sangrienta.png"
+    },
+    {
+        "id":  15,
+        "name":  "Templo del Sol",
+        "map_cell_image":  "assets/map_cells/casilla_15_templo_del_sol.png",
+        "scenario_art":  "assets/scenario_art/escenario_15_templo_del_sol.png"
+    },
+    {
+        "id":  16,
+        "name":  "Costa del Naufragio Negro",
+        "map_cell_image":  "assets/map_cells/casilla_16_costa_del_naufragio_negro.png",
+        "scenario_art":  "assets/scenario_art/escenario_16_costa_del_naufragio_negro.png"
+    },
+    {
+        "id":  17,
+        "name":  "Templo de la Luna",
+        "map_cell_image":  "assets/map_cells/casilla_17_templo_de_la_luna.png",
+        "scenario_art":  "assets/scenario_art/escenario_17_templo_de_la_luna.png"
+    },
+    {
+        "id":  18,
+        "name":  "Cañón Partido",
+        "map_cell_image":  "assets/map_cells/casilla_18_canon_partido.png",
+        "scenario_art":  "assets/scenario_art/escenario_18_canon_partido.png"
+    },
+    {
+        "id":  19,
+        "name":  "Estación Militar",
+        "map_cell_image":  "assets/map_cells/casilla_19_estacion_militar.png",
+        "scenario_art":  "assets/scenario_art/escenario_19_estacion_militar.png"
+    },
+    {
+        "id":  20,
+        "name":  "Observatorio Militar",
+        "map_cell_image":  "assets/map_cells/casilla_20_observatorio_militar.png",
+        "scenario_art":  "assets/scenario_art/escenario_20_observatorio_militar.png"
+    },
+    {
+        "id":  21,
+        "name":  "Muelle Aguas Rojas",
+        "map_cell_image":  "assets/map_cells/casilla_21_muelle_aguas_rojas.png",
+        "scenario_art":  "assets/scenario_art/escenario_21_muelle_aguas_rojas.png"
+    },
+    {
+        "id":  22,
+        "name":  "Pueblo Nevado",
+        "map_cell_image":  "assets/map_cells/casilla_22_pueblo_nevado.png",
+        "scenario_art":  "assets/scenario_art/escenario_22_pueblo_nevado.png"
+    },
+    {
+        "id":  23,
+        "name":  "Jungla de Bambú Diabólico",
+        "map_cell_image":  "assets/map_cells/casilla_23_jungla_de_bambu_diabolico.png",
+        "scenario_art":  "assets/scenario_art/escenario_23_jungla_de_bambu_diabolico.png"
+    },
+    {
+        "id":  24,
+        "name":  "Bastión Duna Seca",
+        "map_cell_image":  "assets/map_cells/casilla_24_bastion_duna_seca.png",
+        "scenario_art":  "assets/scenario_art/escenario_24_bastion_duna_seca.png"
+    },
+    {
+        "id":  25,
+        "name":  "Volcán Ceniza Durmiente",
+        "map_cell_image":  "assets/map_cells/casilla_25_volcan_ceniza_durmiente.png",
+        "scenario_art":  "assets/scenario_art/escenario_25_volcan_ceniza_durmiente.png"
+    }
+]

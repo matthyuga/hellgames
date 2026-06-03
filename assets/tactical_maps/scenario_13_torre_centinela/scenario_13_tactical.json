@@ -1,0 +1,40 @@
+{
+  "scenario_id": 13,
+  "name": "Torre Centinela",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_13_torre_centinela/scenario_13_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_13_torre_centinela/scenario_13_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_13_torre_centinela/scenario_13_state_demo.png",
+  "poi": [
+    {
+      "id": "torre",
+      "name": "Torre central",
+      "cells": [
+        "G6",
+        "H6",
+        "G7",
+        "H7"
+      ]
+    },
+    {
+      "id": "compuerta",
+      "name": "Compuerta principal",
+      "cells": [
+        "G10",
+        "H10"
+      ]
+    },
+    {
+      "id": "drones",
+      "name": "Puestos de drones",
+      "cells": [
+        "D5",
+        "K5"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

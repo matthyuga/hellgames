@@ -1,0 +1,242 @@
+{
+  "id": "prototype_island_4",
+  "name": "Prototipo isla de 4 casillas",
+  "purpose": "Piloto reducido para probar movimiento, memoria, eventos y narracion de Hell Games.",
+  "time_blocks": ["manana", "tarde", "noche", "madrugada"],
+  "active_cells": [
+    {
+      "id": 1,
+      "name": "Faro de la Vigilia Sagrada",
+      "role": "observacion, senales y misterio tecnico",
+      "danger": 3,
+      "neighbors": [2, 6],
+      "special_actions": ["reparar_radio", "encender_faro", "leer_diario"],
+      "global_memories": ["faro_encendido", "radio_reparada", "diario_leido"]
+    },
+    {
+      "id": 2,
+      "name": "Campamento Raiz Maldita",
+      "role": "zona inicial, refugio y choque social",
+      "danger": 2,
+      "neighbors": [1, 7],
+      "special_actions": ["hacer_fogata", "revisar_tiendas", "fabricar_basico"],
+      "global_memories": ["fogata_encendida", "larvas_despertadas", "trato_con_verek"]
+    },
+    {
+      "id": 6,
+      "name": "Circulo de Monolitos",
+      "role": "eventos nocturnos, pistas y presion psicologica",
+      "danger": 3,
+      "neighbors": [1, 7],
+      "special_actions": ["leer_monolitos", "hacer_ritual", "seguir_ecos"],
+      "global_memories": ["monolitos_leidos", "sombra_vista", "senal_hacia_ruinas"]
+    },
+    {
+      "id": 7,
+      "name": "Ruinas del Guardian",
+      "role": "peligro alto, trampas y jefe del piloto",
+      "danger": 5,
+      "neighbors": [2, 6],
+      "special_actions": ["desactivar_trampa", "resolver_acertijo", "abrir_cofre", "devolver_reliquia"],
+      "global_memories": ["ruinas_visitadas", "reliquia_robada", "guardian_juramentado_despierto"]
+    }
+  ],
+  "movement": {
+    "allowed_routes": [[1, 2], [1, 6], [2, 7], [6, 7]],
+    "optional_routes": [
+      {
+        "route": [2, 6],
+        "enabled": false,
+        "note": "Diagonal cerrada para la primera prueba."
+      }
+    ],
+    "cost_time_blocks": 1
+  },
+  "actors": [
+    {
+      "id": "sira",
+      "name": "Sira",
+      "type": "lugareno",
+      "cell": 1,
+      "state": ["herida_leve", "desconfiada"],
+      "inventory": ["venda_usada", "diario_oculto"],
+      "personality_tags": ["cautelosa", "protectora", "lee_marcas_antiguas"],
+      "goals": ["proteger_diario_farero", "evitar_luz_nocturna", "vigilar_raices"],
+      "initial_intention": "vigilar_faro"
+    },
+    {
+      "id": "verek",
+      "name": "Verek",
+      "type": "lugareno",
+      "cell": 2,
+      "state": ["alerta", "hambre_leve"],
+      "inventory": ["cuchillo_viejo", "bolsa_trueque"],
+      "personality_tags": ["oportunista", "negociador", "saqueador_paciente"],
+      "goals": ["conseguir_lente_faro", "vender_informacion", "vigilar_ruinas"],
+      "initial_intention": "vender_rumor"
+    },
+    {
+      "id": "rex",
+      "name": "Rex",
+      "type": "participante",
+      "cell": 2,
+      "state": ["nervioso", "energia_alta"],
+      "needs": {
+        "comida": 50,
+        "sed": 25,
+        "miedo": 55,
+        "energia": 80
+      },
+      "inventory": ["aguja", "retazo_tela", "lata_pequena"],
+      "personality_tags": ["curioso", "dramatico", "evita_matar", "improvisador"],
+      "skills": ["improvisar_herramienta", "distraer", "negociar"],
+      "goals": ["sobrevivir_sin_convertirse_en_asesino"],
+      "initial_intention": "buscar_aliados"
+    },
+    {
+      "id": "renzo_manos_frias",
+      "name": "Renzo Manos Frias",
+      "type": "participante",
+      "cell": 1,
+      "state": ["sereno", "sed_media"],
+      "needs": {
+        "comida": 20,
+        "sed": 50,
+        "miedo": 20,
+        "energia": 60
+      },
+      "inventory": ["destornillador", "cable_corto"],
+      "personality_tags": ["calculador", "paciente", "tecnico", "pragmatico"],
+      "skills": ["reparar_radio", "montar_trampa_simple", "abrir_caja"],
+      "goals": ["encontrar_salida_funcional"],
+      "initial_intention": "revisar_radio"
+    },
+    {
+      "id": "silas_crow",
+      "name": "Silas Crow",
+      "type": "participante",
+      "cell": 6,
+      "state": ["oculto", "energia_alta"],
+      "needs": {
+        "comida": 25,
+        "sed": 20,
+        "miedo": 15,
+        "energia": 85
+      },
+      "inventory": ["navaja_fina", "cuerda_negra"],
+      "personality_tags": ["observador", "reservado", "oportunista", "mentiroso"],
+      "skills": ["sigilo", "rastrear", "saquear", "intimidar"],
+      "goals": ["conseguir_ventaja_antes_que_los_demas"],
+      "initial_intention": "observar_monolitos"
+    },
+    {
+      "id": "gaviotas_hueso",
+      "name": "Gaviotas de hueso",
+      "type": "criatura",
+      "cell": 1,
+      "state": ["pasivas_de_dia"],
+      "behavior_tags": ["alarma_natural", "atraidas_por_comida", "nocturnas"],
+      "initial_intention": "buscar_comida_visible"
+    },
+    {
+      "id": "larvas_raiz",
+      "name": "Larvas de raiz",
+      "type": "criatura",
+      "cell": 2,
+      "state": ["dormidas"],
+      "behavior_tags": ["atraidas_por_humo", "mordida_infecciosa", "esconderse"],
+      "initial_intention": "esperar_estimulo"
+    },
+    {
+      "id": "sombras_monolito",
+      "name": "Sombras de monolito",
+      "type": "criatura",
+      "cell": 6,
+      "state": ["inactivas_de_dia"],
+      "behavior_tags": ["aparecen_de_noche", "imitan_siluetas", "causan_miedo"],
+      "initial_intention": "esperar_noche"
+    },
+    {
+      "id": "custodio_faro",
+      "name": "Custodio del Faro",
+      "type": "guardian",
+      "cell": 1,
+      "state": ["dormido"],
+      "trigger": "faro_encendido_de_madrugada_sin_diario_leido",
+      "behavior_tags": ["bloquea_escalera", "dialoga_primero", "recuerda_promesas"],
+      "initial_intention": "proteger_luz"
+    },
+    {
+      "id": "centinela_piedra",
+      "name": "Centinela de Piedra",
+      "type": "guardian",
+      "cell": 7,
+      "state": ["dormido"],
+      "trigger": "reliquia_robada_o_dos_trampas_falladas",
+      "behavior_tags": ["lento", "resistente", "acepta_ofrenda"],
+      "initial_intention": "proteger_reliquia"
+    },
+    {
+      "id": "guardian_juramentado",
+      "name": "El Guardian Juramentado",
+      "type": "jefe",
+      "cell": 7,
+      "state": ["sellado"],
+      "trigger": "final_dia_3_con_reliquia_robada_o_cofre_forzado",
+      "behavior_tags": ["juzga_bitacora", "habla_antes_de_combatir", "castiga_traicion"],
+      "initial_intention": "esperar_juicio"
+    }
+  ],
+  "pilot_days": [
+    {
+      "day": 1,
+      "beats": [
+        "Renzo revisa la radio del faro.",
+        "Sira decide si hablar con Renzo o esconder el diario.",
+        "Rex intenta negociar con Verek.",
+        "Silas estudia los monolitos.",
+        "Por la noche, una sombra imita a Rex cerca del campamento."
+      ]
+    },
+    {
+      "day": 2,
+      "beats": [
+        "El grupo se divide entre radio, comida y ruinas.",
+        "Verek vende un rumor sobre el faro.",
+        "Silas puede seguir a quien viaje hacia las ruinas.",
+        "Las larvas aparecen si hubo fogata mal apagada.",
+        "El Centinela de Piedra despierta si se fuerza una puerta."
+      ]
+    },
+    {
+      "day": 3,
+      "beats": [
+        "La reliquia queda disponible en las ruinas.",
+        "El Custodio del Faro puede aparecer si la luz se enciende de madrugada.",
+        "El Guardian Juramentado despierta si alguien roba la reliquia.",
+        "La bitacora resume alianzas, heridas, mentiras, objetos y secretos revelados."
+      ]
+    }
+  ],
+  "memory_keys": {
+    "actor": [
+      "ultima_ubicacion",
+      "ultimo_actor_visto",
+      "ultima_amenaza_vista",
+      "deuda_u_ofensa",
+      "objeto_importante_conocido",
+      "mentira_descubierta",
+      "ayuda_o_ataque_recibido"
+    ],
+    "global": [
+      "quien_encendio_faro",
+      "quien_leyo_diario",
+      "quien_entro_ruinas",
+      "quien_robo_reliquia",
+      "quien_negocio_con_verek",
+      "quien_fue_visto_por_silas",
+      "quien_desperto_criaturas",
+      "jefe_liberado"
+    ]
+  }
+}

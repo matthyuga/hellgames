@@ -1,0 +1,38 @@
+{
+  "scenario_id": 12,
+  "name": "Sector X",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_12_sector_x/scenario_12_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_12_sector_x/scenario_12_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_12_sector_x/scenario_12_state_demo.png",
+  "poi": [
+    {
+      "id": "cristales",
+      "name": "Cristales verdes",
+      "cells": [
+        "G6",
+        "H6",
+        "I6"
+      ]
+    },
+    {
+      "id": "contencion",
+      "name": "Barreras rotas",
+      "cells": [
+        "E8",
+        "F8"
+      ]
+    },
+    {
+      "id": "pozo",
+      "name": "Pozo contaminado",
+      "cells": [
+        "J9"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

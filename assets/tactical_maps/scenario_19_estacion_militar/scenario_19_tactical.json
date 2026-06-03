@@ -1,0 +1,37 @@
+{
+  "scenario_id": 19,
+  "name": "Estación Militar",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_19_estacion_militar/scenario_19_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_19_estacion_militar/scenario_19_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_19_estacion_militar/scenario_19_state_demo.png",
+  "poi": [
+    {
+      "id": "antena",
+      "name": "Antena principal",
+      "cells": [
+        "G4"
+      ]
+    },
+    {
+      "id": "generador",
+      "name": "Generador",
+      "cells": [
+        "I7",
+        "J7"
+      ]
+    },
+    {
+      "id": "bunker",
+      "name": "Bunker",
+      "cells": [
+        "F8",
+        "G8"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

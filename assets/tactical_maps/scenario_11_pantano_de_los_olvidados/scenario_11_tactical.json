@@ -1,0 +1,39 @@
+{
+  "scenario_id": 11,
+  "name": "Pantano de los Olvidados",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_11_pantano_de_los_olvidados/scenario_11_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_11_pantano_de_los_olvidados/scenario_11_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_11_pantano_de_los_olvidados/scenario_11_state_demo.png",
+  "poi": [
+    {
+      "id": "cabanas",
+      "name": "Cabanas elevadas",
+      "cells": [
+        "F5",
+        "I6"
+      ]
+    },
+    {
+      "id": "pasarela",
+      "name": "Pasarela podrida",
+      "cells": [
+        "G7",
+        "H7",
+        "I7"
+      ]
+    },
+    {
+      "id": "agua",
+      "name": "Agua negra",
+      "cells": [
+        "D9",
+        "E9"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

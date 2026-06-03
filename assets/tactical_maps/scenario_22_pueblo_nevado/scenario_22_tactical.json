@@ -1,0 +1,37 @@
+{
+  "scenario_id": 22,
+  "name": "Pueblo Nevado",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_22_pueblo_nevado/scenario_22_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_22_pueblo_nevado/scenario_22_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_22_pueblo_nevado/scenario_22_state_demo.png",
+  "poi": [
+    {
+      "id": "plaza",
+      "name": "Plaza nevada",
+      "cells": [
+        "G7",
+        "H7"
+      ]
+    },
+    {
+      "id": "sotano",
+      "name": "Entrada al sotano",
+      "cells": [
+        "I8"
+      ]
+    },
+    {
+      "id": "cabana",
+      "name": "Cabana helada",
+      "cells": [
+        "E5",
+        "F5"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

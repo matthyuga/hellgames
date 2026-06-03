@@ -1,0 +1,38 @@
+{
+  "scenario_id": 14,
+  "name": "Granja Sangrienta",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_14_granja_sangrienta/scenario_14_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_14_granja_sangrienta/scenario_14_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_14_granja_sangrienta/scenario_14_state_demo.png",
+  "poi": [
+    {
+      "id": "granja",
+      "name": "Casa roja",
+      "cells": [
+        "G5",
+        "H5"
+      ]
+    },
+    {
+      "id": "granero",
+      "name": "Granero",
+      "cells": [
+        "J7",
+        "K7"
+      ]
+    },
+    {
+      "id": "huerto",
+      "name": "Huerto sangriento",
+      "cells": [
+        "E9",
+        "F9"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

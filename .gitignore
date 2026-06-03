@@ -1,0 +1,52 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Node / Discord bot variants
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local runtime data
+*.db
+*.sqlite
+*.sqlite3
+logs/
+cache/
+tmp/
+temp/
+
+# Generated or heavy visual assets
+map1.png
+map2.png
+assets/characters/
+assets/map_cells/*.png
+assets/scenario_art/*.png
+assets/tactical_maps/**/*.png
+
+# Keep metadata and documentation for asset catalogs
+!assets/map_cells/*.json
+!assets/scenario_art/*.json
+!assets/scenario_art/*.md
+!assets/tactical_maps/**/*.json
+!assets/tactical_maps/*.json
+!assets/tactical_maps/*.md
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

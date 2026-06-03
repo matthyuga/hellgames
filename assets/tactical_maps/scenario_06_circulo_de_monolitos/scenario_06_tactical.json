@@ -1,0 +1,32 @@
+{
+  "scenario_id": 6,
+  "name": "Círculo de Monolitos",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_06_circulo_de_monolitos/scenario_06_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_06_circulo_de_monolitos/scenario_06_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_06_circulo_de_monolitos/scenario_06_state_demo.png",
+  "poi": [
+    {
+      "id": "circulo",
+      "name": "Centro ritual",
+      "cells": [
+        "G7",
+        "H7"
+      ]
+    },
+    {
+      "id": "monolitos",
+      "name": "Piedras exteriores",
+      "cells": [
+        "D5",
+        "K5",
+        "D10",
+        "K10"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

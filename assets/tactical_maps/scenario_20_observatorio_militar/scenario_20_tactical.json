@@ -1,0 +1,38 @@
+{
+  "scenario_id": 20,
+  "name": "Observatorio Militar",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_20_observatorio_militar/scenario_20_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_20_observatorio_militar/scenario_20_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_20_observatorio_militar/scenario_20_state_demo.png",
+  "poi": [
+    {
+      "id": "plato",
+      "name": "Plato satelital",
+      "cells": [
+        "G6",
+        "H6"
+      ]
+    },
+    {
+      "id": "bunker",
+      "name": "Bunker de observacion",
+      "cells": [
+        "I8",
+        "J8"
+      ]
+    },
+    {
+      "id": "cables",
+      "name": "Campo de cables",
+      "cells": [
+        "E9",
+        "F9"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

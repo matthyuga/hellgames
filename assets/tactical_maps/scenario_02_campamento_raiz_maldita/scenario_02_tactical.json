@@ -1,0 +1,39 @@
+{
+  "scenario_id": 2,
+  "name": "Campamento Raíz Maldita",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_02_campamento_raiz_maldita/scenario_02_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_02_campamento_raiz_maldita/scenario_02_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_02_campamento_raiz_maldita/scenario_02_state_demo.png",
+  "poi": [
+    {
+      "id": "fogata",
+      "name": "Fogata central",
+      "cells": [
+        "G7"
+      ]
+    },
+    {
+      "id": "tiendas",
+      "name": "Tiendas rasgadas",
+      "cells": [
+        "E5",
+        "F5",
+        "I6"
+      ]
+    },
+    {
+      "id": "raices",
+      "name": "Raices negras",
+      "cells": [
+        "C8",
+        "D8",
+        "E9"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

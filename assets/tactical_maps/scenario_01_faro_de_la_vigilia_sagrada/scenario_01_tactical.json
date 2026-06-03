@@ -1,0 +1,72 @@
+{
+  "scenario_id": 1,
+  "name": "Faro de la Vigilia Sagrada",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_01_faro_de_la_vigilia_sagrada/scenario_01_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_01_faro_de_la_vigilia_sagrada/scenario_01_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_01_faro_de_la_vigilia_sagrada/scenario_01_state_demo.png",
+  "poi": [
+    {
+      "id": "faro",
+      "name": "Torre del faro",
+      "cells": [
+        "F5",
+        "F6",
+        "G5",
+        "G6"
+      ]
+    },
+    {
+      "id": "casa_cuidador",
+      "name": "Casa del cuidador",
+      "cells": [
+        "I6",
+        "J6",
+        "I7",
+        "J7"
+      ]
+    },
+    {
+      "id": "santuario",
+      "name": "Santuario de vigilia",
+      "cells": [
+        "C8",
+        "D8"
+      ]
+    },
+    {
+      "id": "acantilado",
+      "name": "Borde del acantilado",
+      "cells": [
+        "A1",
+        "A2",
+        "A3",
+        "B1",
+        "N1",
+        "N2"
+      ]
+    },
+    {
+      "id": "radio_mastil",
+      "name": "Mastil de radio roto",
+      "cells": [
+        "K4"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "B1",
+    "B2",
+    "M1",
+    "N1",
+    "N2",
+    "N3"
+  ],
+  "notes": "Primera prueba de mapa tactico. Grilla precisa agregada por script; la imagen limpia no tiene fichas ni texto."
+}

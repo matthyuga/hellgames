@@ -1,0 +1,39 @@
+{
+  "scenario_id": 15,
+  "name": "Templo del Sol",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_15_templo_del_sol/scenario_15_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_15_templo_del_sol/scenario_15_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_15_templo_del_sol/scenario_15_state_demo.png",
+  "poi": [
+    {
+      "id": "altar",
+      "name": "Altar solar",
+      "cells": [
+        "G7",
+        "H7"
+      ]
+    },
+    {
+      "id": "columnas",
+      "name": "Columnas rotas",
+      "cells": [
+        "D5",
+        "K5",
+        "D10",
+        "K10"
+      ]
+    },
+    {
+      "id": "escalera",
+      "name": "Escalera enterrada",
+      "cells": [
+        "H11"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

@@ -1,0 +1,39 @@
+{
+  "scenario_id": 8,
+  "name": "Pradera Valle del Viento",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_08_pradera_valle_del_viento/scenario_08_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_08_pradera_valle_del_viento/scenario_08_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_08_pradera_valle_del_viento/scenario_08_state_demo.png",
+  "poi": [
+    {
+      "id": "molino",
+      "name": "Molino viejo",
+      "cells": [
+        "G5",
+        "H5"
+      ]
+    },
+    {
+      "id": "campo",
+      "name": "Campo abierto",
+      "cells": [
+        "F8",
+        "G8",
+        "H8"
+      ]
+    },
+    {
+      "id": "zanjas",
+      "name": "Zanjas de viento",
+      "cells": [
+        "C10",
+        "D10"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

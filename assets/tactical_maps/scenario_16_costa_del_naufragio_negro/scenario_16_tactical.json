@@ -1,0 +1,38 @@
+{
+  "scenario_id": 16,
+  "name": "Costa del Naufragio Negro",
+  "grid_width": 14,
+  "grid_height": 14,
+  "cell_size_px": 100,
+  "clean_image": "assets/tactical_maps/scenario_16_costa_del_naufragio_negro/scenario_16_clean.png",
+  "grid_image": "assets/tactical_maps/scenario_16_costa_del_naufragio_negro/scenario_16_grid_14x14.png",
+  "state_demo_image": "assets/tactical_maps/scenario_16_costa_del_naufragio_negro/scenario_16_state_demo.png",
+  "poi": [
+    {
+      "id": "naufragio",
+      "name": "Naufragio negro",
+      "cells": [
+        "G6",
+        "H6",
+        "I6"
+      ]
+    },
+    {
+      "id": "bodega",
+      "name": "Abertura de bodega",
+      "cells": [
+        "J7"
+      ]
+    },
+    {
+      "id": "marea",
+      "name": "Borde de marea",
+      "cells": [
+        "C10",
+        "D10"
+      ]
+    }
+  ],
+  "blocked_cells_initial": [],
+  "notes": "Mapa tactico generado como primera pasada. Revisar POI y celdas bloqueadas manualmente antes de usarlo como canon estricto."
+}

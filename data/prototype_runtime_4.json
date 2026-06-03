@@ -1,0 +1,419 @@
+{
+  "id": "prototype_runtime_4",
+  "prototype_id": "prototype_island_4",
+  "clock": {
+    "real_minute_equals_island_hours": 1,
+    "start_day": 1,
+    "start_hour": 6,
+    "hours_per_day": 24,
+    "narrative_turn_hours": 6,
+    "pilot_days": 3
+  },
+  "stat_model": {
+    "hp": {
+      "min": 0,
+      "max": 100,
+      "zero_state": "muerto_o_fuera_de_juego"
+    },
+    "hunger": {
+      "min": 0,
+      "max": 100,
+      "hourly_gain": 1,
+      "danger_at": 80
+    },
+    "thirst": {
+      "min": 0,
+      "max": 100,
+      "hourly_gain": 1,
+      "danger_at": 75
+    },
+    "stamina": {
+      "min": 0,
+      "max": 100,
+      "hourly_loss_awake": 1,
+      "rest_gain_per_turn": 18,
+      "danger_below": 25
+    },
+    "fear": {
+      "min": 0,
+      "max": 100,
+      "night_gain": 2,
+      "danger_at": 70
+    },
+    "morale": {
+      "min": 0,
+      "max": 100,
+      "default": 50
+    }
+  },
+  "detection_model": {
+    "grid": "14x14",
+    "distance": "manhattan",
+    "base_detection_range": 3,
+    "same_poi_bonus": 2,
+    "hidden_penalty": 3,
+    "night_penalty": 2,
+    "rule": "detection_score = perception + range_bonus - stealth - penalties"
+  },
+  "items": [
+    {
+      "id": "venda_usada",
+      "name": "Venda usada",
+      "type": "medicina",
+      "effects": {
+        "hp": 5,
+        "infection_risk": -5
+      }
+    },
+    {
+      "id": "diario_oculto",
+      "name": "Diario oculto del farero",
+      "type": "clave",
+      "effects": {
+        "unlock_memory": "diario_leido"
+      }
+    },
+    {
+      "id": "cuchillo_viejo",
+      "name": "Cuchillo viejo",
+      "type": "arma",
+      "effects": {
+        "attack": 8,
+        "intimidation": 2
+      }
+    },
+    {
+      "id": "bolsa_trueque",
+      "name": "Bolsa de trueque",
+      "type": "contenedor",
+      "effects": {
+        "trade_bonus": 2
+      }
+    },
+    {
+      "id": "aguja",
+      "name": "Aguja",
+      "type": "herramienta",
+      "effects": {
+        "craft_bonus": 1
+      }
+    },
+    {
+      "id": "retazo_tela",
+      "name": "Retazo de tela",
+      "type": "material",
+      "effects": {
+        "craft_material": true
+      }
+    },
+    {
+      "id": "lata_pequena",
+      "name": "Lata pequena",
+      "type": "comida",
+      "effects": {
+        "hunger": -18
+      }
+    },
+    {
+      "id": "destornillador",
+      "name": "Destornillador",
+      "type": "herramienta",
+      "effects": {
+        "repair_bonus": 2
+      }
+    },
+    {
+      "id": "cable_corto",
+      "name": "Cable corto",
+      "type": "material",
+      "effects": {
+        "repair_material": true
+      }
+    },
+    {
+      "id": "navaja_fina",
+      "name": "Navaja fina",
+      "type": "arma",
+      "effects": {
+        "attack": 6,
+        "stealth_bonus": 1
+      }
+    },
+    {
+      "id": "cuerda_negra",
+      "name": "Cuerda negra",
+      "type": "herramienta",
+      "effects": {
+        "trap_bonus": 1,
+        "climb_bonus": 1
+      }
+    },
+    {
+      "id": "agua_limpia",
+      "name": "Agua limpia",
+      "type": "bebida",
+      "effects": {
+        "thirst": -25
+      }
+    },
+    {
+      "id": "racion_basica",
+      "name": "Racion basica",
+      "type": "comida",
+      "effects": {
+        "hunger": -25
+      }
+    },
+    {
+      "id": "bengala",
+      "name": "Bengala",
+      "type": "senal",
+      "effects": {
+        "reveal_position": true,
+        "fear": -10
+      }
+    },
+    {
+      "id": "lente_agrietada",
+      "name": "Lente agrietada",
+      "type": "clave",
+      "effects": {
+        "repair_faro": true
+      }
+    },
+    {
+      "id": "polvo_ritual",
+      "name": "Polvo ritual",
+      "type": "ritual",
+      "effects": {
+        "monolith_bonus": 2
+      }
+    },
+    {
+      "id": "reliquia_antigua",
+      "name": "Reliquia antigua",
+      "type": "clave",
+      "effects": {
+        "trigger": "guardian_juramentado"
+      }
+    }
+  ],
+  "cell_loot": {
+    "1": {
+      "common": ["agua_limpia", "bengala"],
+      "rare": ["lente_agrietada"]
+    },
+    "2": {
+      "common": ["racion_basica", "retazo_tela", "agua_limpia"],
+      "rare": ["venda_usada"]
+    },
+    "6": {
+      "common": ["polvo_ritual"],
+      "rare": ["reliquia_antigua"]
+    },
+    "7": {
+      "common": ["cuerda_negra", "venda_usada"],
+      "rare": ["reliquia_antigua"]
+    }
+  },
+  "actor_runtime": [
+    {
+      "id": "sira",
+      "hp": 78,
+      "hunger": 35,
+      "thirst": 40,
+      "stamina": 62,
+      "fear": 45,
+      "morale": 48,
+      "attack": 3,
+      "defense": 4,
+      "stealth": 5,
+      "perception": 8,
+      "cell": 1,
+      "micro": "I6",
+      "poi": "casa_cuidador",
+      "hidden": true,
+      "inventory": ["venda_usada", "diario_oculto", "agua_limpia"]
+    },
+    {
+      "id": "verek",
+      "hp": 92,
+      "hunger": 55,
+      "thirst": 35,
+      "stamina": 70,
+      "fear": 20,
+      "morale": 52,
+      "attack": 6,
+      "defense": 4,
+      "stealth": 6,
+      "perception": 6,
+      "cell": 2,
+      "micro": "E5",
+      "poi": "tiendas",
+      "hidden": false,
+      "inventory": ["cuchillo_viejo", "bolsa_trueque", "racion_basica"]
+    },
+    {
+      "id": "rex",
+      "hp": 100,
+      "hunger": 50,
+      "thirst": 25,
+      "stamina": 80,
+      "fear": 55,
+      "morale": 57,
+      "attack": 2,
+      "defense": 3,
+      "stealth": 4,
+      "perception": 5,
+      "cell": 2,
+      "micro": "G7",
+      "poi": "fogata",
+      "hidden": false,
+      "inventory": ["aguja", "retazo_tela", "lata_pequena"]
+    },
+    {
+      "id": "renzo_manos_frias",
+      "hp": 100,
+      "hunger": 20,
+      "thirst": 50,
+      "stamina": 60,
+      "fear": 20,
+      "morale": 55,
+      "attack": 4,
+      "defense": 4,
+      "stealth": 4,
+      "perception": 7,
+      "cell": 1,
+      "micro": "K4",
+      "poi": "radio_mastil",
+      "hidden": false,
+      "inventory": ["destornillador", "cable_corto", "agua_limpia"]
+    },
+    {
+      "id": "silas_crow",
+      "hp": 100,
+      "hunger": 25,
+      "thirst": 20,
+      "stamina": 85,
+      "fear": 15,
+      "morale": 50,
+      "attack": 7,
+      "defense": 3,
+      "stealth": 9,
+      "perception": 8,
+      "cell": 6,
+      "micro": "D5",
+      "poi": "monolitos",
+      "hidden": true,
+      "inventory": ["navaja_fina", "cuerda_negra", "racion_basica"]
+    },
+    {
+      "id": "gaviotas_hueso",
+      "hp": 35,
+      "hunger": 60,
+      "thirst": 20,
+      "stamina": 80,
+      "fear": 10,
+      "morale": 40,
+      "attack": 3,
+      "defense": 1,
+      "stealth": 5,
+      "perception": 7,
+      "cell": 1,
+      "micro": "B2",
+      "poi": "acantilado",
+      "hidden": false,
+      "inventory": []
+    },
+    {
+      "id": "larvas_raiz",
+      "hp": 25,
+      "hunger": 80,
+      "thirst": 10,
+      "stamina": 50,
+      "fear": 0,
+      "morale": 20,
+      "attack": 2,
+      "defense": 1,
+      "stealth": 7,
+      "perception": 3,
+      "cell": 2,
+      "micro": "C8",
+      "poi": "raices",
+      "hidden": true,
+      "inventory": []
+    },
+    {
+      "id": "sombras_monolito",
+      "hp": 45,
+      "hunger": 0,
+      "thirst": 0,
+      "stamina": 100,
+      "fear": 0,
+      "morale": 20,
+      "attack": 4,
+      "defense": 2,
+      "stealth": 10,
+      "perception": 7,
+      "cell": 6,
+      "micro": "H7",
+      "poi": "circulo",
+      "hidden": true,
+      "inventory": []
+    },
+    {
+      "id": "custodio_faro",
+      "hp": 120,
+      "hunger": 0,
+      "thirst": 0,
+      "stamina": 100,
+      "fear": 0,
+      "morale": 80,
+      "attack": 8,
+      "defense": 10,
+      "stealth": 6,
+      "perception": 10,
+      "cell": 1,
+      "micro": "F5",
+      "poi": "faro",
+      "hidden": true,
+      "inventory": []
+    },
+    {
+      "id": "centinela_piedra",
+      "hp": 140,
+      "hunger": 0,
+      "thirst": 0,
+      "stamina": 100,
+      "fear": 0,
+      "morale": 80,
+      "attack": 10,
+      "defense": 14,
+      "stealth": 2,
+      "perception": 8,
+      "cell": 7,
+      "micro": "H4",
+      "poi": "puerta",
+      "hidden": true,
+      "inventory": []
+    },
+    {
+      "id": "guardian_juramentado",
+      "hp": 220,
+      "hunger": 0,
+      "thirst": 0,
+      "stamina": 100,
+      "fear": 0,
+      "morale": 100,
+      "attack": 16,
+      "defense": 18,
+      "stealth": 1,
+      "perception": 12,
+      "cell": 7,
+      "micro": "G7",
+      "poi": "patio",
+      "hidden": true,
+      "inventory": ["reliquia_antigua"]
+    }
+  ]
+}

@@ -27,6 +27,7 @@ logs/
 cache/
 tmp/
 temp/
+data/runs/
 
 # Generated or heavy visual assets
 map1.png

@@ -102,20 +102,195 @@ Riesgos:
 
 ## Comandos iniciales
 
+Para no saturar a la gente, conviene usar un solo comando raiz:
+
+```txt
+/hg
+```
+
+Y debajo usar subcomandos:
+
+```txt
+/hg perfil
+/hg mapa
+/hg observar
+/hg admin sandbox
+```
+
+Esto mantiene el bot ordenado y permite que `/hg ayuda` muestre solo lo que el usuario
+ya tiene desbloqueado.
+
+## Progresion de comandos
+
+La comunidad puede descubrir comandos por nivel de espectador/investigador.
+La idea es que al principio vean poco, y con actividad desbloqueen capas mas profundas.
+
+Admin y owner deben poder saltarse estos requisitos durante pruebas.
+
+Regla recomendada:
+
+- usuarios normales respetan nivel, XP y puntos de seguimiento;
+- mods/admins pueden usar comandos publicos aunque no tengan nivel;
+- owner puede usar todo;
+- el bot debe tener un modo para probar "como usuario normal" sin bypass.
+
+### Niveles publicos
+
+| Nivel | Nombre | Desbloquea |
+| --- | --- | --- |
+| 0 | Espectador | `/hg ayuda`, `/hg perfil`, `/hg bitacora`, `/hg mapa`, `/hg personaje` |
+| 1 | Curioso | `/hg mirar`, `/hg rumores`, `/hg guia` |
+| 2 | Seguidor | `/hg seguir`, `/hg observar`, `/hg mis_seguidos` |
+| 3 | Investigador | `/hg casilla`, `/hg rastros`, `/hg evento` |
+| 4 | Espia | `/hg espiar`, `/hg relaciones`, `/hg historial` |
+| 5 | Analista | `/hg analizar`, `/hg comparar`, `/hg teorias` |
+
+### XP sugerida
+
+| Accion | XP |
+| --- | --- |
+| consultar bitacora diaria | 5 |
+| mirar mapa | 3 |
+| mirar personaje | 4 |
+| seguir personaje | 10 |
+| participar en votacion | 8 |
+| consultar guia desbloqueada | 4 |
+| descubrir rumor nuevo | 12 |
+| acertar teoria o prediccion futura | 25 |
+
+Limites:
+
+- XP por comando publico puede tener cooldown;
+- no conviene dar XP infinita por repetir `/hg mapa`;
+- los admins no deberian farmear XP mientras usan bypass.
+
+### Puntos de seguimiento
+
+Los puntos de seguimiento sirven para especializarse en personajes.
+
+Ejemplo:
+
+```txt
+/hg seguir sira
+```
+
+Costo sugerido:
+
+- seguir personaje: 2 puntos;
+- profundizar seguimiento: 4 puntos;
+- espiar una escena puntual: 1 punto;
+- desbloquear historial parcial: 3 puntos.
+
+Niveles de seguimiento por personaje:
+
+| Nivel | Informacion visible |
+| --- | --- |
+| 0 | ubicacion solo si esta visible |
+| 1 | acciones publicas |
+| 2 | estado fisico/emocional aproximado |
+| 3 | conversaciones cercanas o rumores asociados |
+| 4 | historial parcial y relaciones importantes |
+| 5 | motivaciones profundas y secretos parciales |
+
+## Comandos publicos propuestos
+
+Basicos:
+
+- `/hg ayuda`: muestra comandos disponibles para tu nivel;
+- `/hg perfil`: muestra nivel, XP, puntos y personajes seguidos;
+- `/hg ranking`: ranking de espectadores/investigadores;
+- `/hg bitacora`: ultimo resumen publico del evento;
+- `/hg mapa`: mapa publico de la isla o del sandbox;
+- `/hg personaje <id>`: ficha publica de un personaje;
+- `/hg mirar <personaje>`: vistazo superficial;
+- `/hg mirar_casilla <id>`: descripcion publica de una casilla;
+- `/hg rumores`: rumores desbloqueados;
+- `/hg guia <categoria>`: guia parcial de isla, fauna, objetos, heridas, etc.
+
+Seguimiento:
+
+- `/hg seguir <personaje>`: desbloquea seguimiento basico;
+- `/hg dejar_seguir <personaje>`: deja de gastar foco en ese personaje;
+- `/hg mis_seguidos`: lista personajes seguidos;
+- `/hg observar <personaje>`: observacion mejorada segun nivel;
+- `/hg profundizar <personaje>`: sube nivel de seguimiento si hay puntos;
+- `/hg historial <personaje>`: historial visible segun nivel;
+- `/hg relaciones <personaje>`: relaciones aproximadas visibles;
+- `/hg espiar <personaje>`: escena puntual con riesgo/costo;
+- `/hg rastros <casilla>`: pistas visibles en una zona;
+- `/hg analizar <personaje>`: resumen de patron, sospechas y cambios.
+
+Comunidad:
+
+- `/hg votar`: votacion activa;
+- `/hg teoria <texto>`: registra una teoria del usuario;
+- `/hg comparar <a> <b>`: compara dos personajes si se tiene nivel;
+- `/hg evento`: explica el evento publico actual.
+
+## Comandos admin propuestos
+
 Admin:
 
 - `/hg simular_dia`: avanza un dia o bloque del piloto;
+- `/hg sandbox`: corre el sandbox de 3 dias o un bloque de prueba;
 - `/hg render_mapa`: genera mapa de estado;
 - `/hg publicar_bitacora`: envia la bitacora al canal publico;
 - `/hg registrar_asset`: guarda una imagen subida en `hellgames-assets`;
 - `/hg estado_actor`: muestra datos completos de un personaje.
 
+Mas admin:
+
+- `/hg admin reset_demo`: reinicia el sandbox local;
+- `/hg admin set_estado <actor>`: cambia HP, hambre, sed, miedo, etc.;
+- `/hg admin mover <actor> <casilla> <micro>`: mueve un actor manualmente;
+- `/hg admin dar_item <actor> <item>`: entrega un item;
+- `/hg admin quitar_item <actor> <item>`: quita un item;
+- `/hg admin publicar_mapa`: publica mapa generado;
+- `/hg admin log`: muestra ultimo log tecnico;
+- `/hg admin xp <usuario> <cantidad>`: ajusta XP;
+- `/hg admin puntos <usuario> <cantidad>`: ajusta puntos de seguimiento;
+- `/hg admin desbloquear <usuario> <comando>`: desbloqueo manual.
+
+Owner:
+
+- `/hg owner config`: muestra configuracion sensible no secreta;
+- `/hg owner set_canal <tipo> <canal>`: configura canales;
+- `/hg owner sync`: sincroniza slash commands;
+- `/hg owner backup`: exporta datos locales;
+- `/hg owner importar_assets`: reindexa assets de un canal;
+- `/hg owner modo_bypass <on/off>`: activa/desactiva bypass global de prueba.
+
+## Version 0 recomendada
+
+No implementaria todo de golpe. Primera version real:
+
 Publicos:
 
-- `/hg bitacora`: muestra ultimo resumen publico;
-- `/hg mapa`: muestra mapa publico;
-- `/hg personaje`: ficha visible de un personaje;
-- `/hg rumores`: rumores desbloqueados.
+- `/hg ayuda`;
+- `/hg perfil`;
+- `/hg bitacora`;
+- `/hg mapa`;
+- `/hg personaje`;
+- `/hg mirar`;
+- `/hg seguir`;
+- `/hg observar`;
+- `/hg rumores`.
+
+Admin/owner:
+
+- `/hg admin sandbox`;
+- `/hg admin render_mapa`;
+- `/hg admin publicar_bitacora`;
+- `/hg admin estado_actor`;
+- `/hg admin reset_demo`;
+- `/hg owner sync`;
+- `/hg owner set_canal`.
+
+Con eso ya se puede probar el loop completo:
+
+```txt
+admin corre sandbox -> bot genera bitacora/mapa -> publica -> usuarios miran/siguen/observan -> ganan XP
+```
 
 ## Flujo recomendado
 

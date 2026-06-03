@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "root": "hg",
+  "bypass": {
+    "owner": true,
+    "admin": true,
+    "moderator": true,
+    "allow_preview_as_normal_user": true
+  },
+  "levels": [
+    {
+      "level": 0,
+      "name": "Espectador",
+      "xp_required": 0,
+      "commands": ["ayuda", "perfil", "bitacora", "mapa", "personaje"]
+    },
+    {
+      "level": 1,
+      "name": "Curioso",
+      "xp_required": 50,
+      "commands": ["mirar", "mirar_casilla", "rumores", "guia"]
+    },
+    {
+      "level": 2,
+      "name": "Seguidor",
+      "xp_required": 150,
+      "commands": ["seguir", "dejar_seguir", "mis_seguidos", "observar", "profundizar"]
+    },
+    {
+      "level": 3,
+      "name": "Investigador",
+      "xp_required": 350,
+      "commands": ["casilla", "rastros", "evento"]
+    },
+    {
+      "level": 4,
+      "name": "Espia",
+      "xp_required": 700,
+      "commands": ["espiar", "relaciones", "historial"]
+    },
+    {
+      "level": 5,
+      "name": "Analista",
+      "xp_required": 1200,
+      "commands": ["analizar", "comparar", "teoria"]
+    }
+  ],
+  "xp_rewards": {
+    "bitacora": 5,
+    "mapa": 3,
+    "personaje": 4,
+    "mirar": 4,
+    "seguir": 10,
+    "votar": 8,
+    "guia": 4,
+    "rumor_nuevo": 12,
+    "teoria_acertada": 25
+  },
+  "tracking_costs": {
+    "seguir": 2,
+    "profundizar": 4,
+    "espiar": 1,
+    "historial": 3
+  },
+  "v0_public_commands": [
+    "ayuda",
+    "perfil",
+    "bitacora",
+    "mapa",
+    "personaje",
+    "mirar",
+    "seguir",
+    "observar",
+    "rumores"
+  ],
+  "v0_admin_commands": [
+    "admin sandbox",
+    "admin render_mapa",
+    "admin publicar_bitacora",
+    "admin estado_actor",
+    "admin reset_demo",
+    "owner sync",
+    "owner set_canal"
+  ]
+}

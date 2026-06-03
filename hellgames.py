@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import traceback
 from pathlib import Path
 
 import discord
@@ -16,6 +17,7 @@ from scripts.simulate_sandbox import simulate as simulate_sandbox
 ROOT = Path(__file__).resolve().parent
 MAP_CONTACT_SHEET = ROOT / "data" / "runs" / "maps" / "prototype_state_contact_sheet.png"
 COMMANDS_PATH = ROOT / "data" / "command_unlocks.json"
+DISCORD_TEXT_LIMIT = 1800
 
 
 def load_config() -> None:
@@ -49,7 +51,7 @@ def read_text(path: Path, fallback: str) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def trim_for_discord(text: str, limit: int = 3900) -> str:
+def trim_for_discord(text: str, limit: int = DISCORD_TEXT_LIMIT) -> str:
     if len(text) <= limit:
         return text
     return text[: limit - 80].rstrip() + "\n\n...[bitacora recortada para Discord]"
@@ -96,17 +98,37 @@ async def send_to_configured_channel(
     env_name: str,
     content: str | None = None,
     file_path: Path | None = None,
-) -> None:
+) -> discord.abc.Messageable:
     channel_id = env_int(env_name)
     channel = interaction.client.get_channel(channel_id) if channel_id else None
     if channel is None:
         channel = interaction.channel
     if channel is None or not hasattr(channel, "send"):
-        await interaction.followup.send("No pude resolver el canal de destino.", ephemeral=True)
-        return
+        raise RuntimeError(f"No pude resolver el canal de destino para {env_name}.")
 
     file = discord.File(str(file_path)) if file_path and file_path.exists() else None
     await channel.send(content=content, file=file)
+    return channel
+
+
+async def publish_bitacora_to_channel(interaction: discord.Interaction) -> discord.abc.Messageable:
+    text = read_text(SANDBOX_LOG_PATH, "Todavia no hay bitacora sandbox.")
+    preview = trim_for_discord(text, 1300)
+    content = f"**Bitacora sandbox generada**\n```md\n{preview}\n```"
+    return await send_to_configured_channel(
+        interaction,
+        "HG_PUBLIC_LOG_CHANNEL_ID",
+        content,
+        SANDBOX_LOG_PATH if SANDBOX_LOG_PATH.exists() else None,
+    )
+
+
+async def publish_map_to_channel(interaction: discord.Interaction) -> discord.abc.Messageable:
+    if not MAP_CONTACT_SHEET.exists():
+        render_prototype_maps()
+    size_mb = MAP_CONTACT_SHEET.stat().st_size / (1024 * 1024)
+    content = f"**Mapa de estado del sandbox**\nArchivo: `{size_mb:.2f} MB`"
+    return await send_to_configured_channel(interaction, "HG_PUBLIC_MAP_CHANNEL_ID", content, MAP_CONTACT_SHEET)
 
 
 @bot.event
@@ -119,6 +141,20 @@ async def on_ready() -> None:
     else:
         synced = await bot.tree.sync()
         print(f"Hellgames listo como {bot.user} | sync global: {len(synced)} comandos")
+
+
+@bot.tree.error
+async def on_app_command_error(interaction: discord.Interaction, error: app_commands.AppCommandError) -> None:
+    print("Error en comando slash:")
+    traceback.print_exception(type(error), error, error.__traceback__)
+    message = f"Algo fallo ejecutando el comando: `{type(error).__name__}`."
+    try:
+        if interaction.response.is_done():
+            await interaction.followup.send(message, ephemeral=True)
+        else:
+            await interaction.response.send_message(message, ephemeral=True)
+    except Exception:
+        pass
 
 
 @hg.command(name="ayuda", description="Muestra comandos disponibles en la V0.")
@@ -135,7 +171,7 @@ async def hg_ayuda(interaction: discord.Interaction) -> None:
     )
     embed.add_field(
         name="Admin",
-        value="`/hg admin sandbox`, `/hg admin render_mapa`, `/hg admin publicar_bitacora`, `/hg admin publicar_mapa`, `/hg admin estado_actor`",
+        value="`/hg admin montar_demo`, `/hg admin sandbox`, `/hg admin render_mapa`, `/hg admin publicar_bitacora`, `/hg admin publicar_mapa`, `/hg admin estado_actor`",
         inline=False,
     )
     await interaction.response.send_message(embed=embed, ephemeral=True)
@@ -170,7 +206,8 @@ async def hg_reclamar(interaction: discord.Interaction) -> None:
 @hg.command(name="bitacora", description="Muestra la ultima bitacora sandbox generada.")
 async def hg_bitacora(interaction: discord.Interaction) -> None:
     text = read_text(SANDBOX_LOG_PATH, "Todavia no hay bitacora. Un admin debe ejecutar `/hg admin sandbox`.")
-    await interaction.response.send_message(f"```md\n{trim_for_discord(text)}\n```", ephemeral=True)
+    file = discord.File(str(SANDBOX_LOG_PATH)) if SANDBOX_LOG_PATH.exists() else None
+    await interaction.response.send_message(f"```md\n{trim_for_discord(text)}\n```", file=file, ephemeral=True)
 
 
 @hg.command(name="mapa", description="Muestra el ultimo mapa de estado generado.")
@@ -210,13 +247,39 @@ async def admin_sandbox(interaction: discord.Interaction, seed: int = 11) -> Non
     await interaction.followup.send(f"Sandbox generado con seed `{seed}`.\n`{SANDBOX_LOG_PATH}`", ephemeral=True)
 
 
+@admin.command(name="montar_demo", description="Genera sandbox, renderiza mapa y publica ambos.")
+@app_commands.describe(seed="Numero opcional para repetir una simulacion")
+async def admin_montar_demo(interaction: discord.Interaction, seed: int = 11) -> None:
+    if not await require_admin(interaction):
+        return
+    await interaction.response.defer(ephemeral=True, thinking=True)
+    try:
+        log = simulate_sandbox(seed)
+        SANDBOX_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        SANDBOX_LOG_PATH.write_text(log, encoding="utf-8")
+        render_prototype_maps()
+        log_channel = await publish_bitacora_to_channel(interaction)
+        map_channel = await publish_map_to_channel(interaction)
+        await interaction.followup.send(
+            f"Demo montada con seed `{seed}`.\nBitacora: {getattr(log_channel, 'mention', 'canal configurado')}\nMapa: {getattr(map_channel, 'mention', 'canal configurado')}",
+            ephemeral=True,
+        )
+    except Exception as exc:
+        traceback.print_exception(type(exc), exc, exc.__traceback__)
+        await interaction.followup.send(f"No pude montar la demo: `{type(exc).__name__}: {exc}`", ephemeral=True)
+
+
 @admin.command(name="render_mapa", description="Genera los mapas de estado del piloto.")
 async def admin_render_mapa(interaction: discord.Interaction) -> None:
     if not await require_admin(interaction):
         return
     await interaction.response.defer(ephemeral=True, thinking=True)
-    render_prototype_maps()
-    await interaction.followup.send("Mapas generados en `data/runs/maps/`.", ephemeral=True)
+    try:
+        render_prototype_maps()
+        await interaction.followup.send("Mapas generados en `data/runs/maps/`.", ephemeral=True)
+    except Exception as exc:
+        traceback.print_exception(type(exc), exc, exc.__traceback__)
+        await interaction.followup.send(f"No pude renderizar el mapa: `{type(exc).__name__}: {exc}`", ephemeral=True)
 
 
 @admin.command(name="publicar_bitacora", description="Publica la ultima bitacora en el canal configurado.")
@@ -224,9 +287,12 @@ async def admin_publicar_bitacora(interaction: discord.Interaction) -> None:
     if not await require_admin(interaction):
         return
     await interaction.response.defer(ephemeral=True, thinking=True)
-    text = read_text(SANDBOX_LOG_PATH, "Todavia no hay bitacora sandbox.")
-    await send_to_configured_channel(interaction, "HG_PUBLIC_LOG_CHANNEL_ID", f"```md\n{trim_for_discord(text)}\n```")
-    await interaction.followup.send("Bitacora publicada.", ephemeral=True)
+    try:
+        channel = await publish_bitacora_to_channel(interaction)
+        await interaction.followup.send(f"Bitacora publicada en {getattr(channel, 'mention', 'el canal configurado')}.", ephemeral=True)
+    except Exception as exc:
+        traceback.print_exception(type(exc), exc, exc.__traceback__)
+        await interaction.followup.send(f"No pude publicar la bitacora: `{type(exc).__name__}: {exc}`", ephemeral=True)
 
 
 @admin.command(name="publicar_mapa", description="Publica el ultimo mapa en el canal configurado.")
@@ -234,10 +300,12 @@ async def admin_publicar_mapa(interaction: discord.Interaction) -> None:
     if not await require_admin(interaction):
         return
     await interaction.response.defer(ephemeral=True, thinking=True)
-    if not MAP_CONTACT_SHEET.exists():
-        render_prototype_maps()
-    await send_to_configured_channel(interaction, "HG_PUBLIC_MAP_CHANNEL_ID", "Mapa de estado del sandbox.", MAP_CONTACT_SHEET)
-    await interaction.followup.send("Mapa publicado.", ephemeral=True)
+    try:
+        channel = await publish_map_to_channel(interaction)
+        await interaction.followup.send(f"Mapa publicado en {getattr(channel, 'mention', 'el canal configurado')}.", ephemeral=True)
+    except Exception as exc:
+        traceback.print_exception(type(exc), exc, exc.__traceback__)
+        await interaction.followup.send(f"No pude publicar el mapa: `{type(exc).__name__}: {exc}`", ephemeral=True)
 
 
 @admin.command(name="estado_actor", description="Muestra estado tecnico pendiente de conectar a runtime.")

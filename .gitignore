@@ -34,11 +34,18 @@ data/runs/
 map1.png
 map2.png
 assets/characters/
+assets/skills y mats/**/*.png
+assets/skills y mats/**/*.jpg
+assets/skills y mats/**/*.jpeg
+assets/skills y mats/**/*.pdf
 assets/map_cells/*.png
 assets/scenario_art/*.png
 assets/tactical_maps/**/*.png
 
 # Keep metadata and documentation for asset catalogs
+!assets/skills y mats/**/
+!assets/skills y mats/**/*.json
+!assets/skills y mats/**/*.md
 !assets/map_cells/*.json
 !assets/scenario_art/*.json
 !assets/scenario_art/*.md

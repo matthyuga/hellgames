@@ -1,0 +1,99 @@
+{
+  "source_docs": [
+    "HELL_GAMES_OBJETOS_RECURSOS.md",
+    "doc_materiales1.md",
+    "HELL_GAMES_RECETAS_CRAFTING.md"
+  ],
+  "grid_order": "left_to_right_top_to_bottom",
+  "cell_grid": "4x4",
+  "sets": [
+    {
+      "id": "supervivencia",
+      "file": "hellgames_materiales_01_supervivencia.png",
+      "items": [
+        {"cell": 1, "id": "botella_vacia", "name": "Botella vacia"},
+        {"cell": 2, "id": "agua_limpia", "name": "Agua limpia"},
+        {"cell": 3, "id": "agua_turbia", "name": "Agua turbia"},
+        {"cell": 4, "id": "rama_seca", "name": "Rama seca"},
+        {"cell": 5, "id": "tronco", "name": "Tronco"},
+        {"cell": 6, "id": "tabla", "name": "Tabla"},
+        {"cell": 7, "id": "corteza", "name": "Corteza"},
+        {"cell": 8, "id": "carbon_vegetal", "name": "Carbon vegetal"},
+        {"cell": 9, "id": "piedra_comun", "name": "Piedra comun"},
+        {"cell": 10, "id": "piedra_filosa", "name": "Piedra filosa"},
+        {"cell": 11, "id": "tela", "name": "Tela"},
+        {"cell": 12, "id": "cuerda_fina", "name": "Cuerda fina"},
+        {"cell": 13, "id": "hierba_medicinal", "name": "Hierba medicinal"},
+        {"cell": 14, "id": "bayas_comestibles", "name": "Bayas comestibles"},
+        {"cell": 15, "id": "carne_cruda", "name": "Carne cruda"},
+        {"cell": 16, "id": "lata_comida", "name": "Lata de comida"}
+      ]
+    },
+    {
+      "id": "minerales_metal",
+      "file": "hellgames_materiales_02_minerales_metal.png",
+      "items": [
+        {"cell": 1, "id": "piedra_comun", "name": "Piedra comun"},
+        {"cell": 2, "id": "piedra_filosa", "name": "Piedra filosa"},
+        {"cell": 3, "id": "piedra_lisa", "name": "Piedra lisa"},
+        {"cell": 4, "id": "pedernal", "name": "Pedernal"},
+        {"cell": 5, "id": "arcilla", "name": "Arcilla"},
+        {"cell": 6, "id": "arena", "name": "Arena"},
+        {"cell": 7, "id": "sal_mineral", "name": "Sal mineral"},
+        {"cell": 8, "id": "carbon_mineral", "name": "Carbon mineral"},
+        {"cell": 9, "id": "mineral_hierro", "name": "Mineral de hierro"},
+        {"cell": 10, "id": "cristal_verde", "name": "Cristal verde"},
+        {"cell": 11, "id": "cristal_energetico", "name": "Cristal energetico"},
+        {"cell": 12, "id": "chatarra", "name": "Chatarra"},
+        {"cell": 13, "id": "placa_metalica", "name": "Placa metalica"},
+        {"cell": 14, "id": "tubo_metalico", "name": "Tubo metalico"},
+        {"cell": 15, "id": "alambre", "name": "Alambre"},
+        {"cell": 16, "id": "clavos", "name": "Clavos"}
+      ]
+    },
+    {
+      "id": "fibras_alimentos",
+      "file": "hellgames_materiales_03_fibras_alimentos.png",
+      "items": [
+        {"cell": 1, "id": "soga_gruesa", "name": "Soga gruesa"},
+        {"cell": 2, "id": "cuerda_vieja", "name": "Cuerda vieja"},
+        {"cell": 3, "id": "fibra_vegetal", "name": "Fibra vegetal"},
+        {"cell": 4, "id": "hilo", "name": "Hilo"},
+        {"cell": 5, "id": "retazo_tela", "name": "Retazo de tela"},
+        {"cell": 6, "id": "lona", "name": "Lona"},
+        {"cell": 7, "id": "tela_vela", "name": "Tela de vela"},
+        {"cell": 8, "id": "cuero", "name": "Cuero"},
+        {"cell": 9, "id": "correa", "name": "Correa"},
+        {"cell": 10, "id": "red_pesca", "name": "Red de pesca"},
+        {"cell": 11, "id": "hojas_grandes", "name": "Hojas grandes"},
+        {"cell": 12, "id": "raiz_comestible", "name": "Raiz comestible"},
+        {"cell": 13, "id": "raiz_toxica", "name": "Raiz toxica"},
+        {"cell": 14, "id": "hongos_comestibles", "name": "Hongos comestibles"},
+        {"cell": 15, "id": "hongos_alucinogenos", "name": "Hongos alucinogenos"},
+        {"cell": 16, "id": "pescado_seco", "name": "Pescado seco"}
+      ]
+    },
+    {
+      "id": "quimica_energia_raros",
+      "file": "hellgames_materiales_04_quimica_energia_raros.png",
+      "items": [
+        {"cell": 1, "id": "antiseptico", "name": "Antiseptico"},
+        {"cell": 2, "id": "alcohol_medicinal", "name": "Alcohol medicinal"},
+        {"cell": 3, "id": "jeringa", "name": "Jeringa"},
+        {"cell": 4, "id": "ampolla_sellada", "name": "Ampolla sellada"},
+        {"cell": 5, "id": "tubo_quirurgico", "name": "Tubo quirurgico"},
+        {"cell": 6, "id": "antidoto", "name": "Antidoto"},
+        {"cell": 7, "id": "veneno_liquido", "name": "Veneno liquido"},
+        {"cell": 8, "id": "acido", "name": "Acido"},
+        {"cell": 9, "id": "polvo_irritante", "name": "Polvo irritante"},
+        {"cell": 10, "id": "bateria_pequena", "name": "Bateria pequena"},
+        {"cell": 11, "id": "bateria_auto", "name": "Bateria de auto"},
+        {"cell": 12, "id": "cable_electrico", "name": "Cable electrico"},
+        {"cell": 13, "id": "circuito_roto", "name": "Circuito roto"},
+        {"cell": 14, "id": "fusible", "name": "Fusible"},
+        {"cell": 15, "id": "bobina_cobre", "name": "Bobina de cobre"},
+        {"cell": 16, "id": "fragmento_estrella", "name": "Fragmento de estrella"}
+      ]
+    }
+  ]
+}

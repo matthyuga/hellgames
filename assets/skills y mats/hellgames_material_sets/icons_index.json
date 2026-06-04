@@ -1,0 +1,828 @@
+{
+  "cell_icons": [
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 1,
+      "id": "botella_vacia",
+      "name": "Botella vacia",
+      "icon": "icons_cells/supervivencia_01_botella_vacia.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 2,
+      "id": "agua_limpia",
+      "name": "Agua limpia",
+      "icon": "icons_cells/supervivencia_02_agua_limpia.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 3,
+      "id": "agua_turbia",
+      "name": "Agua turbia",
+      "icon": "icons_cells/supervivencia_03_agua_turbia.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 4,
+      "id": "rama_seca",
+      "name": "Rama seca",
+      "icon": "icons_cells/supervivencia_04_rama_seca.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 5,
+      "id": "tronco",
+      "name": "Tronco",
+      "icon": "icons_cells/supervivencia_05_tronco.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 6,
+      "id": "tabla",
+      "name": "Tabla",
+      "icon": "icons_cells/supervivencia_06_tabla.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 7,
+      "id": "corteza",
+      "name": "Corteza",
+      "icon": "icons_cells/supervivencia_07_corteza.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 8,
+      "id": "carbon_vegetal",
+      "name": "Carbon vegetal",
+      "icon": "icons_cells/supervivencia_08_carbon_vegetal.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 9,
+      "id": "piedra_comun",
+      "name": "Piedra comun",
+      "icon": "icons_cells/supervivencia_09_piedra_comun.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 10,
+      "id": "piedra_filosa",
+      "name": "Piedra filosa",
+      "icon": "icons_cells/supervivencia_10_piedra_filosa.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 11,
+      "id": "tela",
+      "name": "Tela",
+      "icon": "icons_cells/supervivencia_11_tela.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 12,
+      "id": "cuerda_fina",
+      "name": "Cuerda fina",
+      "icon": "icons_cells/supervivencia_12_cuerda_fina.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 13,
+      "id": "hierba_medicinal",
+      "name": "Hierba medicinal",
+      "icon": "icons_cells/supervivencia_13_hierba_medicinal.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 14,
+      "id": "bayas_comestibles",
+      "name": "Bayas comestibles",
+      "icon": "icons_cells/supervivencia_14_bayas_comestibles.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 15,
+      "id": "carne_cruda",
+      "name": "Carne cruda",
+      "icon": "icons_cells/supervivencia_15_carne_cruda.png"
+    },
+    {
+      "set": "supervivencia",
+      "source_sheet": "hellgames_materiales_01_supervivencia.png",
+      "cell": 16,
+      "id": "lata_comida",
+      "name": "Lata de comida",
+      "icon": "icons_cells/supervivencia_16_lata_comida.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 1,
+      "id": "piedra_comun",
+      "name": "Piedra comun",
+      "icon": "icons_cells/minerales_metal_01_piedra_comun.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 2,
+      "id": "piedra_filosa",
+      "name": "Piedra filosa",
+      "icon": "icons_cells/minerales_metal_02_piedra_filosa.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 3,
+      "id": "piedra_lisa",
+      "name": "Piedra lisa",
+      "icon": "icons_cells/minerales_metal_03_piedra_lisa.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 4,
+      "id": "pedernal",
+      "name": "Pedernal",
+      "icon": "icons_cells/minerales_metal_04_pedernal.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 5,
+      "id": "arcilla",
+      "name": "Arcilla",
+      "icon": "icons_cells/minerales_metal_05_arcilla.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 6,
+      "id": "arena",
+      "name": "Arena",
+      "icon": "icons_cells/minerales_metal_06_arena.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 7,
+      "id": "sal_mineral",
+      "name": "Sal mineral",
+      "icon": "icons_cells/minerales_metal_07_sal_mineral.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 8,
+      "id": "carbon_mineral",
+      "name": "Carbon mineral",
+      "icon": "icons_cells/minerales_metal_08_carbon_mineral.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 9,
+      "id": "mineral_hierro",
+      "name": "Mineral de hierro",
+      "icon": "icons_cells/minerales_metal_09_mineral_hierro.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 10,
+      "id": "cristal_verde",
+      "name": "Cristal verde",
+      "icon": "icons_cells/minerales_metal_10_cristal_verde.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 11,
+      "id": "cristal_energetico",
+      "name": "Cristal energetico",
+      "icon": "icons_cells/minerales_metal_11_cristal_energetico.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 12,
+      "id": "chatarra",
+      "name": "Chatarra",
+      "icon": "icons_cells/minerales_metal_12_chatarra.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 13,
+      "id": "placa_metalica",
+      "name": "Placa metalica",
+      "icon": "icons_cells/minerales_metal_13_placa_metalica.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 14,
+      "id": "tubo_metalico",
+      "name": "Tubo metalico",
+      "icon": "icons_cells/minerales_metal_14_tubo_metalico.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 15,
+      "id": "alambre",
+      "name": "Alambre",
+      "icon": "icons_cells/minerales_metal_15_alambre.png"
+    },
+    {
+      "set": "minerales_metal",
+      "source_sheet": "hellgames_materiales_02_minerales_metal.png",
+      "cell": 16,
+      "id": "clavos",
+      "name": "Clavos",
+      "icon": "icons_cells/minerales_metal_16_clavos.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 1,
+      "id": "soga_gruesa",
+      "name": "Soga gruesa",
+      "icon": "icons_cells/fibras_alimentos_01_soga_gruesa.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 2,
+      "id": "cuerda_vieja",
+      "name": "Cuerda vieja",
+      "icon": "icons_cells/fibras_alimentos_02_cuerda_vieja.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 3,
+      "id": "fibra_vegetal",
+      "name": "Fibra vegetal",
+      "icon": "icons_cells/fibras_alimentos_03_fibra_vegetal.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 4,
+      "id": "hilo",
+      "name": "Hilo",
+      "icon": "icons_cells/fibras_alimentos_04_hilo.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 5,
+      "id": "retazo_tela",
+      "name": "Retazo de tela",
+      "icon": "icons_cells/fibras_alimentos_05_retazo_tela.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 6,
+      "id": "lona",
+      "name": "Lona",
+      "icon": "icons_cells/fibras_alimentos_06_lona.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 7,
+      "id": "tela_vela",
+      "name": "Tela de vela",
+      "icon": "icons_cells/fibras_alimentos_07_tela_vela.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 8,
+      "id": "cuero",
+      "name": "Cuero",
+      "icon": "icons_cells/fibras_alimentos_08_cuero.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 9,
+      "id": "correa",
+      "name": "Correa",
+      "icon": "icons_cells/fibras_alimentos_09_correa.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 10,
+      "id": "red_pesca",
+      "name": "Red de pesca",
+      "icon": "icons_cells/fibras_alimentos_10_red_pesca.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 11,
+      "id": "hojas_grandes",
+      "name": "Hojas grandes",
+      "icon": "icons_cells/fibras_alimentos_11_hojas_grandes.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 12,
+      "id": "raiz_comestible",
+      "name": "Raiz comestible",
+      "icon": "icons_cells/fibras_alimentos_12_raiz_comestible.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 13,
+      "id": "raiz_toxica",
+      "name": "Raiz toxica",
+      "icon": "icons_cells/fibras_alimentos_13_raiz_toxica.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 14,
+      "id": "hongos_comestibles",
+      "name": "Hongos comestibles",
+      "icon": "icons_cells/fibras_alimentos_14_hongos_comestibles.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 15,
+      "id": "hongos_alucinogenos",
+      "name": "Hongos alucinogenos",
+      "icon": "icons_cells/fibras_alimentos_15_hongos_alucinogenos.png"
+    },
+    {
+      "set": "fibras_alimentos",
+      "source_sheet": "hellgames_materiales_03_fibras_alimentos.png",
+      "cell": 16,
+      "id": "pescado_seco",
+      "name": "Pescado seco",
+      "icon": "icons_cells/fibras_alimentos_16_pescado_seco.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 1,
+      "id": "antiseptico",
+      "name": "Antiseptico",
+      "icon": "icons_cells/quimica_energia_raros_01_antiseptico.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 2,
+      "id": "alcohol_medicinal",
+      "name": "Alcohol medicinal",
+      "icon": "icons_cells/quimica_energia_raros_02_alcohol_medicinal.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 3,
+      "id": "jeringa",
+      "name": "Jeringa",
+      "icon": "icons_cells/quimica_energia_raros_03_jeringa.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 4,
+      "id": "ampolla_sellada",
+      "name": "Ampolla sellada",
+      "icon": "icons_cells/quimica_energia_raros_04_ampolla_sellada.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 5,
+      "id": "tubo_quirurgico",
+      "name": "Tubo quirurgico",
+      "icon": "icons_cells/quimica_energia_raros_05_tubo_quirurgico.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 6,
+      "id": "antidoto",
+      "name": "Antidoto",
+      "icon": "icons_cells/quimica_energia_raros_06_antidoto.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 7,
+      "id": "veneno_liquido",
+      "name": "Veneno liquido",
+      "icon": "icons_cells/quimica_energia_raros_07_veneno_liquido.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 8,
+      "id": "acido",
+      "name": "Acido",
+      "icon": "icons_cells/quimica_energia_raros_08_acido.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 9,
+      "id": "polvo_irritante",
+      "name": "Polvo irritante",
+      "icon": "icons_cells/quimica_energia_raros_09_polvo_irritante.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 10,
+      "id": "bateria_pequena",
+      "name": "Bateria pequena",
+      "icon": "icons_cells/quimica_energia_raros_10_bateria_pequena.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 11,
+      "id": "bateria_auto",
+      "name": "Bateria de auto",
+      "icon": "icons_cells/quimica_energia_raros_11_bateria_auto.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 12,
+      "id": "cable_electrico",
+      "name": "Cable electrico",
+      "icon": "icons_cells/quimica_energia_raros_12_cable_electrico.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 13,
+      "id": "circuito_roto",
+      "name": "Circuito roto",
+      "icon": "icons_cells/quimica_energia_raros_13_circuito_roto.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 14,
+      "id": "fusible",
+      "name": "Fusible",
+      "icon": "icons_cells/quimica_energia_raros_14_fusible.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 15,
+      "id": "bobina_cobre",
+      "name": "Bobina de cobre",
+      "icon": "icons_cells/quimica_energia_raros_15_bobina_cobre.png"
+    },
+    {
+      "set": "quimica_energia_raros",
+      "source_sheet": "hellgames_materiales_04_quimica_energia_raros.png",
+      "cell": 16,
+      "id": "fragmento_estrella",
+      "name": "Fragmento de estrella",
+      "icon": "icons_cells/quimica_energia_raros_16_fragmento_estrella.png"
+    }
+  ],
+  "id_icons": [
+    {
+      "id": "botella_vacia",
+      "name": "Botella vacia",
+      "icon": "icons_by_id/botella_vacia.png"
+    },
+    {
+      "id": "agua_limpia",
+      "name": "Agua limpia",
+      "icon": "icons_by_id/agua_limpia.png"
+    },
+    {
+      "id": "agua_turbia",
+      "name": "Agua turbia",
+      "icon": "icons_by_id/agua_turbia.png"
+    },
+    {
+      "id": "rama_seca",
+      "name": "Rama seca",
+      "icon": "icons_by_id/rama_seca.png"
+    },
+    {
+      "id": "tronco",
+      "name": "Tronco",
+      "icon": "icons_by_id/tronco.png"
+    },
+    {
+      "id": "tabla",
+      "name": "Tabla",
+      "icon": "icons_by_id/tabla.png"
+    },
+    {
+      "id": "corteza",
+      "name": "Corteza",
+      "icon": "icons_by_id/corteza.png"
+    },
+    {
+      "id": "carbon_vegetal",
+      "name": "Carbon vegetal",
+      "icon": "icons_by_id/carbon_vegetal.png"
+    },
+    {
+      "id": "piedra_comun",
+      "name": "Piedra comun",
+      "icon": "icons_by_id/piedra_comun.png"
+    },
+    {
+      "id": "piedra_filosa",
+      "name": "Piedra filosa",
+      "icon": "icons_by_id/piedra_filosa.png"
+    },
+    {
+      "id": "tela",
+      "name": "Tela",
+      "icon": "icons_by_id/tela.png"
+    },
+    {
+      "id": "cuerda_fina",
+      "name": "Cuerda fina",
+      "icon": "icons_by_id/cuerda_fina.png"
+    },
+    {
+      "id": "hierba_medicinal",
+      "name": "Hierba medicinal",
+      "icon": "icons_by_id/hierba_medicinal.png"
+    },
+    {
+      "id": "bayas_comestibles",
+      "name": "Bayas comestibles",
+      "icon": "icons_by_id/bayas_comestibles.png"
+    },
+    {
+      "id": "carne_cruda",
+      "name": "Carne cruda",
+      "icon": "icons_by_id/carne_cruda.png"
+    },
+    {
+      "id": "lata_comida",
+      "name": "Lata de comida",
+      "icon": "icons_by_id/lata_comida.png"
+    },
+    {
+      "id": "piedra_lisa",
+      "name": "Piedra lisa",
+      "icon": "icons_by_id/piedra_lisa.png"
+    },
+    {
+      "id": "pedernal",
+      "name": "Pedernal",
+      "icon": "icons_by_id/pedernal.png"
+    },
+    {
+      "id": "arcilla",
+      "name": "Arcilla",
+      "icon": "icons_by_id/arcilla.png"
+    },
+    {
+      "id": "arena",
+      "name": "Arena",
+      "icon": "icons_by_id/arena.png"
+    },
+    {
+      "id": "sal_mineral",
+      "name": "Sal mineral",
+      "icon": "icons_by_id/sal_mineral.png"
+    },
+    {
+      "id": "carbon_mineral",
+      "name": "Carbon mineral",
+      "icon": "icons_by_id/carbon_mineral.png"
+    },
+    {
+      "id": "mineral_hierro",
+      "name": "Mineral de hierro",
+      "icon": "icons_by_id/mineral_hierro.png"
+    },
+    {
+      "id": "cristal_verde",
+      "name": "Cristal verde",
+      "icon": "icons_by_id/cristal_verde.png"
+    },
+    {
+      "id": "cristal_energetico",
+      "name": "Cristal energetico",
+      "icon": "icons_by_id/cristal_energetico.png"
+    },
+    {
+      "id": "chatarra",
+      "name": "Chatarra",
+      "icon": "icons_by_id/chatarra.png"
+    },
+    {
+      "id": "placa_metalica",
+      "name": "Placa metalica",
+      "icon": "icons_by_id/placa_metalica.png"
+    },
+    {
+      "id": "tubo_metalico",
+      "name": "Tubo metalico",
+      "icon": "icons_by_id/tubo_metalico.png"
+    },
+    {
+      "id": "alambre",
+      "name": "Alambre",
+      "icon": "icons_by_id/alambre.png"
+    },
+    {
+      "id": "clavos",
+      "name": "Clavos",
+      "icon": "icons_by_id/clavos.png"
+    },
+    {
+      "id": "soga_gruesa",
+      "name": "Soga gruesa",
+      "icon": "icons_by_id/soga_gruesa.png"
+    },
+    {
+      "id": "cuerda_vieja",
+      "name": "Cuerda vieja",
+      "icon": "icons_by_id/cuerda_vieja.png"
+    },
+    {
+      "id": "fibra_vegetal",
+      "name": "Fibra vegetal",
+      "icon": "icons_by_id/fibra_vegetal.png"
+    },
+    {
+      "id": "hilo",
+      "name": "Hilo",
+      "icon": "icons_by_id/hilo.png"
+    },
+    {
+      "id": "retazo_tela",
+      "name": "Retazo de tela",
+      "icon": "icons_by_id/retazo_tela.png"
+    },
+    {
+      "id": "lona",
+      "name": "Lona",
+      "icon": "icons_by_id/lona.png"
+    },
+    {
+      "id": "tela_vela",
+      "name": "Tela de vela",
+      "icon": "icons_by_id/tela_vela.png"
+    },
+    {
+      "id": "cuero",
+      "name": "Cuero",
+      "icon": "icons_by_id/cuero.png"
+    },
+    {
+      "id": "correa",
+      "name": "Correa",
+      "icon": "icons_by_id/correa.png"
+    },
+    {
+      "id": "red_pesca",
+      "name": "Red de pesca",
+      "icon": "icons_by_id/red_pesca.png"
+    },
+    {
+      "id": "hojas_grandes",
+      "name": "Hojas grandes",
+      "icon": "icons_by_id/hojas_grandes.png"
+    },
+    {
+      "id": "raiz_comestible",
+      "name": "Raiz comestible",
+      "icon": "icons_by_id/raiz_comestible.png"
+    },
+    {
+      "id": "raiz_toxica",
+      "name": "Raiz toxica",
+      "icon": "icons_by_id/raiz_toxica.png"
+    },
+    {
+      "id": "hongos_comestibles",
+      "name": "Hongos comestibles",
+      "icon": "icons_by_id/hongos_comestibles.png"
+    },
+    {
+      "id": "hongos_alucinogenos",
+      "name": "Hongos alucinogenos",
+      "icon": "icons_by_id/hongos_alucinogenos.png"
+    },
+    {
+      "id": "pescado_seco",
+      "name": "Pescado seco",
+      "icon": "icons_by_id/pescado_seco.png"
+    },
+    {
+      "id": "antiseptico",
+      "name": "Antiseptico",
+      "icon": "icons_by_id/antiseptico.png"
+    },
+    {
+      "id": "alcohol_medicinal",
+      "name": "Alcohol medicinal",
+      "icon": "icons_by_id/alcohol_medicinal.png"
+    },
+    {
+      "id": "jeringa",
+      "name": "Jeringa",
+      "icon": "icons_by_id/jeringa.png"
+    },
+    {
+      "id": "ampolla_sellada",
+      "name": "Ampolla sellada",
+      "icon": "icons_by_id/ampolla_sellada.png"
+    },
+    {
+      "id": "tubo_quirurgico",
+      "name": "Tubo quirurgico",
+      "icon": "icons_by_id/tubo_quirurgico.png"
+    },
+    {
+      "id": "antidoto",
+      "name": "Antidoto",
+      "icon": "icons_by_id/antidoto.png"
+    },
+    {
+      "id": "veneno_liquido",
+      "name": "Veneno liquido",
+      "icon": "icons_by_id/veneno_liquido.png"
+    },
+    {
+      "id": "acido",
+      "name": "Acido",
+      "icon": "icons_by_id/acido.png"
+    },
+    {
+      "id": "polvo_irritante",
+      "name": "Polvo irritante",
+      "icon": "icons_by_id/polvo_irritante.png"
+    },
+    {
+      "id": "bateria_pequena",
+      "name": "Bateria pequena",
+      "icon": "icons_by_id/bateria_pequena.png"
+    },
+    {
+      "id": "bateria_auto",
+      "name": "Bateria de auto",
+      "icon": "icons_by_id/bateria_auto.png"
+    },
+    {
+      "id": "cable_electrico",
+      "name": "Cable electrico",
+      "icon": "icons_by_id/cable_electrico.png"
+    },
+    {
+      "id": "circuito_roto",
+      "name": "Circuito roto",
+      "icon": "icons_by_id/circuito_roto.png"
+    },
+    {
+      "id": "fusible",
+      "name": "Fusible",
+      "icon": "icons_by_id/fusible.png"
+    },
+    {
+      "id": "bobina_cobre",
+      "name": "Bobina de cobre",
+      "icon": "icons_by_id/bobina_cobre.png"
+    },
+    {
+      "id": "fragmento_estrella",
+      "name": "Fragmento de estrella",
+      "icon": "icons_by_id/fragmento_estrella.png"
+    }
+  ]
+}

@@ -362,6 +362,8 @@ Uso recomendado de los documentos existentes:
 - `doc_npcs1.md`: filosofia de NPCs vivientes, confianza y facciones.
 - `doc_hability1.md`: tabla inicial de habilidades y parametros.
 - `doc_habilidades2.md`: aprendizaje, libros y habilidades avanzadas.
+- `HELL_GAMES_LIBROS_HABILIDADES_RECETAS.md`: sistema consolidado de libros, documentos, recetas escritas y desbloqueo de conocimiento.
+- `assets/skills y mats/hellgames_knowledge_sets/`: iconos de libros, manuales, escritura y recetas transferibles.
 - `doc_armas1.md`: catalogo base de armas.
 - `doc_materiales1.md`: materiales, animales, recursos y transformaciones.
 - `doc_esces.md`: rastros, olor e higiene como mecanica opcional.

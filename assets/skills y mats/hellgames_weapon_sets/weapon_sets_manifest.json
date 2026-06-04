@@ -1,0 +1,100 @@
+{
+  "source_docs": [
+    "HELL_GAMES_ARMAS.md",
+    "doc_armas1.md",
+    "HELL_GAMES_RECETAS_CRAFTING.md",
+    "data/prototype_runtime_4.json"
+  ],
+  "grid_order": "left_to_right_top_to_bottom",
+  "cell_grid": "4x4",
+  "sets": [
+    {
+      "id": "melee_comunes",
+      "file": "hellgames_armas_01_melee_comunes.png",
+      "items": [
+        {"cell": 1, "id": "cuchillo_viejo", "name": "Cuchillo viejo"},
+        {"cell": 2, "id": "cuchillo_oxidado", "name": "Cuchillo oxidado"},
+        {"cell": 3, "id": "navaja_fina", "name": "Navaja fina"},
+        {"cell": 4, "id": "navaja_bolsillo", "name": "Navaja de bolsillo"},
+        {"cell": 5, "id": "palo_madera", "name": "Palo de madera"},
+        {"cell": 6, "id": "garrote_improvisado", "name": "Garrote improvisado"},
+        {"cell": 7, "id": "tubo_metalico", "name": "Tubo metalico"},
+        {"cell": 8, "id": "martillo", "name": "Martillo"},
+        {"cell": 9, "id": "pala", "name": "Pala"},
+        {"cell": 10, "id": "serrucho", "name": "Serrucho"},
+        {"cell": 11, "id": "llave_inglesa", "name": "Llave inglesa"},
+        {"cell": 12, "id": "botella_rota", "name": "Botella rota"},
+        {"cell": 13, "id": "piedra_filosa", "name": "Piedra filosa"},
+        {"cell": 14, "id": "machete", "name": "Machete"},
+        {"cell": 15, "id": "hacha_pequena", "name": "Hacha pequena"},
+        {"cell": 16, "id": "cuchillo_caza", "name": "Cuchillo de caza"}
+      ]
+    },
+    {
+      "id": "melee_avanzadas_improvisadas",
+      "file": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "items": [
+        {"cell": 1, "id": "palanca_hierro", "name": "Palanca de hierro"},
+        {"cell": 2, "id": "pico_mineria", "name": "Pico de mineria"},
+        {"cell": 3, "id": "baston_reforzado", "name": "Baston reforzado"},
+        {"cell": 4, "id": "cadena_gancho", "name": "Cadena con gancho"},
+        {"cell": 5, "id": "hacha_bombero", "name": "Hacha de bombero"},
+        {"cell": 6, "id": "katana_vieja", "name": "Katana vieja"},
+        {"cell": 7, "id": "espada_ceremonial", "name": "Espada ceremonial"},
+        {"cell": 8, "id": "lanza_militar", "name": "Lanza militar"},
+        {"cell": 9, "id": "maza_pesada", "name": "Maza pesada"},
+        {"cell": 10, "id": "guadana_improvisada", "name": "Guadana improvisada"},
+        {"cell": 11, "id": "lanza_casera", "name": "Lanza casera"},
+        {"cell": 12, "id": "lanza_madera", "name": "Lanza de madera"},
+        {"cell": 13, "id": "palo_clavos", "name": "Palo con clavos"},
+        {"cell": 14, "id": "cuchillo_hueso", "name": "Cuchillo de hueso"},
+        {"cell": 15, "id": "hacha_piedra", "name": "Hacha de piedra"},
+        {"cell": 16, "id": "escudo_madera", "name": "Escudo de madera"}
+      ]
+    },
+    {
+      "id": "distancia_municion",
+      "file": "hellgames_armas_03_distancia_municion.png",
+      "items": [
+        {"cell": 1, "id": "honda", "name": "Honda"},
+        {"cell": 2, "id": "tirachinas", "name": "Tirachinas"},
+        {"cell": 3, "id": "jabalina", "name": "Jabalina"},
+        {"cell": 4, "id": "lanza_arrojadiza", "name": "Lanza arrojadiza"},
+        {"cell": 5, "id": "cuchillos_arrojadizos", "name": "Cuchillos arrojadizos"},
+        {"cell": 6, "id": "dardos", "name": "Dardos"},
+        {"cell": 7, "id": "arco_simple", "name": "Arco simple"},
+        {"cell": 8, "id": "arco_caza", "name": "Arco de caza"},
+        {"cell": 9, "id": "ballesta_ligera", "name": "Ballesta ligera"},
+        {"cell": 10, "id": "ballesta_silenciosa", "name": "Ballesta silenciosa"},
+        {"cell": 11, "id": "bala_pequena", "name": "Bala pequena"},
+        {"cell": 12, "id": "bala_pistola", "name": "Bala de pistola"},
+        {"cell": 13, "id": "bala_revolver", "name": "Bala de revolver"},
+        {"cell": 14, "id": "cartucho_escopeta", "name": "Cartucho de escopeta"},
+        {"cell": 15, "id": "municion_rifle", "name": "Municion de rifle"},
+        {"cell": 16, "id": "virote_ballesta", "name": "Virote de ballesta"}
+      ]
+    },
+    {
+      "id": "fuego_trampas_especiales",
+      "file": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "items": [
+        {"cell": 1, "id": "pistola_sin_balas", "name": "Pistola sin balas"},
+        {"cell": 2, "id": "pistola_bengalas", "name": "Pistola de bengalas"},
+        {"cell": 3, "id": "revolver_viejo", "name": "Revolver viejo"},
+        {"cell": 4, "id": "pistola_9mm", "name": "Pistola 9mm"},
+        {"cell": 5, "id": "escopeta_recortada", "name": "Escopeta recortada"},
+        {"cell": 6, "id": "escopeta_caza", "name": "Escopeta de caza"},
+        {"cell": 7, "id": "rifle_cerrojo", "name": "Rifle de cerrojo"},
+        {"cell": 8, "id": "rifle_caza", "name": "Rifle de caza"},
+        {"cell": 9, "id": "arma_polvo_casera", "name": "Arma casera de polvora"},
+        {"cell": 10, "id": "molotov", "name": "Coctel molotov"},
+        {"cell": 11, "id": "bomba_humo_casera", "name": "Bomba de humo casera"},
+        {"cell": 12, "id": "trampa_lazo", "name": "Trampa de lazo"},
+        {"cell": 13, "id": "pinchos_ocultos", "name": "Pinchos ocultos"},
+        {"cell": 14, "id": "trampa_oso", "name": "Trampa de oso"},
+        {"cell": 15, "id": "lanza_estrella", "name": "Lanza de estrella"},
+        {"cell": 16, "id": "guante_electrico", "name": "Guante electrico"}
+      ]
+    }
+  ]
+}

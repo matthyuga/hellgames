@@ -1,0 +1,838 @@
+{
+  "cell_icons": [
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 1,
+      "id": "cuchillo_viejo",
+      "name": "Cuchillo viejo",
+      "icon": "icons_cells/melee_comunes_01_cuchillo_viejo.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 2,
+      "id": "cuchillo_oxidado",
+      "name": "Cuchillo oxidado",
+      "icon": "icons_cells/melee_comunes_02_cuchillo_oxidado.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 3,
+      "id": "navaja_fina",
+      "name": "Navaja fina",
+      "icon": "icons_cells/melee_comunes_03_navaja_fina.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 4,
+      "id": "navaja_bolsillo",
+      "name": "Navaja de bolsillo",
+      "icon": "icons_cells/melee_comunes_04_navaja_bolsillo.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 5,
+      "id": "palo_madera",
+      "name": "Palo de madera",
+      "icon": "icons_cells/melee_comunes_05_palo_madera.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 6,
+      "id": "garrote_improvisado",
+      "name": "Garrote improvisado",
+      "icon": "icons_cells/melee_comunes_06_garrote_improvisado.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 7,
+      "id": "tubo_metalico",
+      "name": "Tubo metalico",
+      "icon": "icons_cells/melee_comunes_07_tubo_metalico.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 8,
+      "id": "martillo",
+      "name": "Martillo",
+      "icon": "icons_cells/melee_comunes_08_martillo.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 9,
+      "id": "pala",
+      "name": "Pala",
+      "icon": "icons_cells/melee_comunes_09_pala.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 10,
+      "id": "serrucho",
+      "name": "Serrucho",
+      "icon": "icons_cells/melee_comunes_10_serrucho.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 11,
+      "id": "llave_inglesa",
+      "name": "Llave inglesa",
+      "icon": "icons_cells/melee_comunes_11_llave_inglesa.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 12,
+      "id": "botella_rota",
+      "name": "Botella rota",
+      "icon": "icons_cells/melee_comunes_12_botella_rota.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 13,
+      "id": "piedra_filosa",
+      "name": "Piedra filosa",
+      "icon": "icons_cells/melee_comunes_13_piedra_filosa.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 14,
+      "id": "machete",
+      "name": "Machete",
+      "icon": "icons_cells/melee_comunes_14_machete.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 15,
+      "id": "hacha_pequena",
+      "name": "Hacha pequena",
+      "icon": "icons_cells/melee_comunes_15_hacha_pequena.png"
+    },
+    {
+      "set": "melee_comunes",
+      "source_sheet": "hellgames_armas_01_melee_comunes.png",
+      "cell": 16,
+      "id": "cuchillo_caza",
+      "name": "Cuchillo de caza",
+      "icon": "icons_cells/melee_comunes_16_cuchillo_caza.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 1,
+      "id": "palanca_hierro",
+      "name": "Palanca de hierro",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_01_palanca_hierro.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 2,
+      "id": "pico_mineria",
+      "name": "Pico de mineria",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_02_pico_mineria.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 3,
+      "id": "baston_reforzado",
+      "name": "Baston reforzado",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_03_baston_reforzado.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 4,
+      "id": "cadena_gancho",
+      "name": "Cadena con gancho",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_04_cadena_gancho.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 5,
+      "id": "hacha_bombero",
+      "name": "Hacha de bombero",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_05_hacha_bombero.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 6,
+      "id": "katana_vieja",
+      "name": "Katana vieja",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_06_katana_vieja.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 7,
+      "id": "espada_ceremonial",
+      "name": "Espada ceremonial",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_07_espada_ceremonial.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 8,
+      "id": "lanza_militar",
+      "name": "Lanza militar",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_08_lanza_militar.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 9,
+      "id": "maza_pesada",
+      "name": "Maza pesada",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_09_maza_pesada.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 10,
+      "id": "guadana_improvisada",
+      "name": "Guadana improvisada",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_10_guadana_improvisada.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 11,
+      "id": "lanza_casera",
+      "name": "Lanza casera",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_11_lanza_casera.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 12,
+      "id": "lanza_madera",
+      "name": "Lanza de madera",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_12_lanza_madera.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 13,
+      "id": "palo_clavos",
+      "name": "Palo con clavos",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_13_palo_clavos.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 14,
+      "id": "cuchillo_hueso",
+      "name": "Cuchillo de hueso",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_14_cuchillo_hueso.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 15,
+      "id": "hacha_piedra",
+      "name": "Hacha de piedra",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_15_hacha_piedra.png"
+    },
+    {
+      "set": "melee_avanzadas_improvisadas",
+      "source_sheet": "hellgames_armas_02_melee_avanzadas_improvisadas.png",
+      "cell": 16,
+      "id": "escudo_madera",
+      "name": "Escudo de madera",
+      "icon": "icons_cells/melee_avanzadas_improvisadas_16_escudo_madera.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 1,
+      "id": "honda",
+      "name": "Honda",
+      "icon": "icons_cells/distancia_municion_01_honda.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 2,
+      "id": "tirachinas",
+      "name": "Tirachinas",
+      "icon": "icons_cells/distancia_municion_02_tirachinas.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 3,
+      "id": "jabalina",
+      "name": "Jabalina",
+      "icon": "icons_cells/distancia_municion_03_jabalina.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 4,
+      "id": "lanza_arrojadiza",
+      "name": "Lanza arrojadiza",
+      "icon": "icons_cells/distancia_municion_04_lanza_arrojadiza.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 5,
+      "id": "cuchillos_arrojadizos",
+      "name": "Cuchillos arrojadizos",
+      "icon": "icons_cells/distancia_municion_05_cuchillos_arrojadizos.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 6,
+      "id": "dardos",
+      "name": "Dardos",
+      "icon": "icons_cells/distancia_municion_06_dardos.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 7,
+      "id": "arco_simple",
+      "name": "Arco simple",
+      "icon": "icons_cells/distancia_municion_07_arco_simple.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 8,
+      "id": "arco_caza",
+      "name": "Arco de caza",
+      "icon": "icons_cells/distancia_municion_08_arco_caza.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 9,
+      "id": "ballesta_ligera",
+      "name": "Ballesta ligera",
+      "icon": "icons_cells/distancia_municion_09_ballesta_ligera.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 10,
+      "id": "ballesta_silenciosa",
+      "name": "Ballesta silenciosa",
+      "icon": "icons_cells/distancia_municion_10_ballesta_silenciosa.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 11,
+      "id": "bala_pequena",
+      "name": "Bala pequena",
+      "icon": "icons_cells/distancia_municion_11_bala_pequena.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 12,
+      "id": "bala_pistola",
+      "name": "Bala de pistola",
+      "icon": "icons_cells/distancia_municion_12_bala_pistola.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 13,
+      "id": "bala_revolver",
+      "name": "Bala de revolver",
+      "icon": "icons_cells/distancia_municion_13_bala_revolver.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 14,
+      "id": "cartucho_escopeta",
+      "name": "Cartucho de escopeta",
+      "icon": "icons_cells/distancia_municion_14_cartucho_escopeta.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 15,
+      "id": "municion_rifle",
+      "name": "Municion de rifle",
+      "icon": "icons_cells/distancia_municion_15_municion_rifle.png"
+    },
+    {
+      "set": "distancia_municion",
+      "source_sheet": "hellgames_armas_03_distancia_municion.png",
+      "cell": 16,
+      "id": "virote_ballesta",
+      "name": "Virote de ballesta",
+      "icon": "icons_cells/distancia_municion_16_virote_ballesta.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 1,
+      "id": "pistola_sin_balas",
+      "name": "Pistola sin balas",
+      "icon": "icons_cells/fuego_trampas_especiales_01_pistola_sin_balas.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 2,
+      "id": "pistola_bengalas",
+      "name": "Pistola de bengalas",
+      "icon": "icons_cells/fuego_trampas_especiales_02_pistola_bengalas.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 3,
+      "id": "revolver_viejo",
+      "name": "Revolver viejo",
+      "icon": "icons_cells/fuego_trampas_especiales_03_revolver_viejo.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 4,
+      "id": "pistola_9mm",
+      "name": "Pistola 9mm",
+      "icon": "icons_cells/fuego_trampas_especiales_04_pistola_9mm.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 5,
+      "id": "escopeta_recortada",
+      "name": "Escopeta recortada",
+      "icon": "icons_cells/fuego_trampas_especiales_05_escopeta_recortada.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 6,
+      "id": "escopeta_caza",
+      "name": "Escopeta de caza",
+      "icon": "icons_cells/fuego_trampas_especiales_06_escopeta_caza.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 7,
+      "id": "rifle_cerrojo",
+      "name": "Rifle de cerrojo",
+      "icon": "icons_cells/fuego_trampas_especiales_07_rifle_cerrojo.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 8,
+      "id": "rifle_caza",
+      "name": "Rifle de caza",
+      "icon": "icons_cells/fuego_trampas_especiales_08_rifle_caza.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 9,
+      "id": "arma_polvo_casera",
+      "name": "Arma casera de polvora",
+      "icon": "icons_cells/fuego_trampas_especiales_09_arma_polvo_casera.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 10,
+      "id": "molotov",
+      "name": "Coctel molotov",
+      "icon": "icons_cells/fuego_trampas_especiales_10_molotov.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 11,
+      "id": "bomba_humo_casera",
+      "name": "Bomba de humo casera",
+      "icon": "icons_cells/fuego_trampas_especiales_11_bomba_humo_casera.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 12,
+      "id": "trampa_lazo",
+      "name": "Trampa de lazo",
+      "icon": "icons_cells/fuego_trampas_especiales_12_trampa_lazo.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 13,
+      "id": "pinchos_ocultos",
+      "name": "Pinchos ocultos",
+      "icon": "icons_cells/fuego_trampas_especiales_13_pinchos_ocultos.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 14,
+      "id": "trampa_oso",
+      "name": "Trampa de oso",
+      "icon": "icons_cells/fuego_trampas_especiales_14_trampa_oso.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 15,
+      "id": "lanza_estrella",
+      "name": "Lanza de estrella",
+      "icon": "icons_cells/fuego_trampas_especiales_15_lanza_estrella.png"
+    },
+    {
+      "set": "fuego_trampas_especiales",
+      "source_sheet": "hellgames_armas_04_fuego_trampas_especiales.png",
+      "cell": 16,
+      "id": "guante_electrico",
+      "name": "Guante electrico",
+      "icon": "icons_cells/fuego_trampas_especiales_16_guante_electrico.png"
+    }
+  ],
+  "id_icons": [
+    {
+      "id": "cuchillo_viejo",
+      "name": "Cuchillo viejo",
+      "icon": "icons_by_id/cuchillo_viejo.png"
+    },
+    {
+      "id": "cuchillo_oxidado",
+      "name": "Cuchillo oxidado",
+      "icon": "icons_by_id/cuchillo_oxidado.png"
+    },
+    {
+      "id": "navaja_fina",
+      "name": "Navaja fina",
+      "icon": "icons_by_id/navaja_fina.png"
+    },
+    {
+      "id": "navaja_bolsillo",
+      "name": "Navaja de bolsillo",
+      "icon": "icons_by_id/navaja_bolsillo.png"
+    },
+    {
+      "id": "palo_madera",
+      "name": "Palo de madera",
+      "icon": "icons_by_id/palo_madera.png"
+    },
+    {
+      "id": "garrote_improvisado",
+      "name": "Garrote improvisado",
+      "icon": "icons_by_id/garrote_improvisado.png"
+    },
+    {
+      "id": "tubo_metalico",
+      "name": "Tubo metalico",
+      "icon": "icons_by_id/tubo_metalico.png"
+    },
+    {
+      "id": "martillo",
+      "name": "Martillo",
+      "icon": "icons_by_id/martillo.png"
+    },
+    {
+      "id": "pala",
+      "name": "Pala",
+      "icon": "icons_by_id/pala.png"
+    },
+    {
+      "id": "serrucho",
+      "name": "Serrucho",
+      "icon": "icons_by_id/serrucho.png"
+    },
+    {
+      "id": "llave_inglesa",
+      "name": "Llave inglesa",
+      "icon": "icons_by_id/llave_inglesa.png"
+    },
+    {
+      "id": "botella_rota",
+      "name": "Botella rota",
+      "icon": "icons_by_id/botella_rota.png"
+    },
+    {
+      "id": "piedra_filosa",
+      "name": "Piedra filosa",
+      "icon": "icons_by_id/piedra_filosa.png"
+    },
+    {
+      "id": "machete",
+      "name": "Machete",
+      "icon": "icons_by_id/machete.png"
+    },
+    {
+      "id": "hacha_pequena",
+      "name": "Hacha pequena",
+      "icon": "icons_by_id/hacha_pequena.png"
+    },
+    {
+      "id": "cuchillo_caza",
+      "name": "Cuchillo de caza",
+      "icon": "icons_by_id/cuchillo_caza.png"
+    },
+    {
+      "id": "palanca_hierro",
+      "name": "Palanca de hierro",
+      "icon": "icons_by_id/palanca_hierro.png"
+    },
+    {
+      "id": "pico_mineria",
+      "name": "Pico de mineria",
+      "icon": "icons_by_id/pico_mineria.png"
+    },
+    {
+      "id": "baston_reforzado",
+      "name": "Baston reforzado",
+      "icon": "icons_by_id/baston_reforzado.png"
+    },
+    {
+      "id": "cadena_gancho",
+      "name": "Cadena con gancho",
+      "icon": "icons_by_id/cadena_gancho.png"
+    },
+    {
+      "id": "hacha_bombero",
+      "name": "Hacha de bombero",
+      "icon": "icons_by_id/hacha_bombero.png"
+    },
+    {
+      "id": "katana_vieja",
+      "name": "Katana vieja",
+      "icon": "icons_by_id/katana_vieja.png"
+    },
+    {
+      "id": "espada_ceremonial",
+      "name": "Espada ceremonial",
+      "icon": "icons_by_id/espada_ceremonial.png"
+    },
+    {
+      "id": "lanza_militar",
+      "name": "Lanza militar",
+      "icon": "icons_by_id/lanza_militar.png"
+    },
+    {
+      "id": "maza_pesada",
+      "name": "Maza pesada",
+      "icon": "icons_by_id/maza_pesada.png"
+    },
+    {
+      "id": "guadana_improvisada",
+      "name": "Guadana improvisada",
+      "icon": "icons_by_id/guadana_improvisada.png"
+    },
+    {
+      "id": "lanza_casera",
+      "name": "Lanza casera",
+      "icon": "icons_by_id/lanza_casera.png"
+    },
+    {
+      "id": "lanza_madera",
+      "name": "Lanza de madera",
+      "icon": "icons_by_id/lanza_madera.png"
+    },
+    {
+      "id": "palo_clavos",
+      "name": "Palo con clavos",
+      "icon": "icons_by_id/palo_clavos.png"
+    },
+    {
+      "id": "cuchillo_hueso",
+      "name": "Cuchillo de hueso",
+      "icon": "icons_by_id/cuchillo_hueso.png"
+    },
+    {
+      "id": "hacha_piedra",
+      "name": "Hacha de piedra",
+      "icon": "icons_by_id/hacha_piedra.png"
+    },
+    {
+      "id": "escudo_madera",
+      "name": "Escudo de madera",
+      "icon": "icons_by_id/escudo_madera.png"
+    },
+    {
+      "id": "honda",
+      "name": "Honda",
+      "icon": "icons_by_id/honda.png"
+    },
+    {
+      "id": "tirachinas",
+      "name": "Tirachinas",
+      "icon": "icons_by_id/tirachinas.png"
+    },
+    {
+      "id": "jabalina",
+      "name": "Jabalina",
+      "icon": "icons_by_id/jabalina.png"
+    },
+    {
+      "id": "lanza_arrojadiza",
+      "name": "Lanza arrojadiza",
+      "icon": "icons_by_id/lanza_arrojadiza.png"
+    },
+    {
+      "id": "cuchillos_arrojadizos",
+      "name": "Cuchillos arrojadizos",
+      "icon": "icons_by_id/cuchillos_arrojadizos.png"
+    },
+    {
+      "id": "dardos",
+      "name": "Dardos",
+      "icon": "icons_by_id/dardos.png"
+    },
+    {
+      "id": "arco_simple",
+      "name": "Arco simple",
+      "icon": "icons_by_id/arco_simple.png"
+    },
+    {
+      "id": "arco_caza",
+      "name": "Arco de caza",
+      "icon": "icons_by_id/arco_caza.png"
+    },
+    {
+      "id": "ballesta_ligera",
+      "name": "Ballesta ligera",
+      "icon": "icons_by_id/ballesta_ligera.png"
+    },
+    {
+      "id": "ballesta_silenciosa",
+      "name": "Ballesta silenciosa",
+      "icon": "icons_by_id/ballesta_silenciosa.png"
+    },
+    {
+      "id": "bala_pequena",
+      "name": "Bala pequena",
+      "icon": "icons_by_id/bala_pequena.png"
+    },
+    {
+      "id": "bala_pistola",
+      "name": "Bala de pistola",
+      "icon": "icons_by_id/bala_pistola.png"
+    },
+    {
+      "id": "bala_revolver",
+      "name": "Bala de revolver",
+      "icon": "icons_by_id/bala_revolver.png"
+    },
+    {
+      "id": "cartucho_escopeta",
+      "name": "Cartucho de escopeta",
+      "icon": "icons_by_id/cartucho_escopeta.png"
+    },
+    {
+      "id": "municion_rifle",
+      "name": "Municion de rifle",
+      "icon": "icons_by_id/municion_rifle.png"
+    },
+    {
+      "id": "virote_ballesta",
+      "name": "Virote de ballesta",
+      "icon": "icons_by_id/virote_ballesta.png"
+    },
+    {
+      "id": "pistola_sin_balas",
+      "name": "Pistola sin balas",
+      "icon": "icons_by_id/pistola_sin_balas.png"
+    },
+    {
+      "id": "pistola_bengalas",
+      "name": "Pistola de bengalas",
+      "icon": "icons_by_id/pistola_bengalas.png"
+    },
+    {
+      "id": "revolver_viejo",
+      "name": "Revolver viejo",
+      "icon": "icons_by_id/revolver_viejo.png"
+    },
+    {
+      "id": "pistola_9mm",
+      "name": "Pistola 9mm",
+      "icon": "icons_by_id/pistola_9mm.png"
+    },
+    {
+      "id": "escopeta_recortada",
+      "name": "Escopeta recortada",
+      "icon": "icons_by_id/escopeta_recortada.png"
+    },
+    {
+      "id": "escopeta_caza",
+      "name": "Escopeta de caza",
+      "icon": "icons_by_id/escopeta_caza.png"
+    },
+    {
+      "id": "rifle_cerrojo",
+      "name": "Rifle de cerrojo",
+      "icon": "icons_by_id/rifle_cerrojo.png"
+    },
+    {
+      "id": "rifle_caza",
+      "name": "Rifle de caza",
+      "icon": "icons_by_id/rifle_caza.png"
+    },
+    {
+      "id": "arma_polvo_casera",
+      "name": "Arma casera de polvora",
+      "icon": "icons_by_id/arma_polvo_casera.png"
+    },
+    {
+      "id": "molotov",
+      "name": "Coctel molotov",
+      "icon": "icons_by_id/molotov.png"
+    },
+    {
+      "id": "bomba_humo_casera",
+      "name": "Bomba de humo casera",
+      "icon": "icons_by_id/bomba_humo_casera.png"
+    },
+    {
+      "id": "trampa_lazo",
+      "name": "Trampa de lazo",
+      "icon": "icons_by_id/trampa_lazo.png"
+    },
+    {
+      "id": "pinchos_ocultos",
+      "name": "Pinchos ocultos",
+      "icon": "icons_by_id/pinchos_ocultos.png"
+    },
+    {
+      "id": "trampa_oso",
+      "name": "Trampa de oso",
+      "icon": "icons_by_id/trampa_oso.png"
+    },
+    {
+      "id": "lanza_estrella",
+      "name": "Lanza de estrella",
+      "icon": "icons_by_id/lanza_estrella.png"
+    },
+    {
+      "id": "guante_electrico",
+      "name": "Guante electrico",
+      "icon": "icons_by_id/guante_electrico.png"
+    }
+  ]
+}

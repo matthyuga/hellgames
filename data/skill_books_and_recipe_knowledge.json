@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "learning_rule": "Los libros desbloquean conocimiento; la practica desbloquea dominio; la presion desbloquea experiencia real.",
+  "asset_sets": {
+    "base_dir": "assets/skills y mats/hellgames_knowledge_sets",
+    "manifest": "assets/skills y mats/hellgames_knowledge_sets/knowledge_sets_manifest.json",
+    "icons_index": "assets/skills y mats/hellgames_knowledge_sets/icons_index.json",
+    "icons_by_id": "assets/skills y mats/hellgames_knowledge_sets/icons_by_id"
+  },
+  "knowledge_layers": [
+    "intuicion",
+    "lectura",
+    "receta_escrita",
+    "practica",
+    "dominio",
+    "secreto"
+  ],
+  "unlock_modes": [
+    "conocida_inicio",
+    "habilidad_basica",
+    "manual_basico",
+    "manual_avanzado",
+    "plano_tecnico",
+    "diario_npc",
+    "maestro_npc",
+    "deduccion",
+    "experimentacion",
+    "evento_guardian"
+  ],
+  "writing_logic": {
+    "skill_model": "microhabilidad_apoyo",
+    "supported_by": ["ciencias", "investigacion", "cartografia", "ocultismo", "mecanica", "medicina"],
+    "recipe_quality": ["tosca", "clara", "tecnica", "codificada", "falsa", "danada"],
+    "tool_rules": {
+      "carbon_vegetal": {
+        "can_substitute_for": ["carboncillo"],
+        "best_for": ["marcas", "mapa_tosco", "restaurar_documento_mojado"],
+        "limits": ["no_recetas_tecnicas_claras", "legibilidad_baja"]
+      },
+      "carboncillo": {
+        "best_for": ["apunte_incompleto", "mapa_anotado", "receta_simple_tosca"],
+        "limits": ["manchas", "detalle_limitado"]
+      },
+      "lapiz": {
+        "best_for": ["receta_simple", "mapa_anotado", "nota_corregible"],
+        "limits": ["requiere_papel_relativamente_seco"]
+      },
+      "lapicera": {
+        "best_for": ["copia_rapida", "receta_tecnica_simple"],
+        "limits": ["falla_mojada", "tinta_limitada"]
+      },
+      "pluma_tinta": {
+        "best_for": ["receta_tecnica", "documento_ritual", "documento_legible"],
+        "limits": ["lenta", "fragil", "requiere_tinta"]
+      },
+      "tiza": {
+        "best_for": ["marcas_pared", "simbolos", "rutas_temporales"],
+        "limits": ["no_conserva_recetas_en_inventario"]
+      }
+    }
+  },
+  "writing_materials": [
+    {"id": "papel_suelto", "name": "Papel suelto", "rarity": "comun", "uses": ["copiar_receta_simple", "nota", "mapa_simple"]},
+    {"id": "cuaderno_mojado", "name": "Cuaderno mojado", "rarity": "comun", "uses": ["pistas_danadas", "restaurar_documento_mojado"]},
+    {"id": "cuaderno_seco", "name": "Cuaderno seco", "rarity": "poco_comun", "uses": ["varias_recetas", "bitacora_personal"]},
+    {"id": "lapiz", "name": "Lapiz", "rarity": "comun", "uses": ["copiar_receta_simple", "mapa_anotado"]},
+    {"id": "lapicera", "name": "Lapicera", "rarity": "comun", "uses": ["copiar_receta_simple", "copiar_receta_tecnica"]},
+    {"id": "pluma", "name": "Pluma", "rarity": "comun", "uses": ["escritura_ritual", "copiar_receta_tecnica"]},
+    {"id": "tinta", "name": "Tinta", "rarity": "poco_comun", "uses": ["copiar_receta_tecnica", "documento_legible"]},
+    {"id": "carboncillo", "name": "Carboncillo", "rarity": "comun", "uses": ["apunte_incompleto", "mapa_anotado", "marcas"]},
+    {"id": "tiza", "name": "Tiza", "rarity": "comun", "uses": ["marcas_pared", "simbolos", "rutas"]},
+    {"id": "sello_cera", "name": "Sello de cera", "rarity": "raro", "uses": ["autenticar_documento", "pacto"]},
+    {"id": "mapa_en_blanco", "name": "Mapa en blanco", "rarity": "poco_comun", "uses": ["mapa_anotado"]},
+    {"id": "receta_escrita", "name": "Receta escrita", "rarity": "variable", "uses": ["transferir_conocimiento"]},
+    {"id": "receta_suelta", "name": "Receta suelta", "rarity": "variable", "uses": ["desbloquear_receta_puntual"]},
+    {"id": "receta_escrita_tecnica", "name": "Receta escrita tecnica", "rarity": "raro", "uses": ["transferir_receta_avanzada"]},
+    {"id": "apunte_incompleto", "name": "Apunte incompleto", "rarity": "comun", "uses": ["deduccion", "pista_parcial"]},
+    {"id": "manual_corto_artesanal", "name": "Manual corto artesanal", "rarity": "poco_comun", "uses": ["compartir_recetas_relacionadas"]},
+    {"id": "receta_falsa", "name": "Receta falsa", "rarity": "variable", "uses": ["estafa", "sabotaje", "guerra_social"]}
+  ],
+  "books": [
+    {
+      "id": "manual_primeros_auxilios",
+      "name": "Manual de primeros auxilios",
+      "skills": ["medicina"],
+      "tier": "basico",
+      "read_hours": 3,
+      "unlocks": ["venda_improvisada"],
+      "zones": [1, 2, 17, 19]
+    },
+    {
+      "id": "guia_suturas_fracturas",
+      "name": "Guia de suturas y fracturas",
+      "skills": ["medicina"],
+      "tier": "intermedio",
+      "read_hours": 5,
+      "requires": {"skill_min": {"medicina": 1}, "practice": {"tratar_heridas": 1}},
+      "unlocks": ["venda_desinfectada"],
+      "zones": [17, 19]
+    },
+    {
+      "id": "tratado_toxicologia",
+      "name": "Tratado de toxicologia aplicada",
+      "skills": ["medicina", "quimica"],
+      "tier": "avanzado",
+      "read_hours": 8,
+      "requires": {"skill_min": {"medicina": 2}},
+      "unlocks": ["antidoto_basico", "veneno_basico"],
+      "zones": [11, 12, 17, 19]
+    },
+    {
+      "id": "guia_plantas_isla",
+      "name": "Guia de plantas de la isla",
+      "skills": ["botanica", "herbolaria", "recolectar"],
+      "tier": "basico",
+      "read_hours": 3,
+      "unlocks": ["identificar_hierbas", "unguento_medicinal"],
+      "zones": [4, 11, 17, 23]
+    },
+    {
+      "id": "herbario_pantano",
+      "name": "Herbario del pantano",
+      "skills": ["botanica", "quimica"],
+      "tier": "intermedio",
+      "read_hours": 5,
+      "unlocks": ["veneno_basico", "evitar_plantas_toxicas"],
+      "zones": [11, 12]
+    },
+    {
+      "id": "manual_supervivencia_humeda",
+      "name": "Manual de supervivencia en clima humedo",
+      "skills": ["supervivencia"],
+      "tier": "basico",
+      "read_hours": 3,
+      "unlocks": ["hacer_fogata", "filtrar_agua_basico"],
+      "zones": [2, 4, 11, 23]
+    },
+    {
+      "id": "manual_trampas_caza",
+      "name": "Manual de trampas de caza",
+      "skills": ["trampas", "caza", "supervivencia"],
+      "tier": "intermedio",
+      "read_hours": 5,
+      "unlocks": ["montar_trampa_lazo", "montar_pinchos_ocultos"],
+      "zones": [2, 7, 14, 23]
+    },
+    {
+      "id": "manual_radio_faro",
+      "name": "Manual de radio del faro",
+      "skills": ["electronica", "mecanica"],
+      "tier": "intermedio",
+      "read_hours": 5,
+      "unlocks": ["reparar_radio_faro"],
+      "zones": [1, 20]
+    },
+    {
+      "id": "manual_generadores",
+      "name": "Manual de generadores pequenos",
+      "skills": ["mecanica", "electronica"],
+      "tier": "intermedio",
+      "read_hours": 6,
+      "unlocks": ["generador_pequeno"],
+      "zones": [3, 13, 19]
+    },
+    {
+      "id": "guia_cableado_militar",
+      "name": "Guia de cableado militar",
+      "skills": ["electronica", "informatica"],
+      "tier": "avanzado",
+      "read_hours": 8,
+      "unlocks": ["abrir_compuerta_electrica", "panel_solar_reparado"],
+      "zones": [13, 19, 20]
+    },
+    {
+      "id": "manual_conservacion_alimentos",
+      "name": "Manual de conservacion de alimentos",
+      "skills": ["cocina", "supervivencia"],
+      "tier": "basico",
+      "read_hours": 3,
+      "unlocks": ["secar_carne", "racion_conservada"],
+      "zones": [2, 5, 14, 21, 22]
+    },
+    {
+      "id": "manual_embarcaciones",
+      "name": "Manual de reparacion de embarcaciones",
+      "skills": ["mecanica", "navegar"],
+      "tier": "avanzado",
+      "read_hours": 8,
+      "unlocks": ["reparar_balsa", "reparar_bote_motor"],
+      "zones": [5, 16, 21]
+    },
+    {
+      "id": "documento_tecnico_minas",
+      "name": "Documento tecnico de minas",
+      "skills": ["mecanica", "electronica"],
+      "tier": "avanzado",
+      "read_hours": 8,
+      "unlocks": ["activar_vagon_mina", "reparar_tren_mina", "activar_monoriel_abandonado"],
+      "zones": [3, 20]
+    },
+    {
+      "id": "diario_ocultista",
+      "name": "Diario ocultista",
+      "skills": ["ocultismo", "investigacion"],
+      "tier": "avanzado",
+      "read_hours": 6,
+      "unlocks": ["activar_monolito_menor", "abrir_ruta_salida_oculta"],
+      "zones": [6, 7, 15]
+    },
+    {
+      "id": "codice_estrellas",
+      "name": "Codice de estrellas contaminadas",
+      "skills": ["ocultismo", "ciencias"],
+      "tier": "experto",
+      "read_hours": 12,
+      "unlocks": ["purificar_estrella_contaminada", "forjar_lanza_estrella"],
+      "zones": [6, 12, 15, 25]
+    }
+  ],
+  "writing_recipes": [
+    {
+      "id": "preparar_carboncillo",
+      "outputs": ["carboncillo"],
+      "ingredients": ["carbon_vegetal|rama_quemada", "tela|corteza"],
+      "station": "fogata_o_refugio",
+      "time_hours": 0.5,
+      "risk": "bajo",
+      "unlock": "supervivencia_basica"
+    },
+    {
+      "id": "copiar_receta_simple",
+      "outputs": ["receta_escrita"],
+      "ingredients": ["papel_suelto", "lapiz|lapicera", "receta_conocida"],
+      "station": "ninguna",
+      "time_hours": 1,
+      "risk": "bajo",
+      "unlock": "saber_receta_original"
+    },
+    {
+      "id": "copiar_receta_tecnica",
+      "outputs": ["receta_escrita_tecnica"],
+      "ingredients": ["cuaderno_seco", "lapicera|pluma+tinta", "receta_tecnica_conocida"],
+      "station": "mesa_campamento",
+      "time_hours": 2,
+      "risk": "medio",
+      "unlock": "habilidad_relacionada_baja_o_media"
+    },
+    {
+      "id": "crear_apunte_incompleto",
+      "outputs": ["apunte_incompleto"],
+      "ingredients": ["papel_suelto", "carboncillo"],
+      "station": "ninguna",
+      "time_hours": 0.5,
+      "risk": "medio",
+      "unlock": "observar_intento_o_fallo"
+    },
+    {
+      "id": "crear_manual_corto",
+      "outputs": ["manual_corto_artesanal"],
+      "ingredients": ["cuaderno_seco", "herramienta_escritura", "tres_recetas_relacionadas"],
+      "station": "mesa_campamento",
+      "time_hours": 4,
+      "risk": "medio",
+      "unlock": "habilidad_media"
+    },
+    {
+      "id": "dibujar_mapa_receta",
+      "outputs": ["mapa_anotado"],
+      "ingredients": ["mapa_en_blanco|mapa_mojado", "carboncillo|lapiz", "ruta_conocida"],
+      "station": "mesa_campamento",
+      "time_hours": 1,
+      "risk": "bajo",
+      "unlock": "explorar_ruta"
+    },
+    {
+      "id": "falsificar_receta",
+      "outputs": ["receta_falsa"],
+      "ingredients": ["papel_suelto", "tinta|lapicera"],
+      "station": "ninguna",
+      "time_hours": 1,
+      "risk": "alto_social",
+      "unlock": "mentir_o_hurtar"
+    },
+    {
+      "id": "restaurar_documento_mojado",
+      "outputs": ["documento_legible_parcial"],
+      "ingredients": ["cuaderno_mojado", "tela", "carbon_vegetal", "refugio_seco"],
+      "station": "mesa_campamento",
+      "time_hours": 2,
+      "risk": "medio",
+      "unlock": "educacion_o_investigacion"
+    }
+  ],
+  "pilot_books": {
+    "1": ["manual_radio_faro", "diario_farero"],
+    "2": ["manual_primeros_auxilios", "manual_supervivencia_humeda"],
+    "6": ["diario_ocultista"],
+    "7": ["receta_escrita:montar_trampa_lazo", "apunte_incompleto:activar_monolito_menor"]
+  }
+}

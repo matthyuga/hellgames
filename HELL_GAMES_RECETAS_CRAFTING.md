@@ -100,7 +100,7 @@ escena social.
 | `palanca_reforzada` | `palanca_hierro_reforzada` | `palanca_hierro`, `correa`, `aceite` | banco_trabajo | 1h | bajo |
 | `filtro_portatil` | `filtro_portatil` | `botella_vacia`, `carbon_vegetal`, `arena`, `tela` | mesa_campamento | 2h | medio |
 | `brujula_calibrada` | `brujula_calibrada` | `brujula`, `iman`, `aguja` | mesa_campamento | 1h | bajo |
-| `mapa_anotado` | `mapa_anotado` | `mapa_mojado`, `carbon_vegetal`, `diario_farero` | mesa_campamento | 1h | bajo |
+| `mapa_anotado` | `mapa_anotado` | `mapa_mojado`, `carbon_vegetal` o `carboncillo`, `diario_farero` | mesa_campamento | 1h | bajo |
 | `abrir_caja_oxidada` | loot variable | `llave_oxidada` o `palanca_hierro` | ninguna | 1h | medio |
 | `reparar_lente_faro` | `lente_faro_reparada` | `lente_agrietada`, `resina`, `tela`, `documento_tecnico` | faro | 3h | medio |
 
@@ -180,6 +180,23 @@ rituales, condiciones de tiempo o consecuencias narrativas.
 | `encender_nucleo_oxidado` | Nucleo activo | `nucleo_oxidado`, `celda_energia`, `bobina_cobre`, `cristal_verde` | Sector X | evento peligroso |
 | `abrir_ruta_salida_oculta` | Ruta oculta | `mapa_parcial`, `llave_antigua`, `diario_ocultista`, `estrella_protegida` | ruinas / torre | acertijo resuelto |
 
+## 8. Escritura, libros y transferencia de recetas
+
+Estas recetas fabrican conocimiento transferible. Sirven para que un personaje
+que sabe algo pueda dejarlo escrito, venderlo, compartirlo, ocultarlo o
+falsificarlo.
+
+| ID | Resultado | Ingredientes | Estacion | Tiempo | Riesgo |
+| --- | --- | --- | --- | --- | --- |
+| `preparar_carboncillo` | `carboncillo` | `carbon_vegetal` o rama quemada, `tela` o `corteza` | fogata/refugio | 0.5h | bajo |
+| `copiar_receta_simple` | `receta_escrita` | `papel_suelto`, `lapiz` o `lapicera`, receta conocida | ninguna | 1h | bajo |
+| `copiar_receta_tecnica` | `receta_escrita_tecnica` | `cuaderno_seco`, `lapicera` o `pluma` + `tinta`, receta tecnica conocida | mesa_campamento | 2h | medio |
+| `crear_apunte_incompleto` | `apunte_incompleto` | `papel_suelto`, `carboncillo` | ninguna | 0.5h | medio |
+| `crear_manual_corto` | `manual_corto_artesanal` | `cuaderno_seco`, herramienta de escritura, 3 recetas conocidas relacionadas | mesa_campamento | 4h | medio |
+| `dibujar_mapa_receta` | `mapa_anotado` | `mapa_en_blanco` o `mapa_mojado`, `carboncillo` o `lapiz`, ruta conocida | mesa_campamento | 1h | bajo |
+| `falsificar_receta` | `receta_falsa` | `papel_suelto`, `tinta` o `lapicera` | ninguna | 1h | alto social |
+| `restaurar_documento_mojado` | documento legible parcial | `cuaderno_mojado`, `tela`, `carbon_vegetal`, refugio seco | mesa_campamento | 2h | medio |
+
 ## Desbloqueo de recetas
 
 Las recetas pueden desbloquearse de varias formas:
@@ -187,10 +204,20 @@ Las recetas pueden desbloquearse de varias formas:
 - conocidas desde el inicio por supervivencia basica;
 - aprendidas por habilidad del personaje;
 - descubiertas al leer diarios, mapas o documentos tecnicos;
+- aprendidas desde libros, manuales, planos o recetas escritas;
+- copiadas por un personaje que ya conoce la receta si tiene papel y herramienta de escritura;
 - ensenadas por lugarenos a cambio de trueque;
 - reveladas al explorar POIs;
 - desbloqueadas por eventos de guardianes o jefes;
 - deducidas si el NPC tiene rasgos compatibles.
+
+El sistema de libros, recetas escritas, materiales de escritura y progreso por
+conocimiento queda desarrollado en:
+
+```txt
+HELL_GAMES_LIBROS_HABILIDADES_RECETAS.md
+data/skill_books_and_recipe_knowledge.json
+```
 
 Ejemplos:
 

@@ -1,0 +1,57 @@
+{
+  "source_docs": [
+    "HELL_GAMES_LIBROS_HABILIDADES_RECETAS.md",
+    "HELL_GAMES_OBJETOS_RECURSOS.md",
+    "HELL_GAMES_RECETAS_CRAFTING.md",
+    "doc_hability1.md",
+    "doc_habilidades2.md"
+  ],
+  "grid_order": "left_to_right_top_to_bottom",
+  "cell_grid": "4x4",
+  "sets": [
+    {
+      "id": "libros_manuales",
+      "file": "hellgames_conocimiento_01_libros_manuales.png",
+      "items": [
+        {"cell": 1, "id": "manual_primeros_auxilios", "name": "Manual de primeros auxilios"},
+        {"cell": 2, "id": "guia_suturas_fracturas", "name": "Guia de suturas y fracturas"},
+        {"cell": 3, "id": "tratado_toxicologia", "name": "Tratado de toxicologia aplicada"},
+        {"cell": 4, "id": "guia_plantas_isla", "name": "Guia de plantas de la isla"},
+        {"cell": 5, "id": "herbario_pantano", "name": "Herbario del pantano"},
+        {"cell": 6, "id": "manual_supervivencia_humeda", "name": "Manual de supervivencia en clima humedo"},
+        {"cell": 7, "id": "manual_trampas_caza", "name": "Manual de trampas de caza"},
+        {"cell": 8, "id": "manual_generadores", "name": "Manual de generadores pequenos"},
+        {"cell": 9, "id": "manual_radio_faro", "name": "Manual de radio del faro"},
+        {"cell": 10, "id": "guia_cableado_militar", "name": "Guia de cableado militar"},
+        {"cell": 11, "id": "manual_conservacion_alimentos", "name": "Manual de conservacion de alimentos"},
+        {"cell": 12, "id": "manual_embarcaciones", "name": "Manual de reparacion de embarcaciones"},
+        {"cell": 13, "id": "documento_tecnico_minas", "name": "Documento tecnico de minas"},
+        {"cell": 14, "id": "diario_ocultista", "name": "Diario ocultista"},
+        {"cell": 15, "id": "codice_estrellas", "name": "Codice de estrellas contaminadas"},
+        {"cell": 16, "id": "receta_suelta", "name": "Receta suelta"}
+      ]
+    },
+    {
+      "id": "escritura_documentos",
+      "file": "hellgames_conocimiento_02_escritura_documentos.png",
+      "items": [
+        {"cell": 1, "id": "papel_suelto", "name": "Papel suelto"},
+        {"cell": 2, "id": "cuaderno_mojado", "name": "Cuaderno mojado"},
+        {"cell": 3, "id": "cuaderno_seco", "name": "Cuaderno seco"},
+        {"cell": 4, "id": "lapiz", "name": "Lapiz"},
+        {"cell": 5, "id": "lapicera", "name": "Lapicera"},
+        {"cell": 6, "id": "pluma", "name": "Pluma"},
+        {"cell": 7, "id": "tinta", "name": "Tinta"},
+        {"cell": 8, "id": "carboncillo", "name": "Carboncillo"},
+        {"cell": 9, "id": "tiza", "name": "Tiza"},
+        {"cell": 10, "id": "sello_cera", "name": "Sello de cera"},
+        {"cell": 11, "id": "mapa_en_blanco", "name": "Mapa en blanco"},
+        {"cell": 12, "id": "receta_escrita", "name": "Receta escrita"},
+        {"cell": 13, "id": "receta_escrita_tecnica", "name": "Receta escrita tecnica"},
+        {"cell": 14, "id": "apunte_incompleto", "name": "Apunte incompleto"},
+        {"cell": 15, "id": "manual_corto_artesanal", "name": "Manual corto artesanal"},
+        {"cell": 16, "id": "receta_falsa", "name": "Receta falsa"}
+      ]
+    }
+  ]
+}

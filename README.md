@@ -14,6 +14,19 @@ El repositorio arranca como base de diseno y prototipo:
 - scripts de apoyo en `scripts/`;
 - prototipo reducido de 4 casillas para probar simulacion.
 
+Para retomar contexto entre sesiones, leer primero:
+
+- `AGENTS.md`
+- `HELL_GAMES_CONTINUIDAD.md`
+- `BITACORA_SESION_HELL_GAMES_ASSETS_CONOCIMIENTO_2026-06-04.md`
+- `BITACORA_SESION_HELL_GAMES_CASTING_CRIATURAS_2026-06-04.md`
+
+Repo GitHub:
+
+```txt
+https://github.com/matthyuga/hellgames.git
+```
+
 ## Prototipo principal
 
 Ver:
@@ -41,3 +54,11 @@ La estrategia recomendada es:
 - guardar imagenes pesadas localmente, en Discord/CDN o en releases separadas;
 - usar IDs, rutas o URLs para que el bot pueda referenciar las imagenes sin cargar
   todo dentro de Discloud.
+
+Notas actuales:
+
+- `assets/characters/` esta ignorado por Git y contiene personajes/criaturas
+  locales importantes.
+- `assets/skills y mats/` contiene sets visuales de materiales, armas, libros y
+  escritura generados localmente. Revisar `HELL_GAMES_CONTINUIDAD.md` antes de
+  decidir si subirlos o mantenerlos fuera del repo.

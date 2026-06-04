@@ -1,0 +1,548 @@
+{
+  "title": "Hell Games - Guia de libros y habilidades",
+  "source_docs": [
+    "HELL_GAMES_LIBROS_HABILIDADES_RECETAS.md",
+    "doc_hability1.md",
+    "doc_habilidades2.md",
+    "HELL_GAMES_RECETAS_CRAFTING.md",
+    "HELL_GAMES_OBJETOS_RECURSOS.md",
+    "data/skill_books_and_recipe_knowledge.json"
+  ],
+  "learning_rule": "Los libros desbloquean conocimiento; la practica desbloquea dominio; la presion desbloquea experiencia real.",
+  "knowledge_layers": [
+    "intuicion",
+    "lectura",
+    "receta_escrita",
+    "practica",
+    "dominio",
+    "secreto"
+  ],
+  "unlock_modes": [
+    "conocida_inicio",
+    "habilidad_basica",
+    "manual_basico",
+    "manual_avanzado",
+    "plano_tecnico",
+    "diario_npc",
+    "maestro_npc",
+    "deduccion",
+    "experimentacion",
+    "evento_guardian"
+  ],
+  "writing_logic": {
+    "skill_model": "microhabilidad_apoyo",
+    "supported_by": [
+      "ciencias",
+      "investigacion",
+      "cartografia",
+      "ocultismo",
+      "mecanica",
+      "medicina"
+    ],
+    "recipe_quality": [
+      "tosca",
+      "clara",
+      "tecnica",
+      "codificada",
+      "falsa",
+      "danada"
+    ],
+    "tool_rules": {
+      "carbon_vegetal": {
+        "can_substitute_for": [
+          "carboncillo"
+        ],
+        "best_for": [
+          "marcas",
+          "mapa_tosco",
+          "restaurar_documento_mojado"
+        ],
+        "limits": [
+          "no_recetas_tecnicas_claras",
+          "legibilidad_baja"
+        ]
+      },
+      "carboncillo": {
+        "best_for": [
+          "apunte_incompleto",
+          "mapa_anotado",
+          "receta_simple_tosca"
+        ],
+        "limits": [
+          "manchas",
+          "detalle_limitado"
+        ]
+      },
+      "lapiz": {
+        "best_for": [
+          "receta_simple",
+          "mapa_anotado",
+          "nota_corregible"
+        ],
+        "limits": [
+          "requiere_papel_relativamente_seco"
+        ]
+      },
+      "lapicera": {
+        "best_for": [
+          "copia_rapida",
+          "receta_tecnica_simple"
+        ],
+        "limits": [
+          "falla_mojada",
+          "tinta_limitada"
+        ]
+      },
+      "pluma_tinta": {
+        "best_for": [
+          "receta_tecnica",
+          "documento_ritual",
+          "documento_legible"
+        ],
+        "limits": [
+          "lenta",
+          "fragil",
+          "requiere_tinta"
+        ]
+      },
+      "tiza": {
+        "best_for": [
+          "marcas_pared",
+          "simbolos",
+          "rutas_temporales"
+        ],
+        "limits": [
+          "no_conserva_recetas_en_inventario"
+        ]
+      }
+    }
+  },
+  "books": [
+    {
+      "id": "manual_primeros_auxilios",
+      "name": "Manual de primeros auxilios",
+      "kind": "libro/manual",
+      "tier": "basico",
+      "skills": "medicina",
+      "read_hours": 3,
+      "unlocks": "venda_improvisada",
+      "zones": "1 Faro, 2 Campamento, 17 Templo de la Luna, 19 Estacion Militar",
+      "pilot": "Casilla 2. Curacion leve y venda improvisada.",
+      "icon": "icons_by_id/manual_primeros_auxilios.png"
+    },
+    {
+      "id": "guia_suturas_fracturas",
+      "name": "Guia de suturas y fracturas",
+      "kind": "libro/manual",
+      "tier": "intermedio",
+      "skills": "medicina",
+      "read_hours": 5,
+      "unlocks": "venda_desinfectada",
+      "zones": "17 Templo de la Luna, 19 Estacion Militar",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/guia_suturas_fracturas.png"
+    },
+    {
+      "id": "tratado_toxicologia",
+      "name": "Tratado de toxicologia aplicada",
+      "kind": "libro/manual",
+      "tier": "avanzado",
+      "skills": "medicina, quimica",
+      "read_hours": 8,
+      "unlocks": "antidoto_basico, veneno_basico",
+      "zones": "11 Pantano, 12 Sector X, 17 Templo de la Luna, 19 Estacion Militar",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/tratado_toxicologia.png"
+    },
+    {
+      "id": "guia_plantas_isla",
+      "name": "Guia de plantas de la isla",
+      "kind": "libro/manual",
+      "tier": "basico",
+      "skills": "botanica, herbolaria, recolectar",
+      "read_hours": 3,
+      "unlocks": "identificar_hierbas, unguento_medicinal",
+      "zones": "4 Cascada, 11 Pantano, 17 Templo de la Luna, 23 Jungla",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/guia_plantas_isla.png"
+    },
+    {
+      "id": "herbario_pantano",
+      "name": "Herbario del pantano",
+      "kind": "libro/manual",
+      "tier": "intermedio",
+      "skills": "botanica, quimica",
+      "read_hours": 5,
+      "unlocks": "veneno_basico, evitar_plantas_toxicas",
+      "zones": "11 Pantano, 12 Sector X",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/herbario_pantano.png"
+    },
+    {
+      "id": "manual_supervivencia_humeda",
+      "name": "Manual de supervivencia en clima humedo",
+      "kind": "libro/manual",
+      "tier": "basico",
+      "skills": "supervivencia",
+      "read_hours": 3,
+      "unlocks": "hacer_fogata, filtrar_agua_basico",
+      "zones": "2 Campamento, 4 Cascada, 11 Pantano, 23 Jungla",
+      "pilot": "Casilla 2. Fogata, filtro y agua segura.",
+      "icon": "icons_by_id/manual_supervivencia_humeda.png"
+    },
+    {
+      "id": "manual_trampas_caza",
+      "name": "Manual de trampas de caza",
+      "kind": "libro/manual",
+      "tier": "intermedio",
+      "skills": "trampas, caza, supervivencia",
+      "read_hours": 5,
+      "unlocks": "montar_trampa_lazo, montar_pinchos_ocultos",
+      "zones": "2 Campamento, 7 Ruinas, 14 Granja, 23 Jungla",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/manual_trampas_caza.png"
+    },
+    {
+      "id": "manual_radio_faro",
+      "name": "Manual de radio del faro",
+      "kind": "libro/manual",
+      "tier": "intermedio",
+      "skills": "electronica, mecanica",
+      "read_hours": 5,
+      "unlocks": "reparar_radio_faro",
+      "zones": "1 Faro, 20 Observatorio",
+      "pilot": "Casilla 1. Permite reparar radio/faro si hay piezas.",
+      "icon": "icons_by_id/manual_radio_faro.png"
+    },
+    {
+      "id": "manual_generadores",
+      "name": "Manual de generadores pequenos",
+      "kind": "libro/manual",
+      "tier": "intermedio",
+      "skills": "mecanica, electronica",
+      "read_hours": 6,
+      "unlocks": "generador_pequeno",
+      "zones": "3 Minas, 13 Torre, 19 Estacion Militar",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/manual_generadores.png"
+    },
+    {
+      "id": "guia_cableado_militar",
+      "name": "Guia de cableado militar",
+      "kind": "libro/manual",
+      "tier": "avanzado",
+      "skills": "electronica, informatica",
+      "read_hours": 8,
+      "unlocks": "abrir_compuerta_electrica, panel_solar_reparado",
+      "zones": "13 Torre, 19 Estacion Militar, 20 Observatorio",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/guia_cableado_militar.png"
+    },
+    {
+      "id": "manual_conservacion_alimentos",
+      "name": "Manual de conservacion de alimentos",
+      "kind": "libro/manual",
+      "tier": "basico",
+      "skills": "cocina, supervivencia",
+      "read_hours": 3,
+      "unlocks": "secar_carne, racion_conservada",
+      "zones": "2 Campamento, 5 Puerto, 14 Granja, 21 Muelle, 22 Pueblo Nevado",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/manual_conservacion_alimentos.png"
+    },
+    {
+      "id": "manual_embarcaciones",
+      "name": "Manual de reparacion de embarcaciones",
+      "kind": "libro/manual",
+      "tier": "avanzado",
+      "skills": "mecanica, navegar",
+      "read_hours": 8,
+      "unlocks": "reparar_balsa, reparar_bote_motor",
+      "zones": "5 Puerto, 16 Costa, 21 Muelle",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/manual_embarcaciones.png"
+    },
+    {
+      "id": "documento_tecnico_minas",
+      "name": "Documento tecnico de minas",
+      "kind": "libro/manual",
+      "tier": "avanzado",
+      "skills": "mecanica, electronica",
+      "read_hours": 8,
+      "unlocks": "activar_vagon_mina, reparar_tren_mina, activar_monoriel_abandonado",
+      "zones": "3 Minas, 20 Observatorio",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/documento_tecnico_minas.png"
+    },
+    {
+      "id": "diario_ocultista",
+      "name": "Diario ocultista",
+      "kind": "libro/manual",
+      "tier": "avanzado",
+      "skills": "ocultismo, investigacion",
+      "read_hours": 6,
+      "unlocks": "activar_monolito_menor, abrir_ruta_salida_oculta",
+      "zones": "6 Monolitos, 7 Ruinas, 15 Templo del Sol",
+      "pilot": "Casilla 6. Pista incompleta de monolito.",
+      "icon": "icons_by_id/diario_ocultista.png"
+    },
+    {
+      "id": "codice_estrellas",
+      "name": "Codice de estrellas contaminadas",
+      "kind": "libro/manual",
+      "tier": "experto",
+      "skills": "ocultismo, ciencias",
+      "read_hours": 12,
+      "unlocks": "purificar_estrella_contaminada, forjar_lanza_estrella",
+      "zones": "6 Monolitos, 12 Sector X, 15 Templo del Sol, 25 Volcan",
+      "pilot": "No prioritario en piloto; puede aparecer por loot, NPC o evento.",
+      "icon": "icons_by_id/codice_estrellas.png"
+    }
+  ],
+  "writing_materials": [
+    {
+      "id": "papel_suelto",
+      "name": "Papel suelto",
+      "kind": "escritura/documento",
+      "rarity": "comun",
+      "uses": "copiar_receta_simple, nota, mapa_simple",
+      "pilot": "Casilla 2. Base para copiar recetas simples.",
+      "icon": "icons_by_id/papel_suelto.png"
+    },
+    {
+      "id": "cuaderno_mojado",
+      "name": "Cuaderno mojado",
+      "kind": "escritura/documento",
+      "rarity": "comun",
+      "uses": "pistas_danadas, restaurar_documento_mojado",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/cuaderno_mojado.png"
+    },
+    {
+      "id": "cuaderno_seco",
+      "name": "Cuaderno seco",
+      "kind": "escritura/documento",
+      "rarity": "poco_comun",
+      "uses": "varias_recetas, bitacora_personal",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/cuaderno_seco.png"
+    },
+    {
+      "id": "lapiz",
+      "name": "Lapiz",
+      "kind": "escritura/documento",
+      "rarity": "comun",
+      "uses": "copiar_receta_simple, mapa_anotado",
+      "pilot": "Casilla 2. Escritura simple resistente y corregible.",
+      "icon": "icons_by_id/lapiz.png"
+    },
+    {
+      "id": "lapicera",
+      "name": "Lapicera",
+      "kind": "escritura/documento",
+      "rarity": "comun",
+      "uses": "copiar_receta_simple, copiar_receta_tecnica",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/lapicera.png"
+    },
+    {
+      "id": "pluma",
+      "name": "Pluma",
+      "kind": "escritura/documento",
+      "rarity": "comun",
+      "uses": "escritura_ritual, copiar_receta_tecnica",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/pluma.png"
+    },
+    {
+      "id": "tinta",
+      "name": "Tinta",
+      "kind": "escritura/documento",
+      "rarity": "poco_comun",
+      "uses": "copiar_receta_tecnica, documento_legible",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/tinta.png"
+    },
+    {
+      "id": "carboncillo",
+      "name": "Carboncillo",
+      "kind": "escritura/documento",
+      "rarity": "comun",
+      "uses": "apunte_incompleto, mapa_anotado, marcas",
+      "pilot": "Casillas 2, 6 o 7. Mapas toscos, marcas y apuntes incompletos.",
+      "icon": "icons_by_id/carboncillo.png"
+    },
+    {
+      "id": "tiza",
+      "name": "Tiza",
+      "kind": "escritura/documento",
+      "rarity": "comun",
+      "uses": "marcas_pared, simbolos, rutas",
+      "pilot": "Casillas 6 o 7. Marcas de ruta o simbolos temporales.",
+      "icon": "icons_by_id/tiza.png"
+    },
+    {
+      "id": "sello_cera",
+      "name": "Sello de cera",
+      "kind": "escritura/documento",
+      "rarity": "raro",
+      "uses": "autenticar_documento, pacto",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/sello_cera.png"
+    },
+    {
+      "id": "mapa_en_blanco",
+      "name": "Mapa en blanco",
+      "kind": "escritura/documento",
+      "rarity": "poco_comun",
+      "uses": "mapa_anotado",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/mapa_en_blanco.png"
+    },
+    {
+      "id": "receta_escrita",
+      "name": "Receta escrita",
+      "kind": "escritura/documento",
+      "rarity": "variable",
+      "uses": "transferir_conocimiento",
+      "pilot": "Casilla 7. Transferencia de receta puntual.",
+      "icon": "icons_by_id/receta_escrita.png"
+    },
+    {
+      "id": "receta_suelta",
+      "name": "Receta suelta",
+      "kind": "escritura/documento",
+      "rarity": "variable",
+      "uses": "desbloquear_receta_puntual",
+      "pilot": "Casilla 7. Puede revelar trampa de lazo u otra receta puntual.",
+      "icon": "icons_by_id/receta_suelta.png"
+    },
+    {
+      "id": "receta_escrita_tecnica",
+      "name": "Receta escrita tecnica",
+      "kind": "escritura/documento",
+      "rarity": "raro",
+      "uses": "transferir_receta_avanzada",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/receta_escrita_tecnica.png"
+    },
+    {
+      "id": "apunte_incompleto",
+      "name": "Apunte incompleto",
+      "kind": "escritura/documento",
+      "rarity": "comun",
+      "uses": "deduccion, pista_parcial",
+      "pilot": "Casilla 6 o 7. Pista parcial con riesgo de error.",
+      "icon": "icons_by_id/apunte_incompleto.png"
+    },
+    {
+      "id": "manual_corto_artesanal",
+      "name": "Manual corto artesanal",
+      "kind": "escritura/documento",
+      "rarity": "poco_comun",
+      "uses": "compartir_recetas_relacionadas",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/manual_corto_artesanal.png"
+    },
+    {
+      "id": "receta_falsa",
+      "name": "Receta falsa",
+      "kind": "escritura/documento",
+      "rarity": "variable",
+      "uses": "estafa, sabotaje, guerra_social",
+      "pilot": "Puede aparecer como soporte de copia, comercio o pista.",
+      "icon": "icons_by_id/receta_falsa.png"
+    }
+  ],
+  "writing_recipes": [
+    {
+      "id": "preparar_carboncillo",
+      "outputs": "carboncillo",
+      "ingredients": "carbon_vegetal|rama_quemada, tela|corteza",
+      "station": "fogata_o_refugio",
+      "time_hours": 0.5,
+      "risk": "bajo",
+      "unlock": "supervivencia_basica"
+    },
+    {
+      "id": "copiar_receta_simple",
+      "outputs": "receta_escrita",
+      "ingredients": "papel_suelto, lapiz|lapicera, receta_conocida",
+      "station": "ninguna",
+      "time_hours": 1,
+      "risk": "bajo",
+      "unlock": "saber_receta_original"
+    },
+    {
+      "id": "copiar_receta_tecnica",
+      "outputs": "receta_escrita_tecnica",
+      "ingredients": "cuaderno_seco, lapicera|pluma+tinta, receta_tecnica_conocida",
+      "station": "mesa_campamento",
+      "time_hours": 2,
+      "risk": "medio",
+      "unlock": "habilidad_relacionada_baja_o_media"
+    },
+    {
+      "id": "crear_apunte_incompleto",
+      "outputs": "apunte_incompleto",
+      "ingredients": "papel_suelto, carboncillo",
+      "station": "ninguna",
+      "time_hours": 0.5,
+      "risk": "medio",
+      "unlock": "observar_intento_o_fallo"
+    },
+    {
+      "id": "crear_manual_corto",
+      "outputs": "manual_corto_artesanal",
+      "ingredients": "cuaderno_seco, herramienta_escritura, tres_recetas_relacionadas",
+      "station": "mesa_campamento",
+      "time_hours": 4,
+      "risk": "medio",
+      "unlock": "habilidad_media"
+    },
+    {
+      "id": "dibujar_mapa_receta",
+      "outputs": "mapa_anotado",
+      "ingredients": "mapa_en_blanco|mapa_mojado, carboncillo|lapiz, ruta_conocida",
+      "station": "mesa_campamento",
+      "time_hours": 1,
+      "risk": "bajo",
+      "unlock": "explorar_ruta"
+    },
+    {
+      "id": "falsificar_receta",
+      "outputs": "receta_falsa",
+      "ingredients": "papel_suelto, tinta|lapicera",
+      "station": "ninguna",
+      "time_hours": 1,
+      "risk": "alto_social",
+      "unlock": "mentir_o_hurtar"
+    },
+    {
+      "id": "restaurar_documento_mojado",
+      "outputs": "documento_legible_parcial",
+      "ingredients": "cuaderno_mojado, tela, carbon_vegetal, refugio_seco",
+      "station": "mesa_campamento",
+      "time_hours": 2,
+      "risk": "medio",
+      "unlock": "educacion_o_investigacion"
+    }
+  ],
+  "pilot_books": {
+    "1": [
+      "manual_radio_faro",
+      "diario_farero"
+    ],
+    "2": [
+      "manual_primeros_auxilios",
+      "manual_supervivencia_humeda"
+    ],
+    "6": [
+      "diario_ocultista"
+    ],
+    "7": [
+      "receta_escrita:montar_trampa_lazo",
+      "apunte_incompleto:activar_monolito_menor"
+    ]
+  }
+}

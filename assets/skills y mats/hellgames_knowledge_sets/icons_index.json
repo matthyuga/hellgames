@@ -1,0 +1,293 @@
+{
+  "source_manifest": "knowledge_sets_manifest.json",
+  "icons": [
+    {
+      "id": "manual_primeros_auxilios",
+      "name": "Manual de primeros auxilios",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 1,
+      "cell_icon": "icons_cells/libros_manuales_01_manual_primeros_auxilios.png",
+      "icon": "icons_by_id/manual_primeros_auxilios.png"
+    },
+    {
+      "id": "guia_suturas_fracturas",
+      "name": "Guia de suturas y fracturas",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 2,
+      "cell_icon": "icons_cells/libros_manuales_02_guia_suturas_fracturas.png",
+      "icon": "icons_by_id/guia_suturas_fracturas.png"
+    },
+    {
+      "id": "tratado_toxicologia",
+      "name": "Tratado de toxicologia aplicada",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 3,
+      "cell_icon": "icons_cells/libros_manuales_03_tratado_toxicologia.png",
+      "icon": "icons_by_id/tratado_toxicologia.png"
+    },
+    {
+      "id": "guia_plantas_isla",
+      "name": "Guia de plantas de la isla",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 4,
+      "cell_icon": "icons_cells/libros_manuales_04_guia_plantas_isla.png",
+      "icon": "icons_by_id/guia_plantas_isla.png"
+    },
+    {
+      "id": "herbario_pantano",
+      "name": "Herbario del pantano",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 5,
+      "cell_icon": "icons_cells/libros_manuales_05_herbario_pantano.png",
+      "icon": "icons_by_id/herbario_pantano.png"
+    },
+    {
+      "id": "manual_supervivencia_humeda",
+      "name": "Manual de supervivencia en clima humedo",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 6,
+      "cell_icon": "icons_cells/libros_manuales_06_manual_supervivencia_humeda.png",
+      "icon": "icons_by_id/manual_supervivencia_humeda.png"
+    },
+    {
+      "id": "manual_trampas_caza",
+      "name": "Manual de trampas de caza",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 7,
+      "cell_icon": "icons_cells/libros_manuales_07_manual_trampas_caza.png",
+      "icon": "icons_by_id/manual_trampas_caza.png"
+    },
+    {
+      "id": "manual_generadores",
+      "name": "Manual de generadores pequenos",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 8,
+      "cell_icon": "icons_cells/libros_manuales_08_manual_generadores.png",
+      "icon": "icons_by_id/manual_generadores.png"
+    },
+    {
+      "id": "manual_radio_faro",
+      "name": "Manual de radio del faro",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 9,
+      "cell_icon": "icons_cells/libros_manuales_09_manual_radio_faro.png",
+      "icon": "icons_by_id/manual_radio_faro.png"
+    },
+    {
+      "id": "guia_cableado_militar",
+      "name": "Guia de cableado militar",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 10,
+      "cell_icon": "icons_cells/libros_manuales_10_guia_cableado_militar.png",
+      "icon": "icons_by_id/guia_cableado_militar.png"
+    },
+    {
+      "id": "manual_conservacion_alimentos",
+      "name": "Manual de conservacion de alimentos",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 11,
+      "cell_icon": "icons_cells/libros_manuales_11_manual_conservacion_alimentos.png",
+      "icon": "icons_by_id/manual_conservacion_alimentos.png"
+    },
+    {
+      "id": "manual_embarcaciones",
+      "name": "Manual de reparacion de embarcaciones",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 12,
+      "cell_icon": "icons_cells/libros_manuales_12_manual_embarcaciones.png",
+      "icon": "icons_by_id/manual_embarcaciones.png"
+    },
+    {
+      "id": "documento_tecnico_minas",
+      "name": "Documento tecnico de minas",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 13,
+      "cell_icon": "icons_cells/libros_manuales_13_documento_tecnico_minas.png",
+      "icon": "icons_by_id/documento_tecnico_minas.png"
+    },
+    {
+      "id": "diario_ocultista",
+      "name": "Diario ocultista",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 14,
+      "cell_icon": "icons_cells/libros_manuales_14_diario_ocultista.png",
+      "icon": "icons_by_id/diario_ocultista.png"
+    },
+    {
+      "id": "codice_estrellas",
+      "name": "Codice de estrellas contaminadas",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 15,
+      "cell_icon": "icons_cells/libros_manuales_15_codice_estrellas.png",
+      "icon": "icons_by_id/codice_estrellas.png"
+    },
+    {
+      "id": "receta_suelta",
+      "name": "Receta suelta",
+      "set": "libros_manuales",
+      "sheet": "hellgames_conocimiento_01_libros_manuales.png",
+      "cell": 16,
+      "cell_icon": "icons_cells/libros_manuales_16_receta_suelta.png",
+      "icon": "icons_by_id/receta_suelta.png"
+    },
+    {
+      "id": "papel_suelto",
+      "name": "Papel suelto",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 1,
+      "cell_icon": "icons_cells/escritura_documentos_01_papel_suelto.png",
+      "icon": "icons_by_id/papel_suelto.png"
+    },
+    {
+      "id": "cuaderno_mojado",
+      "name": "Cuaderno mojado",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 2,
+      "cell_icon": "icons_cells/escritura_documentos_02_cuaderno_mojado.png",
+      "icon": "icons_by_id/cuaderno_mojado.png"
+    },
+    {
+      "id": "cuaderno_seco",
+      "name": "Cuaderno seco",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 3,
+      "cell_icon": "icons_cells/escritura_documentos_03_cuaderno_seco.png",
+      "icon": "icons_by_id/cuaderno_seco.png"
+    },
+    {
+      "id": "lapiz",
+      "name": "Lapiz",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 4,
+      "cell_icon": "icons_cells/escritura_documentos_04_lapiz.png",
+      "icon": "icons_by_id/lapiz.png"
+    },
+    {
+      "id": "lapicera",
+      "name": "Lapicera",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 5,
+      "cell_icon": "icons_cells/escritura_documentos_05_lapicera.png",
+      "icon": "icons_by_id/lapicera.png"
+    },
+    {
+      "id": "pluma",
+      "name": "Pluma",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 6,
+      "cell_icon": "icons_cells/escritura_documentos_06_pluma.png",
+      "icon": "icons_by_id/pluma.png"
+    },
+    {
+      "id": "tinta",
+      "name": "Tinta",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 7,
+      "cell_icon": "icons_cells/escritura_documentos_07_tinta.png",
+      "icon": "icons_by_id/tinta.png"
+    },
+    {
+      "id": "carboncillo",
+      "name": "Carboncillo",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 8,
+      "cell_icon": "icons_cells/escritura_documentos_08_carboncillo.png",
+      "icon": "icons_by_id/carboncillo.png"
+    },
+    {
+      "id": "tiza",
+      "name": "Tiza",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 9,
+      "cell_icon": "icons_cells/escritura_documentos_09_tiza.png",
+      "icon": "icons_by_id/tiza.png"
+    },
+    {
+      "id": "sello_cera",
+      "name": "Sello de cera",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 10,
+      "cell_icon": "icons_cells/escritura_documentos_10_sello_cera.png",
+      "icon": "icons_by_id/sello_cera.png"
+    },
+    {
+      "id": "mapa_en_blanco",
+      "name": "Mapa en blanco",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 11,
+      "cell_icon": "icons_cells/escritura_documentos_11_mapa_en_blanco.png",
+      "icon": "icons_by_id/mapa_en_blanco.png"
+    },
+    {
+      "id": "receta_escrita",
+      "name": "Receta escrita",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 12,
+      "cell_icon": "icons_cells/escritura_documentos_12_receta_escrita.png",
+      "icon": "icons_by_id/receta_escrita.png"
+    },
+    {
+      "id": "receta_escrita_tecnica",
+      "name": "Receta escrita tecnica",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 13,
+      "cell_icon": "icons_cells/escritura_documentos_13_receta_escrita_tecnica.png",
+      "icon": "icons_by_id/receta_escrita_tecnica.png"
+    },
+    {
+      "id": "apunte_incompleto",
+      "name": "Apunte incompleto",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 14,
+      "cell_icon": "icons_cells/escritura_documentos_14_apunte_incompleto.png",
+      "icon": "icons_by_id/apunte_incompleto.png"
+    },
+    {
+      "id": "manual_corto_artesanal",
+      "name": "Manual corto artesanal",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 15,
+      "cell_icon": "icons_cells/escritura_documentos_15_manual_corto_artesanal.png",
+      "icon": "icons_by_id/manual_corto_artesanal.png"
+    },
+    {
+      "id": "receta_falsa",
+      "name": "Receta falsa",
+      "set": "escritura_documentos",
+      "sheet": "hellgames_conocimiento_02_escritura_documentos.png",
+      "cell": 16,
+      "cell_icon": "icons_cells/escritura_documentos_16_receta_falsa.png",
+      "icon": "icons_by_id/receta_falsa.png"
+    }
+  ]
+}

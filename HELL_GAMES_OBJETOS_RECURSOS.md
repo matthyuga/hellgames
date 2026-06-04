@@ -315,6 +315,43 @@ cuentan como herramientas de progreso.
 | `joya` | Joya | raro | trueque |
 | `nucleo_oxidado` | Nucleo oxidado | muy raro | maquina antigua |
 
+## 15. Conocimiento, libros y escritura
+
+Estos objetos conectan habilidades, recetas y aprendizaje. El sistema completo
+esta descrito en `HELL_GAMES_LIBROS_HABILIDADES_RECETAS.md` y en
+`data/skill_books_and_recipe_knowledge.json`.
+
+| ID | Nombre | Rareza | Usos |
+| --- | --- | --- | --- |
+| `manual_primeros_auxilios` | Manual de primeros auxilios | comun | desbloquear medicina basica, vendas |
+| `guia_plantas_isla` | Guia de plantas de la isla | poco comun | botanica, herbolaria, identificacion |
+| `manual_supervivencia_humeda` | Manual de supervivencia humeda | comun | fogata, filtro de agua, campamento |
+| `manual_radio_faro` | Manual de radio del faro | poco comun | reparar radio, entender antenas |
+| `manual_generadores` | Manual de generadores pequenos | raro | generadores, energia, mecanica |
+| `guia_cableado_militar` | Guia de cableado militar | raro | electronica, compuertas, sensores |
+| `manual_trampas_caza` | Manual de trampas de caza | poco comun | lazos, pinchos, alarmas |
+| `diario_ocultista` | Diario ocultista | raro | monolitos, rituales, rutas ocultas |
+| `documento_tecnico_minas` | Documento tecnico de minas | raro | tren, vagon, monoriel |
+| `codice_estrellas` | Codice de estrellas contaminadas | muy raro | purificacion, lanza de estrella, pactos |
+| `papel_suelto` | Papel suelto | comun | copiar recetas, notas, mapas simples |
+| `cuaderno_mojado` | Cuaderno mojado | comun | pistas danadas, restaurar documento |
+| `cuaderno_seco` | Cuaderno seco | poco comun | varias recetas, bitacora personal |
+| `lapiz` | Lapiz | comun | escribir sin tinta, mapas, recetas |
+| `lapicera` | Lapicera | comun | copiar recetas rapido |
+| `pluma` | Pluma | comun | escritura fina o ritual |
+| `tinta` | Tinta | poco comun | copiar recetas legibles |
+| `carboncillo` | Carboncillo | comun | marcas, mapas, apuntes incompletos |
+| `tiza` | Tiza | comun | marcas de pared, simbolos, rutas |
+| `sello_cera` | Sello de cera | raro | autenticar documento, pacto, falsificacion |
+| `mapa_en_blanco` | Mapa en blanco | poco comun | crear mapa anotado |
+| `receta_escrita` | Receta escrita | variable | transferir conocimiento de crafting |
+| `receta_suelta` | Receta suelta | variable | hallazgo de una receta puntual |
+| `receta_escrita_tecnica` | Receta escrita tecnica | raro | transferir receta avanzada o reparacion |
+| `apunte_incompleto` | Apunte incompleto | comun | pista parcial, deduccion, riesgo de error |
+| `manual_corto_artesanal` | Manual corto artesanal | poco comun | compartir varias recetas relacionadas |
+| `receta_falsa` | Receta falsa | variable | estafa, sabotaje, guerra social |
+| `mapa_anotado` | Mapa anotado | poco comun | rutas, peligros, zonas de recurso |
+
 ## Estados posibles
 
 Un objeto puede tener modificadores:

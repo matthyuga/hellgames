@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROTOTYPE_PATH = ROOT / "data" / "prototype_island_4.json"
 RUNTIME_PATH = ROOT / "data" / "prototype_runtime_4.json"
+CRAFTING_PROFILES_PATH = ROOT / "data" / "actor_crafting_profiles.json"
 DEFAULT_OUTPUT = ROOT / "data" / "runs" / "prototype_island_4_sandbox_log.md"
 
 PARTICIPANTS = ["rex", "renzo_manos_frias", "silas_crow"]
@@ -20,6 +21,12 @@ CREATURES = ["gaviotas_hueso", "larvas_raiz", "sombras_monolito"]
 def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def load_optional_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    return load_json(path)
 
 
 def clamp(value: int, min_value: int = 0, max_value: int = 100) -> int:
@@ -144,7 +151,49 @@ def rest_or_hide(actor: dict) -> str:
     return f"{actor['name']} se oculta y recupera algo de energia."
 
 
-def choose_participant_action(actor: dict, cells: dict[int, dict], runtime: dict, memories: dict, phase: str, rng: random.Random) -> str:
+def try_recipe_action(actor: dict, memories: dict, crafting_profiles: dict[str, dict]) -> str | None:
+    profile = crafting_profiles.get(actor["id"], {})
+    known = set(profile.get("known_recipes", []))
+    interests = set(profile.get("interests", []))
+    inventory = actor.setdefault("inventory", [])
+
+    if actor["id"] == "rex" and "venda_improvisada" in known:
+        if "aguja" in inventory and "retazo_tela" in inventory and not memories.get("rex_fabrico_venda"):
+            inventory.remove("retazo_tela")
+            inventory.append("venda_limpia")
+            actor["stamina"] = clamp(actor["stamina"] - 4)
+            memories["rex_fabrico_venda"] = True
+            return "Rex improvisa una venda con aguja y retazo de tela; no es elegante, pero puede salvar una escena."
+
+    if actor["id"] == "renzo_manos_frias" and "reparar_radio_faro" in known:
+        if actor["cell"] == 1 and not memories.get("radio_reparada"):
+            memories["radio_reparada"] = actor["id"]
+            actor["stamina"] = clamp(actor["stamina"] - 8)
+            return "Renzo usa sus conocimientos tecnicos para reparar la radio del faro y capta una advertencia incompleta sobre las ruinas."
+
+    if actor["id"] == "silas_crow" and "montar_cuerda_tensada" in known:
+        if actor["cell"] == 7 and "cuerda_negra" in inventory and not memories.get("silas_monto_trampa_ruinas"):
+            memories["silas_monto_trampa_ruinas"] = True
+            actor["stamina"] = clamp(actor["stamina"] - 6)
+            return "Silas tensa una cuerda negra entre piedras rotas; cualquiera que corra por las ruinas pagara por no mirar al suelo."
+
+    if actor["id"] == "sira" and "mapa_anotado" in known:
+        if "lore" in interests and not memories.get("sira_marco_ruta_segura"):
+            memories["sira_marco_ruta_segura"] = True
+            return "Sira anota una ruta segura entre marcas antiguas, aunque no decide todavia con quien compartirla."
+
+    return None
+
+
+def choose_participant_action(
+    actor: dict,
+    cells: dict[int, dict],
+    runtime: dict,
+    memories: dict,
+    phase: str,
+    rng: random.Random,
+    crafting_profiles: dict[str, dict],
+) -> str:
     if actor["hp"] <= 0:
         return f"{actor['name']} ya no puede actuar."
 
@@ -153,10 +202,9 @@ def choose_participant_action(actor: dict, cells: dict[int, dict], runtime: dict
     if actor["stamina"] <= 25 or actor["fear"] >= 78:
         return rest_or_hide(actor)
 
-    if actor["id"] == "renzo_manos_frias" and actor["cell"] == 1 and not memories.get("radio_reparada"):
-        memories["radio_reparada"] = actor["id"]
-        actor["stamina"] = clamp(actor["stamina"] - 8)
-        return "Renzo repara la radio del faro y capta una advertencia incompleta sobre las ruinas."
+    recipe_action = try_recipe_action(actor, memories, crafting_profiles)
+    if recipe_action:
+        return recipe_action
 
     if actor["id"] == "silas_crow" and actor["cell"] in {6, 7} and rng.random() < 0.42:
         if actor["cell"] == 6:
@@ -283,9 +331,164 @@ def build_actors(prototype: dict, runtime: dict) -> dict[str, dict]:
     return deepcopy({entry["id"]: {**base_actors.get(entry["id"], {}), **entry} for entry in runtime["actor_runtime"]})
 
 
+def turn_schedule(runtime: dict) -> list[dict]:
+    clock = runtime["clock"]
+    start_hour = clock["start_hour"]
+    total_hours = ((clock["pilot_days"] - 1) * clock["hours_per_day"]) + (clock["hours_per_day"] - start_hour)
+    turn_hours = clock["narrative_turn_hours"]
+    schedule = []
+    for hour_index in range(total_hours):
+        if hour_index % turn_hours != 0:
+            continue
+        absolute_hour = start_hour + hour_index
+        island_hour = absolute_hour % 24
+        schedule.append(
+            {
+                "hour_index": hour_index,
+                "day": (absolute_hour // 24) + 1,
+                "hour": island_hour,
+                "phase": phase_for_hour(island_hour),
+            }
+        )
+    return schedule
+
+
+def format_result_lines(actors: dict[str, dict], memories: dict) -> list[str]:
+    lines = ["## Resultado del sandbox"]
+    survivors = []
+    for actor_id in PARTICIPANTS:
+        actor = actors[actor_id]
+        alive = actor["hp"] > 0
+        if alive:
+            survivors.append(actor["name"])
+        status = "sobrevive" if alive else "queda fuera de juego"
+        lines.append(
+            f"- {actor['name']} {status}: casilla {actor['cell']} {actor['micro']}, "
+            f"HP {actor['hp']}, hambre {actor['hunger']}, sed {actor['thirst']}, "
+            f"energia {actor['stamina']}, miedo {actor['fear']}."
+        )
+
+    lines.append("")
+    lines.append(f"Supervivientes: {', '.join(survivors) if survivors else 'ninguno'}.")
+    lines.append("")
+    lines.append("## Memorias globales")
+    if memories:
+        for key in sorted(memories):
+            value = memories[key]
+            if isinstance(value, str) and value in actors:
+                value = actors[value]["name"]
+            lines.append(f"- `{key}`: {value}")
+    else:
+        lines.append("- Sin memorias globales registradas.")
+    return lines
+
+
+def simulate_live(seed: int, completed_turns: int | None = None) -> dict:
+    prototype = load_json(PROTOTYPE_PATH)
+    runtime = load_json(RUNTIME_PATH)
+    crafting_profiles_data = load_optional_json(CRAFTING_PROFILES_PATH)
+    crafting_profiles = {entry["id"]: entry for entry in crafting_profiles_data.get("actors", [])}
+    rng = random.Random(seed)
+    actors = build_actors(prototype, runtime)
+    cells = active_cells(prototype)
+    memories: dict[str, object] = {}
+
+    clock = runtime["clock"]
+    schedule = turn_schedule(runtime)
+    target_turns = len(schedule) if completed_turns is None else max(0, min(completed_turns, len(schedule)))
+
+    intro_lines = [
+        "# Bitacora sandbox - Prototipo isla 4 casillas",
+        "",
+        f"Seed: `{seed}`",
+        "Objetivo: sobrevivir 3 dias sin casilla de escape.",
+        f"Escala: 1 minuto real = {clock['real_minute_equals_island_hours']} hora isla",
+        "",
+        "## Inicio",
+    ]
+    intro_events = random_spawn_participants(actors, runtime, rng)
+    intro_lines.extend(f"- {line}" for line in intro_events)
+    intro_lines.append("")
+
+    routines = runtime["sandbox_rules"]["local_routines"]
+    schedule_by_hour = {entry["hour_index"]: entry for entry in schedule}
+    total_hours = schedule[-1]["hour_index"] + 1 if schedule else 0
+    turn_logs: list[dict] = []
+    completed = 0
+
+    for hour_index in range(total_hours):
+        meta = schedule_by_hour.get(hour_index)
+        phase = meta["phase"] if meta else phase_for_hour((clock["start_hour"] + hour_index) % 24)
+
+        for actor in actors.values():
+            apply_hourly_decay(actor, phase)
+
+        if meta is None:
+            continue
+        if completed >= target_turns:
+            break
+
+        turn: list[str] = []
+        for actor_id in PARTICIPANTS + LOCALS:
+            turn.extend(consume_if_needed(actors[actor_id]))
+
+        for local_id in LOCALS:
+            turn.append(apply_local_routine(actors[local_id], routines[local_id], meta["phase"]))
+            recipe_action = try_recipe_action(actors[local_id], memories, crafting_profiles)
+            if recipe_action:
+                turn.append(recipe_action)
+
+        for actor_id in PARTICIPANTS:
+            turn.append(choose_participant_action(actors[actor_id], cells, runtime, memories, meta["phase"], rng, crafting_profiles))
+
+        turn.extend(interaction_phase(actors, memories, rng))
+        turn.extend(creature_events(actors, runtime, memories, meta["phase"], rng))
+        turn.extend(guardian_events(actors, runtime, memories, meta["phase"], rng))
+
+        if not turn:
+            turn.append("La isla avanza sin incidentes visibles.")
+
+        completed += 1
+        turn_logs.append(
+            {
+                "index": completed,
+                "title": f"Dia {meta['day']} - {meta['phase'].title()} ({meta['hour']:02d}:00)",
+                "day": meta["day"],
+                "hour": meta["hour"],
+                "phase": meta["phase"],
+                "lines": turn,
+            }
+        )
+
+    log_lines = intro_lines[:]
+    for turn in turn_logs:
+        log_lines.append(f"## {turn['title']}")
+        log_lines.extend(f"- {line}" for line in turn["lines"])
+        log_lines.append("")
+
+    complete = completed >= len(schedule)
+    if complete:
+        log_lines.extend(format_result_lines(actors, memories))
+
+    return {
+        "seed": seed,
+        "turn_index": completed,
+        "total_turns": len(schedule),
+        "complete": complete,
+        "intro_events": intro_events,
+        "turns": turn_logs,
+        "latest_turn": turn_logs[-1] if turn_logs else None,
+        "actors": actors,
+        "memories": memories,
+        "log_text": "\n".join(log_lines).rstrip() + "\n",
+    }
+
+
 def simulate(seed: int) -> str:
     prototype = load_json(PROTOTYPE_PATH)
     runtime = load_json(RUNTIME_PATH)
+    crafting_profiles_data = load_optional_json(CRAFTING_PROFILES_PATH)
+    crafting_profiles = {entry["id"]: entry for entry in crafting_profiles_data.get("actors", [])}
     rng = random.Random(seed)
     actors = build_actors(prototype, runtime)
     cells = active_cells(prototype)
@@ -332,7 +535,7 @@ def simulate(seed: int) -> str:
             turn.append(apply_local_routine(actors[local_id], routines[local_id], phase))
 
         for actor_id in PARTICIPANTS:
-            turn.append(choose_participant_action(actors[actor_id], cells, runtime, memories, phase, rng))
+            turn.append(choose_participant_action(actors[actor_id], cells, runtime, memories, phase, rng, crafting_profiles))
 
         turn.extend(interaction_phase(actors, memories, rng))
         turn.extend(creature_events(actors, runtime, memories, phase, rng))

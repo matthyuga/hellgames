@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "actors": [
+    {
+      "id": "rex",
+      "crafting_role": "improvisador de supervivencia",
+      "known_recipes": ["venda_improvisada", "antorcha_simple", "fabricar_lanza_casera", "mochila_reparada"],
+      "interests": ["aliados", "medicina_basica", "herramientas_ligeras", "evitar_matar"],
+      "search_priorities": ["tela", "agua_limpia", "rama_seca", "cuerda_fina", "lata_comida"],
+      "will_trade_for": ["venda_limpia", "agua_limpia", "mapa_anotado"],
+      "avoids": ["armas_de_fuego", "proyectos_malditos"],
+      "notes": "Busca resolver problemas sin volverse asesino. Si encuentra materiales simples, intenta crear utilidad antes que dano."
+    },
+    {
+      "id": "renzo_manos_frias",
+      "crafting_role": "tecnico reparador",
+      "known_recipes": ["reparar_radio_faro", "kit_reparacion_basico", "reparar_linterna", "generador_pequeno"],
+      "interests": ["salida_funcional", "radio", "energia", "mecanica"],
+      "search_priorities": ["cable_electrico", "bateria_pequena", "fusible", "antena", "documento_tecnico"],
+      "will_trade_for": ["lente_agrietada", "bateria_auto", "motor_pequeno"],
+      "avoids": ["rituales_sin_control"],
+      "notes": "Prefiere proyectos que produzcan ventaja objetiva: senales, energia, mapas o rutas."
+    },
+    {
+      "id": "silas_crow",
+      "crafting_role": "trampero oportunista",
+      "known_recipes": ["montar_cuerda_tensada", "montar_trampa_lazo", "fabricar_bomba_humo", "preparar_dardo_venenoso"],
+      "interests": ["sigilo", "trampas", "reliquias", "ventaja_social"],
+      "search_priorities": ["cuerda_fina", "cuerda_vieja", "veneno_liquido", "polvo_ritual", "reliquia_antigua"],
+      "will_trade_for": ["mapa_parcial", "llave_antigua", "dardos"],
+      "avoids": ["combate_abierto"],
+      "notes": "No fabrica para sobrevivir mejor, fabrica para controlar rutas y saber quien cae primero."
+    },
+    {
+      "id": "sira",
+      "crafting_role": "guardiana de saberes locales",
+      "known_recipes": ["mapa_anotado", "unguento_medicinal", "activar_monolito_menor", "reparar_lente_faro"],
+      "interests": ["lore", "faro", "rutas_seguras", "evitar_despertar_guardianes"],
+      "search_priorities": ["diario_farero", "lente_agrietada", "hierba_medicinal", "polvo_ritual", "amuleto_roto"],
+      "will_trade_for": ["promesa", "ayuda_medica", "devolver_reliquia"],
+      "avoids": ["saqueo_de_ruinas", "luz_nocturna_irresponsable"],
+      "notes": "Puede ensenar recetas, pero rara vez lo hace gratis. Le importan las consecuencias."
+    },
+    {
+      "id": "verek",
+      "crafting_role": "comerciante de piezas y rumores",
+      "known_recipes": ["kit_reparacion_basico", "montar_alarma_latas", "abrir_caja_oxidada", "filtro_portatil"],
+      "interests": ["trueque", "deudas", "piezas_valiosas", "informacion"],
+      "search_priorities": ["lente_agrietada", "chatarra", "tornillos", "bateria_pequena", "moneda_vieja"],
+      "will_trade_for": ["racion_basica", "lata_comida", "joya", "favor_futuro"],
+      "avoids": ["trabajo_sin_pago"],
+      "notes": "Sabe mas recetas de las que admite. Puede vender instrucciones incompletas si eso lo beneficia."
+    }
+  ]
+}

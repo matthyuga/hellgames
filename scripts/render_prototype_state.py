@@ -162,6 +162,17 @@ def render_contact_sheet(paths: list[Path], output_dir: Path) -> Path:
     return output
 
 
+def render_state_maps(actors: list[dict], output_dir: Path = DEFAULT_OUTPUT_DIR) -> Path:
+    grouped: dict[int, list[dict]] = defaultdict(list)
+    for actor in actors:
+        grouped[int(actor["cell"])].append(actor)
+
+    rendered = []
+    for cell_id in (1, 2, 6, 7):
+        rendered.append(render_cell(cell_id, grouped[cell_id], output_dir))
+    return render_contact_sheet(rendered, output_dir)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Renderiza mapas de estado del prototipo Hell Games.")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
@@ -172,17 +183,10 @@ def main() -> None:
     base_actors = {actor["id"]: actor for actor in prototype["actors"]}
     actors = [{**base_actors.get(entry["id"], {}), **entry} for entry in runtime["actor_runtime"]]
 
-    grouped: dict[int, list[dict]] = defaultdict(list)
-    for actor in actors:
-        grouped[int(actor["cell"])].append(actor)
-
-    rendered = []
-    for cell_id in (1, 2, 6, 7):
-        rendered.append(render_cell(cell_id, grouped[cell_id], args.output_dir))
-    contact = render_contact_sheet(rendered, args.output_dir)
+    contact = render_state_maps(actors, args.output_dir)
 
     print("Mapas escritos:")
-    for path in rendered:
+    for path in sorted(args.output_dir.glob("prototype_state_cell_*.png")):
         print(f"- {path}")
     print(f"- {contact}")
 

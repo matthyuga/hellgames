@@ -12,7 +12,7 @@
       "level": 0,
       "name": "Espectador",
       "xp_required": 0,
-      "commands": ["ayuda", "perfil", "bitacora", "mapa", "personaje", "monedas", "reclamar"]
+      "commands": ["ayuda", "guia", "perfil", "bitacora", "mapa", "personaje", "monedas", "reclamar"]
     },
     {
       "level": 1,
@@ -84,6 +84,7 @@
     "bitacora",
     "mapa",
     "personaje",
+    "guia",
     "monedas",
     "reclamar",
     "mirar",
@@ -94,6 +95,11 @@
     "rumores"
   ],
   "v0_admin_commands": [
+    "admin iniciar_piloto",
+    "admin avanzar_turno",
+    "admin stalk",
+    "admin montar_demo",
+    "admin diagnostico",
     "admin sandbox",
     "admin render_mapa",
     "admin publicar_bitacora",
